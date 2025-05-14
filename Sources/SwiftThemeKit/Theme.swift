@@ -18,6 +18,10 @@ public struct Theme {
     /// The set of shadow styles representing elevation or focus states.
     public let shadows: ThemeShadows
 
+    public let stroke: ThemeStroke
+
+    public let shapes: ThemeShapes
+
     /// Initializes a new theme instance with custom tokens.
     ///
     /// - Parameters:
@@ -31,13 +35,17 @@ public struct Theme {
         typography: ThemeTypography,
         spacing: ThemeSpacing,
         radii: ThemeRadii,
-        shadows: ThemeShadows
+        shadows: ThemeShadows,
+        stroke: ThemeStroke,
+        shapes: ThemeShapes
     ) {
         self.colors = colors
         self.typography = typography
         self.spacing = spacing
         self.radii = radii
         self.shadows = shadows
+        self.stroke = stroke
+        self.shapes = shapes
     }
 
     /// The default theme configuration optimized for light mode.
@@ -47,7 +55,9 @@ public struct Theme {
         typography: .defaultLight,
         spacing: .defaultLight,
         radii: .defaultLight,
-        shadows: .defaultLight
+        shadows: .defaultLight,
+        stroke: .defaultLignt,
+        shapes: .defaultLight
     )
 
     /// The default theme configuration optimized for dark mode.
@@ -57,6 +67,8 @@ public struct Theme {
         typography: .defaultDark,
         spacing: .defaultDark,
         radii: .defaultDark,
-        shadows: .defaultDark
+        shadows: .defaultDark,
+        stroke: .defaultDark,
+        shapes: .defaultDark
     )
 }
