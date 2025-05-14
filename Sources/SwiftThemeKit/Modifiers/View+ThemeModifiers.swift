@@ -77,4 +77,19 @@ public extension View {
     func clipRadius(_ token: RadiusToken, style: RoundedCornerStyle = .circular) -> some View {
         self.modifier(ClipRadiusModifier(token: token, style: style))
     }
+
+    /// Applies a themed stroke (border) to the current view.
+    ///
+    /// - Parameters:
+    ///   - width: A `StrokeToken` representing the stroke width from the theme.
+    ///   - radius: A `RadiusToken` representing the corner radius. Default is `.md`.
+    ///   - color: A `ColorToken` for stroke color. Default is `.primary`.
+    @ViewBuilder
+    func stroke(
+        _ width: StrokeToken,
+        radius: RadiusToken = .md,
+        color: ColorToken = .primary
+    ) -> some View {
+        self.modifier(StrokeModifier(width: width, radius: radius, color: color))
+    }
 }

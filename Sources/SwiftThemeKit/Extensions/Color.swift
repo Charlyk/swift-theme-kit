@@ -17,7 +17,7 @@ extension Color {
         default:
             (a, r, g, b) = (1, 1, 1, 0)
         }
-        
+
         self.init(
             .sRGB,
             red: Double(r) / 255,
@@ -25,5 +25,34 @@ extension Color {
             blue:  Double(b) / 255,
             opacity: Double(a) / 255
         )
+    }
+
+    /// Returns a darker version of the color by reducing brightness.
+    /// - Parameter amount: A value between 0 and 1. `0.1` means 10% darker.
+    func darken(by amount: CGFloat) -> Color {
+#if canImport(UIKit)
+        var uiColor = UIColor(self)
+        var hue: CGFloat = 0, saturation: CGFloat = 0, brightness: CGFloat = 0, alpha: CGFloat = 0
+
+        if uiColor.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
+            let newBrightness = max(brightness - amount, 0.0)
+            return Color(hue: hue, saturation: saturation, brightness: newBrightness)
+        }
+
+        return self // fallback
+#elseif canImport(AppKit)
+        var nsColor = NSColor(self)
+        nsColor = nsColor.usingColorSpace(.deviceRGB) ?? nsColor
+        var hue: CGFloat = 0, saturation: CGFloat = 0, brightness: CGFloat = 0, alpha: CGFloat = 0
+
+        if nsColor.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
+            let newBrightness = max(brightness - amount, 0.0)
+            return Color(hue: hue, saturation: saturation, brightness: newBrightness)
+        }
+
+        return self
+#else
+        return self
+#endif
     }
 }
