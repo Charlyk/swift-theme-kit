@@ -48,7 +48,8 @@ public extension ThemeColors {
 
         outline: Color? = nil,
         outlineVariant: Color? = nil,
-        scrim: Color? = nil
+        scrim: Color? = nil,
+        shadow: Color? = nil
     ) -> ThemeColors {
         ThemeColors(
             primary: primary ?? self.primary,
@@ -93,7 +94,8 @@ public extension ThemeColors {
 
             outline: outline ?? self.outline,
             outlineVariant: outlineVariant ?? self.outlineVariant,
-            scrim: scrim ?? self.scrim
+            scrim: scrim ?? self.scrim,
+            shadow: shadow ?? self.shadow
         )
     }
 }
