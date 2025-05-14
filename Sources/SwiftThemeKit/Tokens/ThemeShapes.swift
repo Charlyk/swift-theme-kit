@@ -40,7 +40,7 @@ public struct ThemeShapes {
         self.xl = xl
     }
 
-    subscript(_ token: ShapeTokens) -> RoundedRectangle {
+    subscript(_ token: ShapeToken) -> RoundedRectangle {
         switch(token) {
         case .xs: return xs
         case .sm: return sm
@@ -51,7 +51,7 @@ public struct ThemeShapes {
     }
 }
 
-public enum ShapeTokens {
+public enum ShapeToken {
     case xs
     case sm
     case md
