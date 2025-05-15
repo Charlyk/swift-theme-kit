@@ -5,10 +5,10 @@ public struct ThemeButtonStyle: ButtonStyle {
   let size: ButtonSize
   let shape: ButtonShape
   let font: ThemeFontToken?
-
+  
   @Environment(\.appTheme) private var theme
   @Environment(\.isEnabled) private var isEnabled
-
+  
   public init(variant: ButtonVariant = .filled,
               size: ButtonSize = .medium,
               shape: ButtonShape = .rounded,
@@ -18,17 +18,17 @@ public struct ThemeButtonStyle: ButtonStyle {
     self.shape = shape
     self.font = font
   }
-
+  
   public func makeBody(configuration: Configuration) -> some View {
     let isPressed = configuration.isPressed
     let isDestructive = configuration.role == .destructive
-
+    
     let bgColor: Color
     let borderColor: Color
     let fgColor: Color
     var shadow: ThemeShadow? = nil
     let padding: EdgeInsets
-
+    
     switch variant {
     case .filled:
       let typedBgColor = isDestructive ? theme.colors.error : theme.colors.primary
@@ -60,10 +60,10 @@ public struct ThemeButtonStyle: ButtonStyle {
       fgColor = isDestructive ? theme.colors.error : theme.colors.primary
       padding = size.paddingValues(for: theme)
     }
-
+    
     let effectiveBgColor = isEnabled ? bgColor : theme.colors.onSurface.opacity(0.12)
     let effectiveFgColor = isEnabled ? fgColor : theme.colors.onSurface.opacity(0.32)
-
+    
     return configuration.label
       .foregroundColor(effectiveFgColor)
       .if(size != .fullWidth) { $0.padding(padding) }
@@ -87,7 +87,7 @@ public struct ThemeButtonStyle: ButtonStyle {
       }
       .opacity(configuration.isPressed ? 0.9 : 1.0)
   }
-
+  
   private func getFont() -> Font {
     if let font = font {
       if let weight = font.weight {
