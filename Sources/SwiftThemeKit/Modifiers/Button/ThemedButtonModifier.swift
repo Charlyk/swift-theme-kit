@@ -3,7 +3,7 @@ import SwiftUI
 struct ThemedButtonModifier: ViewModifier {
   @Environment(\.appTheme) private var theme
   @Environment(\.buttonConfiguration) private var config
-
+  
   func body(content: Content) -> some View {
     let configuration = ButtonConfiguration(
       variant: config.variant ?? theme.buttons.variant,
@@ -19,7 +19,7 @@ struct ThemedButtonModifier: ViewModifier {
 struct ApplyFinalButtonStyleModifier: ViewModifier {
   @Environment(\.appTheme) private var theme
   @Environment(\.buttonConfiguration) private var config
-
+  
   func body(content: Content) -> some View {
     content.buttonStyle(
       ThemeButtonStyle(

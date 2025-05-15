@@ -3,7 +3,7 @@ import SwiftUI
 struct TypographyModifier: ViewModifier {
   @Environment(\.appTheme) private var theme
   let token: ThemeFontToken
-
+  
   func body(content: Content) -> some View {
     let baseFont = theme.typography[token.style]
     if let weight = token.weight {
