@@ -1,15 +1,15 @@
 import SwiftUI
 
-public struct PlainTextButtonStyle: ButtonStyle {
+struct PlainTextButtonStyle: ButtonStyle {
   @Environment(\.appTheme) private var theme
   @Environment(\.isEnabled) private var isEnabled
   let token: ThemeFontToken
 
-  public init(token: ThemeFontToken) {
+  init(token: ThemeFontToken) {
     self.token = token
   }
 
-  public func makeBody(configuration: Configuration) -> some View {
+  func makeBody(configuration: Configuration) -> some View {
     let isPressed = configuration.isPressed
     let isDestructive = configuration.role == .destructive
 

@@ -31,7 +31,7 @@ extension Color {
   /// - Parameter amount: A value between 0 and 1. `0.1` means 10% darker.
   func darken(by amount: CGFloat) -> Color {
 #if canImport(UIKit)
-    var uiColor = UIColor(self)
+    let uiColor = UIColor(self)
     var hue: CGFloat = 0, saturation: CGFloat = 0, brightness: CGFloat = 0, alpha: CGFloat = 0
 
     if uiColor.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
