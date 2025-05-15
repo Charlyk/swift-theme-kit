@@ -12,6 +12,7 @@ public extension Theme {
   ///   - stroke: The stroke styles.
   ///   - shapes: The shapes styles used for various components.
   ///   - buttons: The buttons default values used when no modifier applied
+  ///   - textFields: The text field default values used when no modifier applied
   func copy(
     colors: ThemeColors? = nil,
     typography: ThemeTypography? = nil,
@@ -20,7 +21,8 @@ public extension Theme {
     shadows: ThemeShadows? = nil,
     stroke: ThemeStroke? = nil,
     shapes: ThemeShapes? = nil,
-    buttons: ThemeButtonDefaults? = nil
+    buttons: ThemeButtonDefaults? = nil,
+    textFields: ThemeTextFieldDefaults? = nil
   ) -> Theme {
     Theme(
       colors: colors ?? self.colors,
@@ -30,7 +32,8 @@ public extension Theme {
       shadows: shadows ?? self.shadows,
       stroke: stroke ?? self.stroke,
       shapes: shapes ?? self.shapes,
-      buttons: buttons ?? self.buttons
+      buttons: buttons ?? self.buttons,
+      textFields: textFields ?? self.textFields
     )
   }
 }
