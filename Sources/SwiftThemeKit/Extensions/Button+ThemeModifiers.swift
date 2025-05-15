@@ -2,7 +2,7 @@ import SwiftUI
 
 public extension View {
   @ViewBuilder
-  func applyThemeStyle() -> some View {
+  func applyThemeButtonStyle() -> some View {
     self
       .modifier(ThemedButtonModifier())
       .modifier(ApplyFinalButtonStyleModifier())
@@ -26,5 +26,11 @@ public extension View {
   @ViewBuilder
   func plainTextButton(_ style: TextStyleToken = .buttonText, weight: Font.Weight? = nil) -> some View {
     self.buttonStyle(PlainTextButtonStyle(token: ThemeFontToken(style, weight: weight)))
+  }
+
+  @ViewBuilder
+  func labelStyle(_ token: TextStyleToken, weight: Font.Weight? = nil) -> some View {
+    let fontToken = ThemeFontToken(token, weight: weight)
+    self.modifier(ButtonFontModifier(token: fontToken))
   }
 }

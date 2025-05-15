@@ -5,10 +5,11 @@ struct ThemedButtonModifier: ViewModifier {
   @Environment(\.buttonConfiguration) private var config
 
   func body(content: Content) -> some View {
-    let configuration = config ?? ButtonConfiguration(
-      variant: theme.buttons.variant,
-      shape: theme.buttons.shape,
-      size: theme.buttons.size
+    let configuration = ButtonConfiguration(
+      variant: config.variant ?? theme.buttons.variant,
+      shape: config.shape ?? theme.buttons.shape,
+      size: config.size ?? theme.buttons.size,
+      font: config.font
     )
     content
       .environment(\.buttonConfiguration, configuration)
@@ -24,7 +25,8 @@ struct ApplyFinalButtonStyleModifier: ViewModifier {
       ThemeButtonStyle(
         variant: config.variant ?? theme.buttons.variant,
         size: config.size ?? theme.buttons.size,
-        shape: config.shape ?? theme.buttons.shape
+        shape: config.shape ?? theme.buttons.shape,
+        font: config.font
       )
     )
   }
