@@ -6,11 +6,23 @@ extension View {
   ///   - condition: The condition to evaluate.
   ///   - transform: The transform to apply to the source `View`.
   /// - Returns: Either the original `View` or the modified `View` if the condition is `true`.
-  @ViewBuilder public func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
+  @ViewBuilder
+  public func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
     if condition {
       transform(self)
     } else {
       self
     }
+  }
+
+  @ViewBuilder
+  func measure(_ size: Binding<CGSize>) -> some View {
+      self.background(
+          GeometryReader { proxy in
+              Color.clear.onAppear {
+                  size.wrappedValue = proxy.size
+              }
+          }
+      )
   }
 }

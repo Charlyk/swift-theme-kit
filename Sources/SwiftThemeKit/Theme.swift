@@ -27,6 +27,9 @@ public struct Theme {
   /// The set of buttons default configurations
   public let buttons: ThemeButtonDefaults
   
+  /// The set of buttons default configurations
+  public let textFields: ThemeTextFieldDefaults
+
   /// Initializes a new theme instance with custom tokens.
   ///
   /// - Parameters:
@@ -46,7 +49,8 @@ public struct Theme {
     shadows: ThemeShadows,
     stroke: ThemeStroke,
     shapes: ThemeShapes,
-    buttons: ThemeButtonDefaults
+    buttons: ThemeButtonDefaults,
+    textFields: ThemeTextFieldDefaults
   ) {
     self.colors = colors
     self.typography = typography
@@ -56,6 +60,7 @@ public struct Theme {
     self.stroke = stroke
     self.shapes = shapes
     self.buttons = buttons
+    self.textFields = textFields
   }
   
   /// The default theme configuration optimized for light mode.
@@ -68,7 +73,8 @@ public struct Theme {
     shadows: .defaultLight,
     stroke: .defaultLignt,
     shapes: .defaultLight,
-    buttons: .defaultLight
+    buttons: .defaultLight,
+    textFields: .defaultLight
   )
   
   /// The default theme configuration optimized for dark mode.
@@ -81,6 +87,7 @@ public struct Theme {
     shadows: .defaultDark,
     stroke: .defaultDark,
     shapes: .defaultDark,
-    buttons: .defaultDark
+    buttons: .defaultDark,
+    textFields: .defaultDark
   )
 }
