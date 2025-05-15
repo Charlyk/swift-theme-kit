@@ -1,29 +1,32 @@
 /// A complete representation of a visual theme including color, typography, spacing, radius, and shadow tokens.
 /// The `Theme` struct is the root context for all styling logic in a themed SwiftUI application.
 public struct Theme {
-
+  
   /// The set of color tokens used throughout the UI.
   /// Includes semantic roles like `primary`, `onSurface`, `background`, etc.
   public let colors: ThemeColors
-
+  
   /// The full typography scale used for all text elements, including headings, body text, and labels.
   public let typography: ThemeTypography
-
+  
   /// The standard spacing scale for padding, margins, and layout spacing.
   public let spacing: ThemeSpacing
-
+  
   /// The radius scale used for rounded corners and clip shapes.
   public let radii: ThemeRadii
-
+  
   /// The set of shadow styles representing elevation or focus states.
   public let shadows: ThemeShadows
-
+  
+  /// The set of stroke styles
   public let stroke: ThemeStroke
-
+  
+  /// The set of shapes styles used in clipShape modifiers
   public let shapes: ThemeShapes
-
-  public let buttons: ThemeButton
-
+  
+  /// The set of buttons default configurations
+  public let buttons: ThemeButtonDefaults
+  
   /// Initializes a new theme instance with custom tokens.
   ///
   /// - Parameters:
@@ -32,6 +35,9 @@ public struct Theme {
   ///   - spacing: The spacing scale.
   ///   - radii: The corner radius scale.
   ///   - shadows: The shadow styles for various elevations.
+  ///   - stroke: The stroke styles.
+  ///   - shapes: The shapes styles used for various components.
+  ///   - buttons: The buttons default values used when no modifier applied
   public init(
     colors: ThemeColors,
     typography: ThemeTypography,
@@ -40,7 +46,7 @@ public struct Theme {
     shadows: ThemeShadows,
     stroke: ThemeStroke,
     shapes: ThemeShapes,
-    buttons: ThemeButton
+    buttons: ThemeButtonDefaults
   ) {
     self.colors = colors
     self.typography = typography
@@ -51,7 +57,7 @@ public struct Theme {
     self.shapes = shapes
     self.buttons = buttons
   }
-
+  
   /// The default theme configuration optimized for light mode.
   /// Uses `defaultLight` for colors and shadows, and shared defaults for other scales.
   public static var defaultLight: Theme = Theme(
@@ -64,7 +70,7 @@ public struct Theme {
     shapes: .defaultLight,
     buttons: .defaultLight
   )
-
+  
   /// The default theme configuration optimized for dark mode.
   /// Uses `defaultDark` for colors and shadows, and shared defaults for other scales.
   public static var defaultDark: Theme = Theme(
