@@ -4,8 +4,8 @@ import PackageDescription
 let package = Package(
     name: "SwiftThemeKit",
     platforms: [
-        .iOS(.v14),            // Minimum SwiftUI version
-        .macOS(.v11),
+        .iOS(.v15),            // Minimum SwiftUI version
+        .macOS(.v12),
         .tvOS(.v14),
         .watchOS(.v7)
     ],
@@ -19,10 +19,7 @@ let package = Package(
         .target(
             name: "SwiftThemeKit",
             dependencies: [],
-            path: "Sources/SwiftThemeKit",
-            resources: [
-                .process("Resources/Fonts")
-            ]
+            path: "Sources/SwiftThemeKit"
         ),
         .testTarget(
             name: "SwiftThemeKitTests",

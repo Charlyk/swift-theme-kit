@@ -15,8 +15,9 @@ public extension View {
   /// - Parameter token: The typography style to use (e.g. `.headlineMedium`, `.labelSmall`).
   /// - Returns: A view with the themed font applied.
   @ViewBuilder
-  func font(_ token: TextStyleToken) -> some View {
-    self.modifier(TypographyModifier(token: token))
+  func font(_ token: TextStyleToken, weight: Font.Weight? = nil) -> some View {
+    let fontToken = ThemeFontToken(token, weight: weight)
+    self.modifier(TypographyModifier(token: fontToken))
   }
 
   /// Applies a foreground text or icon color using a theme-defined `ColorToken`.

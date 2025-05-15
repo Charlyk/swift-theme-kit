@@ -8,7 +8,8 @@ public extension Theme {
         radii: ThemeRadii? = nil,
         shadows: ThemeShadows? = nil,
         stroke: ThemeStroke? = nil,
-        shapes: ThemeShapes? = nil
+        shapes: ThemeShapes? = nil,
+        buttons: ThemeButton? = nil
     ) -> Theme {
         Theme(
             colors: colors ?? self.colors,
@@ -17,7 +18,8 @@ public extension Theme {
             radii: radii ?? self.radii,
             shadows: shadows ?? self.shadows,
             stroke: stroke ?? self.stroke,
-            shapes: shapes ?? self.shapes
+            shapes: shapes ?? self.shapes,
+            buttons: buttons ?? self.buttons
         )
     }
 }
