@@ -9,14 +9,16 @@ struct ButtonVariantModifier: ViewModifier {
     let configuration = ButtonConfiguration(
       variant: token,
       shape: config.shape ?? theme.buttons.shape,
-      size: config.size ?? theme.buttons.size
+      size: config.size ?? theme.buttons.size,
+      font: config.font
     )
     content
       .buttonStyle(
         ThemeButtonStyle(
           variant: configuration.variant ?? theme.buttons.variant,
           size: configuration.size ?? theme.buttons.size,
-          shape: configuration.shape ?? theme.buttons.shape
+          shape: configuration.shape ?? theme.buttons.shape,
+          font: configuration.font
         )
       )
       .environment(
@@ -35,14 +37,16 @@ struct ButtonSizeModifier: ViewModifier {
     let configuration = ButtonConfiguration(
       variant: config.variant ?? theme.buttons.variant,
       shape: config.shape ?? theme.buttons.shape,
-      size: token
+      size: token,
+      font: config.font
     )
     content
       .buttonStyle(
         ThemeButtonStyle(
           variant: configuration.variant ?? theme.buttons.variant,
           size: configuration.size ?? theme.buttons.size,
-          shape: configuration.shape ?? theme.buttons.shape
+          shape: configuration.shape ?? theme.buttons.shape,
+          font: configuration.font
         )
       )
       .environment(
@@ -61,14 +65,44 @@ struct ButtonShapeModifier: ViewModifier {
     let configuration = ButtonConfiguration(
       variant: config.variant ?? theme.buttons.variant,
       shape: token,
-      size: config.size ?? theme.buttons.size
+      size: config.size ?? theme.buttons.size,
+      font: config.font
     )
     content
       .buttonStyle(
         ThemeButtonStyle(
           variant: configuration.variant ?? theme.buttons.variant,
           size: configuration.size ?? theme.buttons.size,
-          shape: configuration.shape ?? theme.buttons.shape
+          shape: configuration.shape ?? theme.buttons.shape,
+          font: configuration.font
+        )
+      )
+      .environment(
+        \.buttonConfiguration,
+         configuration
+      )
+  }
+}
+
+struct ButtonFontModifier: ViewModifier {
+  @Environment(\.appTheme) private var theme
+  @Environment(\.buttonConfiguration) private var config
+  let token: ThemeFontToken
+
+  func body(content: Content) -> some View {
+    let configuration = ButtonConfiguration(
+      variant: config.variant ?? theme.buttons.variant,
+      shape: config.shape ?? theme.buttons.shape,
+      size: config.size ?? theme.buttons.size,
+      font: token
+    )
+    content
+      .buttonStyle(
+        ThemeButtonStyle(
+          variant: configuration.variant ?? theme.buttons.variant,
+          size: configuration.size ?? theme.buttons.size,
+          shape: configuration.shape ?? theme.buttons.shape,
+          font: configuration.font
         )
       )
       .environment(

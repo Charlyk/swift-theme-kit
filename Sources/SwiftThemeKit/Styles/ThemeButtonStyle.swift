@@ -4,16 +4,19 @@ public struct ThemeButtonStyle: ButtonStyle {
   let variant: ButtonVariant
   let size: ButtonSize
   let shape: ButtonShape
+  let font: ThemeFontToken?
 
   @Environment(\.appTheme) private var theme
   @Environment(\.isEnabled) private var isEnabled
 
   public init(variant: ButtonVariant = .filled,
               size: ButtonSize = .medium,
-              shape: ButtonShape = .rounded) {
+              shape: ButtonShape = .rounded,
+              font: ThemeFontToken? = nil) {
     self.variant = variant
     self.size = size
     self.shape = shape
+    self.font = font
   }
 
   public func makeBody(configuration: Configuration) -> some View {
@@ -34,7 +37,7 @@ public struct ThemeButtonStyle: ButtonStyle {
       fgColor = isDestructive ? theme.colors.onError : theme.colors.onPrimary
       padding = size.paddingValues(for: theme)
     case .tonal:
-      let typedBgColor = isDestructive ? theme.colors.errorContainer.opacity(0.75) : theme.colors.secondaryContainer
+      let typedBgColor = isDestructive ? theme.colors.errorContainer : theme.colors.secondaryContainer
       bgColor = isPressed ? typedBgColor.darken(by: 0.1) : typedBgColor
       borderColor = .clear
       fgColor = isDestructive ? theme.colors.onErrorContainer : theme.colors.onSecondaryContainer
@@ -58,18 +61,19 @@ public struct ThemeButtonStyle: ButtonStyle {
       padding = size.paddingValues(for: theme)
     }
 
-    let adjustedBgColor = configuration
+    let effectiveBgColor = isEnabled ? bgColor : theme.colors.onSurface.opacity(0.12)
+    let effectiveFgColor = isEnabled ? fgColor : theme.colors.onSurface.opacity(0.32)
 
     return configuration.label
-      .foregroundColor(fgColor)
+      .foregroundColor(effectiveFgColor)
       .if(size != .fullWidth) { $0.padding(padding) }
       .if(size == .fullWidth) {
         $0.frame(maxWidth: .infinity)
           .padding(.top, padding.top)
           .padding(.bottom, padding.bottom)
       }
-      .font(size.font(for: theme))
-      .background(bgColor)
+      .font(getFont())
+      .background(effectiveBgColor)
       .if(variant == .outline) {
         $0.background(
           RoundedRectangle(cornerRadius: shape.radius(for: theme))
@@ -82,5 +86,17 @@ public struct ThemeButtonStyle: ButtonStyle {
         $0.shadow(color: shadow!.color, radius: shadow!.radius, x: shadow!.x, y: shadow!.y)
       }
       .opacity(configuration.isPressed ? 0.9 : 1.0)
+  }
+
+  private func getFont() -> Font {
+    if let font = font {
+      if let weight = font.weight {
+        return theme.typography[font.style].weight(weight)
+      } else {
+        return theme.typography[font.style]
+      }
+    } else {
+      return size.font(for: theme)
+    }
   }
 }
