@@ -8,6 +8,10 @@ private struct ButtonConfigurationKey: EnvironmentKey {
   static let defaultValue: ButtonConfiguration = ButtonConfiguration()
 }
 
+private struct TextFieldConfigurationKey: EnvironmentKey {
+  static let defaultValue: TextFieldConfiguration = TextFieldConfiguration()
+}
+
 private struct TypographyKey: EnvironmentKey {
   static let defaultValue: ThemeFontToken = ThemeFontToken(.bodyMedium)
 }
@@ -21,6 +25,11 @@ extension EnvironmentValues {
   var buttonConfiguration: ButtonConfiguration {
     get { self[ButtonConfigurationKey.self] }
     set { self[ButtonConfigurationKey.self] = newValue }
+  }
+
+  var textFieldConfiguration: TextFieldConfiguration {
+    get { self[TextFieldConfigurationKey.self] }
+    set { self[TextFieldConfigurationKey.self] = newValue }
   }
 
   var typographyStyle: ThemeFontToken {
