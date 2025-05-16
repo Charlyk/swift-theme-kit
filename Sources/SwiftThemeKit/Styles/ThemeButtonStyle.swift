@@ -32,13 +32,13 @@ public struct ThemeButtonStyle: ButtonStyle {
     switch variant {
     case .filled:
       let typedBgColor = isDestructive ? theme.colors.error : theme.colors.primary
-      bgColor = isPressed ? typedBgColor.darken(by: 0.1) : typedBgColor
+      bgColor = isPressed ? typedBgColor.lighten(by: 0.1) : typedBgColor
       borderColor = .clear
       fgColor = isDestructive ? theme.colors.onError : theme.colors.onPrimary
       padding = size.paddingValues(for: theme)
     case .tonal:
       let typedBgColor = isDestructive ? theme.colors.errorContainer : theme.colors.secondaryContainer
-      bgColor = isPressed ? typedBgColor.darken(by: 0.1) : typedBgColor
+      bgColor = isPressed ? typedBgColor.lighten(by: 0.1) : typedBgColor
       borderColor = .clear
       fgColor = isDestructive ? theme.colors.onErrorContainer : theme.colors.onSecondaryContainer
       padding = size.paddingValues(for: theme)
