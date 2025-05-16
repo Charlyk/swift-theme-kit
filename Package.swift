@@ -6,7 +6,7 @@ let package = Package(
     platforms: [
         .iOS(.v15),            // Minimum SwiftUI version
         .macOS(.v12),
-        .tvOS(.v14),
+        .tvOS(.v15),
         .watchOS(.v7)
     ],
     products: [

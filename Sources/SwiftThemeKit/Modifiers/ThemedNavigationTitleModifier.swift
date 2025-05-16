@@ -11,6 +11,15 @@ public struct ThemedNavigationTitleModifier: ViewModifier {
     let baseFont = theme.typography[token]
     let font = weight.map { baseFont.weight($0) } ?? baseFont
 
+#if os(tvOS)
+    return content
+      .toolbar {
+        ToolbarItem(placement: .principal) {
+          Text(title)
+            .font(font) // or use your theme
+        }
+      }
+#else
     return content
       .navigationBarTitleDisplayMode(.inline)
       .toolbar {
@@ -19,5 +28,6 @@ public struct ThemedNavigationTitleModifier: ViewModifier {
             .font(font) // or use your theme
         }
       }
+#endif
   }
 }
