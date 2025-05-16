@@ -71,7 +71,7 @@ public enum ButtonShape: Equatable {
 struct AnyShape: InsettableShape {
   /// Internal closure used to build a `Path` from a `CGRect`.
   private let pathBuilder: @Sendable (CGRect) -> Path
-  private let insetBuilder: (CGFloat) -> AnyShape
+  private let insetBuilder: @Sendable (CGFloat) -> AnyShape
 
   /// Initializes the wrapper using a concrete `Shape` instance.
   /// - Parameter shape: The shape to wrap.

@@ -1,3 +1,5 @@
+import SwiftUI
+
 public enum TextFieldVariant {
   case outlined
   case underlined
