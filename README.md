@@ -17,7 +17,7 @@ Add SwiftThemeKit to your project using Swift Package Manager:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yourusername/SwiftThemeKit.git", from: "1.0.0")
+    .package(url: "https://github.com/Charlyk/swift-theme-kit.git", from: "1.0.0")
 ]
 ```
 
@@ -136,7 +136,7 @@ let customTheme = Theme(
 
 - iOS 14.0+
 - macOS 11.0+
-- tvOS 14.0+
+- tvOS 15.0+
 - watchOS 7.0+
 - Swift 5.5+
 
