@@ -132,6 +132,10 @@ let customTheme = Theme(
 - Follow the token-based approach for maintaining consistency
 - Use semantic color tokens instead of direct color values
 
+## Documentation
+
+See the full documentation [here](https://charlyk.github.io/swift-theme-kit/)
+
 ## Requirements
 
 - iOS 14.0+
