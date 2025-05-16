@@ -43,6 +43,14 @@ public struct ThemedNavigationTitleModifier: ViewModifier {
             .font(font)
         }
       }
+#elseif os(macOS)
+    return content
+      .toolbar {
+        ToolbarItem(placement: .principal) {
+          Text(title)
+            .font(font)
+        }
+      }
 #else
     return content
       .navigationBarTitleDisplayMode(.inline)

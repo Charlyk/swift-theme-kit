@@ -2,7 +2,7 @@ import SwiftUI
 
 /// Defines a shadow style for UI elements, including color, blur radius, and offset values.
 /// Used to indicate elevation, depth, or focus across your app.
-public struct ThemeShadow {
+public struct ThemeShadow: Equatable {
   
   /// The color of the shadow.
   /// Typically black with opacity in light mode or white with opacity in dark mode.
