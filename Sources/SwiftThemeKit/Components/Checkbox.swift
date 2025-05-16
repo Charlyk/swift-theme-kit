@@ -1,17 +1,53 @@
 import SwiftUI
 
+/// A custom themed checkbox component that adapts to the current `Theme`.
+///
+/// `Checkbox` supports both text labels and custom views, as well as configurable shape and label alignment.
+/// It is fully accessible and updates the bound `isChecked` state when toggled.
+///
+/// Example:
+/// ```swift
+/// Checkbox(isChecked: $isOn, label: "Subscribe to newsletter")
+/// ```
+///
+/// You can also provide a custom view as a label:
+/// ```swift
+/// Checkbox(isChecked: $isOn) {
+///   HStack {
+///     Image(systemName: "bell")
+///     Text("Notify me")
+///   }
+/// }
+/// ```
 public struct Checkbox: View {
   @Environment(\.appTheme) var theme
+
+  /// A binding that reflects whether the checkbox is selected or not.
   @Binding var isChecked: Bool
+
+  /// Optional label content displayed next to the checkbox.
   private var label: AnyView?
+
+  /// The shape of the checkbox (e.g. `.rounded`, `.square`, `.circle`).
   private var shape: CheckboxShape = .rounded
+
+  /// Determines whether the label appears on the leading or trailing side.
   private var labelPosition: HorizontalPosition = .trailing
 
+  /// Initializes a standalone checkbox without a label.
+  ///
+  /// - Parameter isChecked: A binding to the checkbox state.
   public init(isChecked: Binding<Bool>) {
     self._isChecked = isChecked
     self.label = nil
   }
 
+  /// Initializes a checkbox with a simple string label.
+  ///
+  /// - Parameters:
+  ///   - isChecked: A binding to the checkbox state.
+  ///   - label: The text to display next to the checkbox.
+  ///   - labelPosition: Position of the label relative to the checkbox (defaults to `.trailing`).
   public init(isChecked: Binding<Bool>,
               label: String,
               labelPosition: HorizontalPosition = .trailing) {
@@ -23,6 +59,12 @@ public struct Checkbox: View {
     )
   }
 
+  /// Initializes a checkbox with a fully custom view label.
+  ///
+  /// - Parameters:
+  ///   - isChecked: A binding to the checkbox state.
+  ///   - labelPosition: Position of the label relative to the checkbox (defaults to `.trailing`).
+  ///   - label: A view builder that defines the label content.
   public init<Label: View>(isChecked: Binding<Bool>,
                            labelPosition: HorizontalPosition = .trailing,
                            @ViewBuilder label: @escaping () -> Label) {
@@ -31,13 +73,15 @@ public struct Checkbox: View {
     self.label = AnyView(label())
   }
 
+  /// The body of the checkbox view.
+  ///
+  /// This includes the checkbox shape, checkmark, background fill, and optional label.
   public var body: some View {
     Button(action: {
       isChecked.toggle()
     }) {
       if let label, labelPosition == .leading {
         label
-
         Spacer()
       }
 

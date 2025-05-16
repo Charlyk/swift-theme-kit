@@ -103,6 +103,25 @@ public extension View {
     self.modifier(ClipShapeModifier(token: token))
   }
 
+  /// Sets a custom navigation title using the theme's typography system.
+  ///
+  /// This modifier allows you to style the navigation bar title with a specific text style
+  /// from your theme, and optionally apply a font weight.
+  ///
+  /// - Parameters:
+  ///   - title: The string to display as the navigation title.
+  ///   - style: The typography style token from your theme (e.g., `.headlineLarge`, `.titleMedium`). Defaults to `.headlineLarge`.
+  ///   - weight: An optional font weight override (e.g., `.bold`, `.medium`).
+  ///
+  /// - Returns: A view with a themed navigation title applied.
+  ///
+  /// ### Example:
+  /// ```swift
+  /// NavigationStack {
+  ///   MyView()
+  ///     .navigationTitle("Settings", style: .titleLarge, weight: .semibold)
+  /// }
+  /// ```
   func navigationTitle(
     _ title: String,
     style: TextStyleToken = .headlineLarge,

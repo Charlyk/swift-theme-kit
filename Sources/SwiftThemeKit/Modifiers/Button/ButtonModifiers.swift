@@ -1,5 +1,7 @@
 import SwiftUI
 
+/// A view modifier that applies a specific `ButtonVariant` to a view while preserving
+/// other button styling properties from the theme or existing environment configuration.
 struct ButtonVariantModifier: ViewModifier {
   @Environment(\.appTheme) private var theme
   @Environment(\.buttonConfiguration) private var config
@@ -21,13 +23,12 @@ struct ButtonVariantModifier: ViewModifier {
           font: configuration.font
         )
       )
-      .environment(
-        \.buttonConfiguration,
-         configuration
-      )
+      .environment(\.buttonConfiguration, configuration)
   }
 }
 
+/// A view modifier that applies a specific `ButtonSize` to a view while retaining
+/// the current shape, variant, and font from the environment or theme.
 struct ButtonSizeModifier: ViewModifier {
   @Environment(\.appTheme) private var theme
   @Environment(\.buttonConfiguration) private var config
@@ -49,13 +50,12 @@ struct ButtonSizeModifier: ViewModifier {
           font: configuration.font
         )
       )
-      .environment(
-        \.buttonConfiguration,
-         configuration
-      )
+      .environment(\.buttonConfiguration, configuration)
   }
 }
 
+/// A view modifier that applies a specific `ButtonShape` to a view while preserving
+/// the current variant, size, and font configuration from the environment or theme.
 struct ButtonShapeModifier: ViewModifier {
   @Environment(\.appTheme) private var theme
   @Environment(\.buttonConfiguration) private var config
@@ -77,13 +77,12 @@ struct ButtonShapeModifier: ViewModifier {
           font: configuration.font
         )
       )
-      .environment(
-        \.buttonConfiguration,
-         configuration
-      )
+      .environment(\.buttonConfiguration, configuration)
   }
 }
 
+/// A view modifier that applies a custom `ThemeFontToken` to a button's text style
+/// without overriding its size, variant, or shape.
 struct ButtonFontModifier: ViewModifier {
   @Environment(\.appTheme) private var theme
   @Environment(\.buttonConfiguration) private var config
@@ -105,9 +104,6 @@ struct ButtonFontModifier: ViewModifier {
           font: configuration.font
         )
       )
-      .environment(
-        \.buttonConfiguration,
-         configuration
-      )
+      .environment(\.buttonConfiguration, configuration)
   }
 }
