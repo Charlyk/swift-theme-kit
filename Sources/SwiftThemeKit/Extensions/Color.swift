@@ -56,4 +56,34 @@ extension Color {
     return self
 #endif
   }
+
+  /// Returns a lighter version of the color by increasing brightness.
+  /// - Parameter amount: A value between 0 and 1. `0.1` means 10% lighter.
+  func lighten(by amount: CGFloat) -> Color {
+#if canImport(UIKit)
+    let uiColor = UIColor(self)
+    var hue: CGFloat = 0, saturation: CGFloat = 0, brightness: CGFloat = 0, alpha: CGFloat = 0
+
+    if uiColor.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha) {
+      let newBrightness = min(brightness + amount, 1.0)
+      return Color(hue: hue, saturation: saturation, brightness: newBrightness)
+    }
+
+    return self // fallback
+
+#elseif canImport(AppKit)
+    if let nsColor = NSColor(self).usingColorSpace(.deviceRGB) {
+      var hue: CGFloat = 0, saturation: CGFloat = 0, brightness: CGFloat = 0, alpha: CGFloat = 0
+      nsColor.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+
+      let newBrightness = min(brightness + amount, 1.0)
+      return Color(hue: hue, saturation: saturation, brightness: newBrightness)
+    }
+
+    return self // fallback
+
+#else
+    return self
+#endif
+  }
 }

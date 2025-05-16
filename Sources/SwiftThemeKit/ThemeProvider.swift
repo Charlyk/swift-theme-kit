@@ -41,10 +41,12 @@ public struct ThemeProvider<Content: View>: View {
       if colorScheme == .dark {
         content()
           .transition(.opacity)
+          .tint(lightTheme.colors.primary)
           .environment(\.appTheme, darkTheme)
       } else {
         content()
           .transition(.opacity)
+          .tint(lightTheme.colors.primary)
           .environment(\.appTheme, lightTheme)
       }
     }
