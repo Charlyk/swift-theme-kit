@@ -5,15 +5,29 @@ public struct Checkbox: View {
   @Binding var isChecked: Bool
   private var label: AnyView?
   private var shape: CheckboxShape = .rounded
+  private var labelPosition: HorizontalPosition = .trailing
 
   public init(isChecked: Binding<Bool>) {
     self._isChecked = isChecked
     self.label = nil
   }
 
+  public init(isChecked: Binding<Bool>,
+              label: String,
+              labelPosition: HorizontalPosition = .trailing) {
+    self._isChecked = isChecked
+    self.labelPosition = labelPosition
+    self.label = AnyView(
+      Text(label)
+        .font(.bodyMedium)
+    )
+  }
+
   public init<Label: View>(isChecked: Binding<Bool>,
+                           labelPosition: HorizontalPosition = .trailing,
                            @ViewBuilder label: @escaping () -> Label) {
     self._isChecked = isChecked
+    self.labelPosition = labelPosition
     self.label = AnyView(label())
   }
 
@@ -21,7 +35,13 @@ public struct Checkbox: View {
     Button(action: {
       isChecked.toggle()
     }) {
-      HStack(spacing: 0) {
+      if let label, labelPosition == .leading {
+        label
+
+        Spacer()
+      }
+
+      HStack(alignment: .center, spacing: 0) {
         Image(systemName: isChecked ? "checkmark" : "")
           .frame(width: 24, height: 24)
           .foregroundColor(.white)
@@ -31,10 +51,10 @@ public struct Checkbox: View {
           .clipShape(shape.shape(theme: theme))
           .background(
             shape.shape(theme: theme)
-              .stroke(theme.colors.primary, lineWidth: theme.stroke.sm)
+              .stroke(theme.colors.primary, lineWidth: theme.stroke.xs)
           )
 
-        if let label {
+        if let label, labelPosition == .trailing {
           label
         }
       }
@@ -44,15 +64,22 @@ public struct Checkbox: View {
 }
 
 #Preview {
-  Checkbox(isChecked: .constant(true)) {
-    Text("Checked checkbox")
-      .font(.bodyMedium)
-      .padding(.leading, 4)
-  }
+  VStack(alignment: .leading) {
+    Checkbox(isChecked: .constant(true)) {
+      Text("Checked checkbox")
+        .font(.bodyMedium)
+        .padding(.leading, 6)
+    }
 
-  Checkbox(isChecked: .constant(false)) {
-    Text("Unchecked checkbox")
-      .font(.bodyMedium)
-      .padding(.leading, 4)
+    Checkbox(isChecked: .constant(false)) {
+      Text("Unchecked checkbox")
+        .font(.bodyMedium)
+        .padding(.leading, 5)
+    }
+
+    Checkbox(isChecked: .constant(false),
+             label: "Unchecked checkbox",
+             labelPosition: .leading)
   }
+  .padding(.horizontal, 16)
 }
