@@ -146,7 +146,7 @@ See the full documentation [here](https://charlyk.github.io/swift-theme-kit/)
 
 ## Contributing
 
-We welcome contributions! Please read our contributing guidelines before submitting pull requests.
+We welcome contributions! Please read our [contributing guidelines](https://github.com/Charlyk/swift-theme-kit/blob/master/CONTRIBUTING.md) before submitting pull requests.
 
 ## License
 
