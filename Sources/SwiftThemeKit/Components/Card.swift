@@ -39,3 +39,13 @@ public struct Card<Content: View>: View {
       .shadow(elevation)
   }
 }
+
+#Preview {
+  VStack {
+    Card {
+      Text("Hello, World!")
+        .frame(maxWidth: .infinity)
+    }
+  }
+  .padding(.horizontal, 16)
+}
