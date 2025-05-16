@@ -1,7 +1,7 @@
 import SwiftUI
 
 private struct AppThemeKey: EnvironmentKey {
-  static let defaultValue: Theme? = nil
+  static let defaultValue: Theme = .defaultLight
 }
 
 private struct ButtonConfigurationKey: EnvironmentKey {
@@ -18,14 +18,7 @@ private struct TypographyKey: EnvironmentKey {
 
 extension EnvironmentValues {
   public var appTheme: Theme {
-    get {
-#if DEBUG
-      if self[AppThemeKey.self] == nil {
-        assertionFailure("SwiftThemeKit: ⚠️ ThemeProvider is missing. Falling back to defaultLight.")
-      }
-#endif
-      return self[AppThemeKey.self] ?? .defaultLight
-    }
+    get { self[AppThemeKey.self] }
     set { self[AppThemeKey.self] = newValue }
   }
 
