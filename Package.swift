@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "SwiftThemeKit",
     platforms: [
-        .iOS(.v15),            // Minimum SwiftUI version
+        .iOS(.v15),
         .macOS(.v12),
         .tvOS(.v15),
         .watchOS(.v7)
@@ -15,6 +15,10 @@ let package = Package(
             targets: ["SwiftThemeKit"]
         ),
     ],
+    dependencies: [
+        // Add ViewInspector here
+        .package(url: "https://github.com/nalexn/ViewInspector", from: "0.10.1")
+    ],
     targets: [
         .target(
             name: "SwiftThemeKit",
@@ -23,7 +27,10 @@ let package = Package(
         ),
         .testTarget(
             name: "SwiftThemeKitTests",
-            dependencies: ["SwiftThemeKit"],
+            dependencies: [
+                "SwiftThemeKit",
+                .product(name: "ViewInspector", package: "ViewInspector")
+            ],
             path: "Tests/SwiftThemeKitTests"
         ),
     ]
