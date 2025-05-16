@@ -146,7 +146,7 @@ We welcome contributions! Please read our contributing guidelines before submitt
 
 ## License
 
-SwiftThemeKit is available under the MIT license. See the LICENSE file for more info.
+SwiftThemeKit is available under the MIT license. See the [LICENSE file](https://github.com/Charlyk/swift-theme-kit/blob/master/LICENCE) for more info.
 
 ## Keywords
 
