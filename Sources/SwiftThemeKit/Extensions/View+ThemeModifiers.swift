@@ -129,4 +129,34 @@ public extension View {
   ) -> some View {
     self.modifier(ThemedNavigationTitleModifier(title: title, token: style, weight: weight))
   }
+
+  /// Applies layout weight to a view by allowing it to grow in all directions
+  /// and prioritizing its space relative to sibling views.
+  ///
+  /// This is inspired by Jetpack Compose's `weight()` function and is useful
+  /// in `HStack` and `VStack` when you want views to divide space proportionally.
+  ///
+  /// ### Example (Horizontal):
+  /// ```swift
+  /// HStack(spacing: 0) {
+  ///   Color.red.weight(1)
+  ///   Color.blue.weight(2)
+  /// }
+  /// ```
+  ///
+  /// ### Example (Vertical):
+  /// ```swift
+  /// VStack(spacing: 0) {
+  ///   Color.green.weight(1)
+  ///   Color.orange.weight(1)
+  /// }
+  /// ```
+  ///
+  /// - Parameter value: The layout priority weight relative to sibling views.
+  /// - Returns: A view that fills available space based on priority.
+  func weight(_ value: Double) -> some View {
+    self
+      .frame(maxWidth: .infinity, maxHeight: .infinity)
+      .layoutPriority(value)
+  }
 }
