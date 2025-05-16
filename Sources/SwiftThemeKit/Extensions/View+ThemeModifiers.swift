@@ -102,4 +102,12 @@ public extension View {
   func clipShape(_ token: ShapeToken) -> some View {
     self.modifier(ClipShapeModifier(token: token))
   }
+
+  func navigationTitle(
+    _ title: String,
+    style: TextStyleToken = .headlineLarge,
+    weight: Font.Weight? = nil
+  ) -> some View {
+    self.modifier(ThemedNavigationTitleModifier(title: title, token: style, weight: weight))
+  }
 }
