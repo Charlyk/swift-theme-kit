@@ -12,19 +12,19 @@ struct TextFieldsView: View {
         Text("Text fields")
           .font(.headlineLarge)
 
-        TextField("Text fields", text: $fieldsValue)
+        TextField("Outlined", text: $fieldsValue)
           .textFieldVariant(.outlined)
           .textFieldShape(shapes.textFieldShape)
 
-        TextField("Text fields", text: $fieldsValue)
+        TextField("Underlined", text: $fieldsValue)
           .textFieldVariant(.underlined)
           .textFieldShape(shapes.textFieldShape)
 
-        TextField("Text fields", text: $fieldsValue)
+        TextField("Filled", text: $fieldsValue)
           .textFieldVariant(.filled)
           .textFieldShape(shapes.textFieldShape)
 
-        TextField("Text fields", text: $fieldsValue)
+        TextField("Plain", text: $fieldsValue)
           .textFieldVariant(.plain)
           .textFieldShape(shapes.textFieldShape)
       }
