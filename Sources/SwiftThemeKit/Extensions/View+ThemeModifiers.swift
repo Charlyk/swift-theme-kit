@@ -35,7 +35,7 @@ public extension View {
   /// - Returns: A view with the background color applied.
   @ViewBuilder
   func backgroundColor(_ token: ColorToken) -> some View {
-    self.modifier(BackgroundModifier(token: token, edgesIgnoringSafeArea: nil))
+    self.modifier(BackgroundColorModifier(token: token, edgesIgnoringSafeArea: nil))
   }
 
   /// Applies a background fill color using a theme-defined `ColorToken`.
@@ -45,7 +45,28 @@ public extension View {
   /// - Returns: A view with the background color applied.
   @ViewBuilder
   func backgroundColor(_ token: ColorToken, edgesIgnoringSafeArea: Edge.Set) -> some View {
-    self.modifier(BackgroundModifier(token: token, edgesIgnoringSafeArea: edgesIgnoringSafeArea))
+    self.modifier(BackgroundColorModifier(token: token, edgesIgnoringSafeArea: edgesIgnoringSafeArea))
+  }
+
+  /// Applies a background shape using a theme-defined `ShapeToken`.
+  ///
+  /// - Parameter token: The shape token to apply (e.g. `.sm`, `.md`).
+  /// - Parameter color: The color token to fill the shape with.
+  /// - Returns: A view with the background color applied.
+  @ViewBuilder
+  func backgroundShape(_ token: ShapeToken, color: ColorToken? = nil) -> some View {
+    self.modifier(BackgroundShapeModifier(token: token, colorToken: color, edgesIgnoringSafeArea: nil))
+  }
+
+  /// Applies a background shape using a theme-defined `ShapeToken`.
+  ///
+  /// - Parameter token: The shape token to apply (e.g. `.sm`, `.md`).
+  /// - Parameter color: The color token to fill the shape with.
+  /// - Parameter edgesIgnoringSafeArea: Edges that should be ignored by the background color
+  /// - Returns: A view with the background color applied.
+  @ViewBuilder
+  func backgroundShape(_ token: ShapeToken, color: ColorToken? = nil, edgesIgnoringSafeArea: Edge.Set) -> some View {
+    self.modifier(BackgroundShapeModifier(token: token, colorToken: color, edgesIgnoringSafeArea: edgesIgnoringSafeArea))
   }
 
   /// Applies padding using a `SpacingToken` from the theme and optional edge set.
@@ -180,5 +201,9 @@ public extension View {
 
   func fillMaxHeight(alignment: Alignment = .leading) -> some View {
     self.frame(maxHeight: .infinity, alignment: alignment)
+  }
+
+  func size(_ size: CGFloat, alignment: Alignment = .center) -> some View {
+    self.frame(width: size, height: size, alignment: alignment)
   }
 }

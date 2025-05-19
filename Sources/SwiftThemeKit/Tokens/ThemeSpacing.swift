@@ -62,7 +62,7 @@ public struct ThemeSpacing {
   }
 }
 
-public enum SpacingToken {
+public enum SpacingToken: String, CaseIterable {
   case xs
   case sm
   case md

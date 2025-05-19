@@ -173,7 +173,7 @@ public struct ThemeTypography {
   }
 }
 
-public enum TextStyleToken {
+public enum TextStyleToken: String, CaseIterable {
   case displayLarge
   case displayMedium
   case displaySmall
