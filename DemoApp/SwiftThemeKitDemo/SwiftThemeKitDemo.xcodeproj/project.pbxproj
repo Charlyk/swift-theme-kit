@@ -7,14 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D63CC722DDB402B00BEA59F /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 5D63CC712DDB402B00BEA59F /* SnapshotTesting */; };
 		F84CBDE02DD7A93F00B9DBAE /* SwiftThemeKit in Frameworks */ = {isa = PBXBuildFile; productRef = F84CBDDF2DD7A93F00B9DBAE /* SwiftThemeKit */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5D63CC3D2DDB3E1900BEA59F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F84CBDBA2DD7A29E00B9DBAE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F84CBDC12DD7A29E00B9DBAE;
+			remoteInfo = SwiftThemeKitDemo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		5D63CC392DDB3E1900BEA59F /* SwiftThemeKitDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftThemeKitDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F84CBDC22DD7A29E00B9DBAE /* SwiftThemeKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftThemeKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		5D63CC3A2DDB3E1900BEA59F /* SwiftThemeKitDemoTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SwiftThemeKitDemoTests;
+			sourceTree = "<group>";
+		};
 		F84CBDC42DD7A29E00B9DBAE /* SwiftThemeKitDemo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SwiftThemeKitDemo;
@@ -23,6 +40,14 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5D63CC362DDB3E1900BEA59F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D63CC722DDB402B00BEA59F /* SnapshotTesting in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F84CBDBF2DD7A29E00B9DBAE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -38,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				F84CBDC42DD7A29E00B9DBAE /* SwiftThemeKitDemo */,
+				5D63CC3A2DDB3E1900BEA59F /* SwiftThemeKitDemoTests */,
 				F84CBDC32DD7A29E00B9DBAE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				F84CBDC22DD7A29E00B9DBAE /* SwiftThemeKitDemo.app */,
+				5D63CC392DDB3E1900BEA59F /* SwiftThemeKitDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,6 +80,30 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5D63CC382DDB3E1900BEA59F /* SwiftThemeKitDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D63CC3F2DDB3E1900BEA59F /* Build configuration list for PBXNativeTarget "SwiftThemeKitDemoTests" */;
+			buildPhases = (
+				5D63CC352DDB3E1900BEA59F /* Sources */,
+				5D63CC362DDB3E1900BEA59F /* Frameworks */,
+				5D63CC372DDB3E1900BEA59F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D63CC3E2DDB3E1900BEA59F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				5D63CC3A2DDB3E1900BEA59F /* SwiftThemeKitDemoTests */,
+			);
+			name = SwiftThemeKitDemoTests;
+			packageProductDependencies = (
+				5D63CC712DDB402B00BEA59F /* SnapshotTesting */,
+			);
+			productName = SwiftThemeKitDemoTests;
+			productReference = 5D63CC392DDB3E1900BEA59F /* SwiftThemeKitDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F84CBDC12DD7A29E00B9DBAE /* SwiftThemeKitDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F84CBDD12DD7A29F00B9DBAE /* Build configuration list for PBXNativeTarget "SwiftThemeKitDemo" */;
@@ -86,6 +137,10 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					5D63CC382DDB3E1900BEA59F = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = F84CBDC12DD7A29E00B9DBAE;
+					};
 					F84CBDC12DD7A29E00B9DBAE = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -102,6 +157,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				F84CBDDE2DD7A93F00B9DBAE /* XCLocalSwiftPackageReference "../../../swift-theme-kit" */,
+				5D63CC702DDB402B00BEA59F /* XCLocalSwiftPackageReference "../../../swift-snapshot-testing" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F84CBDC32DD7A29E00B9DBAE /* Products */;
@@ -109,11 +165,19 @@
 			projectRoot = "";
 			targets = (
 				F84CBDC12DD7A29E00B9DBAE /* SwiftThemeKitDemo */,
+				5D63CC382DDB3E1900BEA59F /* SwiftThemeKitDemoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5D63CC372DDB3E1900BEA59F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F84CBDC02DD7A29E00B9DBAE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,6 +188,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5D63CC352DDB3E1900BEA59F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F84CBDBE2DD7A29E00B9DBAE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -133,7 +204,56 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5D63CC3E2DDB3E1900BEA59F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F84CBDC12DD7A29E00B9DBAE /* SwiftThemeKitDemo */;
+			targetProxy = 5D63CC3D2DDB3E1900BEA59F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		5D63CC402DDB3E1900BEA59F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TFSTWKU589;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.quantum-apps.SwiftThemeKitDemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftThemeKitDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftThemeKitDemo";
+			};
+			name = Debug;
+		};
+		5D63CC412DDB3E1900BEA59F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TFSTWKU589;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.quantum-apps.SwiftThemeKitDemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftThemeKitDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftThemeKitDemo";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		F84CBDCF2DD7A29F00B9DBAE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -329,6 +449,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5D63CC3F2DDB3E1900BEA59F /* Build configuration list for PBXNativeTarget "SwiftThemeKitDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D63CC402DDB3E1900BEA59F /* Debug */,
+				5D63CC412DDB3E1900BEA59F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F84CBDBD2DD7A29E00B9DBAE /* Build configuration list for PBXProject "SwiftThemeKitDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -350,6 +479,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
+		5D63CC702DDB402B00BEA59F /* XCLocalSwiftPackageReference "../../../swift-snapshot-testing" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../../swift-snapshot-testing";
+		};
 		F84CBDDE2DD7A93F00B9DBAE /* XCLocalSwiftPackageReference "../../../swift-theme-kit" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = "../../../swift-theme-kit";
@@ -357,6 +490,10 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5D63CC712DDB402B00BEA59F /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SnapshotTesting;
+		};
 		F84CBDDF2DD7A93F00B9DBAE /* SwiftThemeKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftThemeKit;
