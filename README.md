@@ -1,3 +1,5 @@
+![logo](logo.png)
+
 # SwiftThemeKit - A Modern Design System Framework for SwiftUI
 
 SwiftThemeKit is a powerful and flexible design system framework for SwiftUI that enables you to create consistent, themeable user interfaces with ease. It provides a comprehensive set of components and utilities that follow modern design principles while maintaining full customizability.
