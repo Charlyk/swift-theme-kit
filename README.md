@@ -11,6 +11,20 @@ SwiftThemeKit is a powerful and flexible design system framework for SwiftUI tha
 - ♿️ Built with accessibility in mind
 - 📦 Easy to integrate and use in SwiftUI projects
 
+## Screenshots
+
+- [Typography](DemoApp/SwiftThemeKitDemo/SwiftThemeKitDemoTests/__Snapshots__/SwiftThemeKitDemoTests/testExampleViewSnapshot.TypographyView.png)
+- [Colors](DemoApp/SwiftThemeKitDemo/SwiftThemeKitDemoTests/__Snapshots__/SwiftThemeKitDemoTests/testExampleViewSnapshot.ColorsView.png)
+- [Shadows](DemoApp/SwiftThemeKitDemo/SwiftThemeKitDemoTests/__Snapshots__/SwiftThemeKitDemoTests/testExampleViewSnapshot.ShadowsView.png)
+- [TextFields](DemoApp/SwiftThemeKitDemo/SwiftThemeKitDemoTests/__Snapshots__/SwiftThemeKitDemoTests/testExampleViewSnapshot.TextFieldsView.png)
+- [Shapes](DemoApp/SwiftThemeKitDemo/SwiftThemeKitDemoTests/__Snapshots__/SwiftThemeKitDemoTests/testExampleViewSnapshot.ShapesView.png)
+- [Spacings](DemoApp/SwiftThemeKitDemo/SwiftThemeKitDemoTests/__Snapshots__/SwiftThemeKitDemoTests/testExampleViewSnapshot.SpacingsView.png)
+- [Strokes](DemoApp/SwiftThemeKitDemo/SwiftThemeKitDemoTests/__Snapshots__/SwiftThemeKitDemoTests/testExampleViewSnapshot.StrokesView.png)
+- [Radio Group](DemoApp/SwiftThemeKitDemo/SwiftThemeKitDemoTests/__Snapshots__/SwiftThemeKitDemoTests/testExampleViewSnapshot.RadioGroupView.png)
+- [Checkboxes](DemoApp/SwiftThemeKitDemo/SwiftThemeKitDemoTests/__Snapshots__/SwiftThemeKitDemoTests/testExampleViewSnapshot.CheckboxesView.png)
+- [Buttons](DemoApp/SwiftThemeKitDemo/SwiftThemeKitDemoTests/__Snapshots__/SwiftThemeKitDemoTests/testExampleViewSnapshot.ButtonsView.png)
+- [Radius](DemoApp/SwiftThemeKitDemo/SwiftThemeKitDemoTests/__Snapshots__/SwiftThemeKitDemoTests/testExampleViewSnapshot.RadiiView.png)
+
 ## Installation
 
 Add SwiftThemeKit to your project using Swift Package Manager:
