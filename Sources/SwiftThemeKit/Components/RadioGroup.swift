@@ -30,10 +30,12 @@ public struct RadioGroup<T: Hashable>: View {
   ///   - options: Array of options to display.
   ///   - labelPosition: Position of label relative to radio (default is `.trailing`).
   ///   - labelProvider: Closure that returns a `String` for each option.
-  public init(selection: Binding<T>,
-              options: [T],
-              labelPosition: HorizontalPosition = .trailing,
-              labelProvider: @escaping (T) -> String) {
+  public init(
+    selection: Binding<T>,
+    options: [T],
+    labelPosition: HorizontalPosition = .trailing,
+    labelProvider: @escaping (T) -> String
+  ) {
     self._selection = selection
     self.options = options
     self.labelPosition = labelPosition

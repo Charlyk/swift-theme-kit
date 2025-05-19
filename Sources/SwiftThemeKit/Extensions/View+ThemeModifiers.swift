@@ -59,6 +59,16 @@ public extension View {
     self.modifier(PaddingModifier(edges: edges, token: token))
   }
 
+  /// Applies padding using a `SpacingToken` from the theme and optional edge set.
+  ///
+  /// - Parameters:
+  ///   - token: The spacing token to use (e.g. `.sm`, `.lg`).
+  /// - Returns: A view with the specified padding applied.
+  @ViewBuilder
+  func padding(_ token: SpacingToken) -> some View {
+    self.modifier(PaddingModifier(edges: .all, token: token))
+  }
+
   /// Applies a corner radius using a `RadiusToken` from the current theme.
   ///
   /// - Parameter token: The radius token to apply (e.g. `.sm`, `.pill`, `.circle`).
@@ -158,5 +168,17 @@ public extension View {
     self
       .frame(maxWidth: .infinity, maxHeight: .infinity)
       .layoutPriority(value)
+  }
+
+  func fillMaxSize(alignment: Alignment = .leading) -> some View {
+    self.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: alignment)
+  }
+
+  func fillMaxWidth(alignment: Alignment = .leading) -> some View {
+    self.frame(maxWidth: .infinity, alignment: alignment)
+  }
+
+  func fillMaxHeight(alignment: Alignment = .leading) -> some View {
+    self.frame(maxHeight: .infinity, alignment: alignment)
   }
 }

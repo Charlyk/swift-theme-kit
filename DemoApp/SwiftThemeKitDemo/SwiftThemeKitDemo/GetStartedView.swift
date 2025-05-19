@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftThemeKit
 
 struct GetStartedView: View {
-  @AppStorage("colorScheme") private var colorScheme: String = "system"
+  @AppStorage("colorScheme") private var colorScheme: String = "light"
   @Environment(\.appTheme) private var theme
   
   var body: some View {
@@ -27,24 +27,23 @@ struct GetStartedView: View {
         .multilineTextAlignment(.center)
         .padding(.bottom, theme.spacing.md)
 
-      Button {
-        colorScheme = "dark"
+      NavigationLink {
+        OnboardingGoalView()
       } label: {
         Text("Get Started")
       }
       .buttonSize(.fullWidth)
-      .buttonShape(.capsule)
 
-      Button {
-        colorScheme = "light"
+      NavigationLink {
+        LoginView()
       } label: {
         Text("Login")
       }
       .buttonVariant(.tonal)
       .buttonSize(.fullWidth)
-      .buttonShape(.capsule)
     }
-    .padding(.horizontal, theme.spacing.md)
+    .padding(.horizontal, .md)
+    .backgroundColor(.surface, edgesIgnoringSafeArea: .all)
   }
 
   private var bottomContainer: some View {
