@@ -28,6 +28,8 @@ public struct ThemeButtonStyle: ButtonStyle {
   let size: ButtonSize
   let shape: ButtonShape
   let font: ThemeFontToken?
+  let backgroundColor: Color?
+  let foregroundColor: Color?
 
   @Environment(\.appTheme) private var theme
   @Environment(\.isEnabled) private var isEnabled
@@ -36,12 +38,16 @@ public struct ThemeButtonStyle: ButtonStyle {
     variant: ButtonVariant = .filled,
     size: ButtonSize = .medium,
     shape: ButtonShape = .rounded,
-    font: ThemeFontToken? = nil
+    font: ThemeFontToken? = nil,
+    backgroundColor: Color? = nil,
+    foregroundColor: Color? = nil
   ) {
     self.variant = variant
     self.size = size
     self.shape = shape
     self.font = font
+    self.backgroundColor = backgroundColor
+    self.foregroundColor = foregroundColor
   }
 
   public func makeBody(configuration: Configuration) -> some View {
@@ -57,17 +63,17 @@ public struct ThemeButtonStyle: ButtonStyle {
     // Configure button colors and shadows based on variant
     switch variant {
     case .filled:
-      let typedBgColor = isDestructive ? theme.colors.error : theme.colors.primary
+      let typedBgColor = backgroundColor ?? (isDestructive ? theme.colors.error : theme.colors.primary)
       bgColor = isPressed ? typedBgColor.lighten(by: 0.1) : typedBgColor
       borderColor = .clear
-      fgColor = isDestructive ? theme.colors.onError : theme.colors.onPrimary
+      fgColor = foregroundColor ?? (isDestructive ? theme.colors.onError : theme.colors.onPrimary)
       padding = size.paddingValues(for: theme)
 
     case .tonal:
-      let typedBgColor = isDestructive ? theme.colors.errorContainer : theme.colors.secondaryContainer
+      let typedBgColor = backgroundColor ?? (isDestructive ? theme.colors.errorContainer : theme.colors.secondaryContainer)
       bgColor = isPressed ? typedBgColor.lighten(by: 0.1) : typedBgColor
       borderColor = .clear
-      fgColor = isDestructive ? theme.colors.onErrorContainer : theme.colors.onSecondaryContainer
+      fgColor = foregroundColor ?? (isDestructive ? theme.colors.onErrorContainer : theme.colors.onSecondaryContainer)
       padding = size.paddingValues(for: theme)
 
     case .outline:
@@ -75,14 +81,14 @@ public struct ThemeButtonStyle: ButtonStyle {
         ? theme.colors.error.opacity(0.05)
         : theme.colors.primary.opacity(0.05)
       bgColor = isPressed ? pressedBgColor : .clear
-      borderColor = isDestructive ? theme.colors.error : theme.colors.outlineVariant
-      fgColor = isDestructive ? theme.colors.error : theme.colors.onSurfaceVariant
+      borderColor = backgroundColor ?? (isDestructive ? theme.colors.error : theme.colors.outlineVariant)
+      fgColor = foregroundColor ?? (isDestructive ? theme.colors.error : theme.colors.onSurfaceVariant)
       padding = size.paddingValues(for: theme)
 
     case .elevated:
-      bgColor = isPressed
+      bgColor = backgroundColor ?? (isPressed
         ? theme.colors.surfaceContainerLow.darken(by: 0.1)
-        : theme.colors.surfaceContainerLow
+        : theme.colors.surfaceContainerLow)
       borderColor = .clear
       fgColor = isDestructive ? theme.colors.error : theme.colors.primary
       padding = size.paddingValues(for: theme)
@@ -91,7 +97,7 @@ public struct ThemeButtonStyle: ButtonStyle {
     case .text:
       bgColor = .clear
       borderColor = .clear
-      fgColor = isDestructive ? theme.colors.error : theme.colors.primary
+      fgColor = foregroundColor ?? (isDestructive ? theme.colors.error : theme.colors.primary)
       padding = size.paddingValues(for: theme)
     }
 

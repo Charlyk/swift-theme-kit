@@ -57,6 +57,7 @@ public struct ThemeSpacing {
     case .lg: return lg
     case .xl: return xl
     case .xxl: return xxl
+    case .none: return .zero
     }
   }
 }
@@ -68,4 +69,5 @@ public enum SpacingToken {
   case lg
   case xl
   case xxl
+  case none
 }

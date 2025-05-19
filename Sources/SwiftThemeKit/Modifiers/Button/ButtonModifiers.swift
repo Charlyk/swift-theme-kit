@@ -12,7 +12,9 @@ struct ButtonVariantModifier: ViewModifier {
       variant: token,
       shape: config.shape ?? theme.buttons.shape,
       size: config.size ?? theme.buttons.size,
-      font: config.font
+      font: config.font,
+      backgroundColor: config.backgroundColor,
+      foregroundColor: config.foregroundColor
     )
     content
       .buttonStyle(
@@ -20,7 +22,9 @@ struct ButtonVariantModifier: ViewModifier {
           variant: configuration.variant ?? theme.buttons.variant,
           size: configuration.size ?? theme.buttons.size,
           shape: configuration.shape ?? theme.buttons.shape,
-          font: configuration.font
+          font: configuration.font,
+          backgroundColor: configuration.backgroundColor,
+          foregroundColor: configuration.foregroundColor
         )
       )
       .environment(\.buttonConfiguration, configuration)
@@ -39,7 +43,9 @@ struct ButtonSizeModifier: ViewModifier {
       variant: config.variant ?? theme.buttons.variant,
       shape: config.shape ?? theme.buttons.shape,
       size: token,
-      font: config.font
+      font: config.font,
+      backgroundColor: config.backgroundColor,
+      foregroundColor: config.foregroundColor
     )
     content
       .buttonStyle(
@@ -47,7 +53,9 @@ struct ButtonSizeModifier: ViewModifier {
           variant: configuration.variant ?? theme.buttons.variant,
           size: configuration.size ?? theme.buttons.size,
           shape: configuration.shape ?? theme.buttons.shape,
-          font: configuration.font
+          font: configuration.font,
+          backgroundColor: configuration.backgroundColor,
+          foregroundColor: configuration.foregroundColor
         )
       )
       .environment(\.buttonConfiguration, configuration)
@@ -66,7 +74,9 @@ struct ButtonShapeModifier: ViewModifier {
       variant: config.variant ?? theme.buttons.variant,
       shape: token,
       size: config.size ?? theme.buttons.size,
-      font: config.font
+      font: config.font,
+      backgroundColor: config.backgroundColor,
+      foregroundColor: config.foregroundColor
     )
     content
       .buttonStyle(
@@ -74,7 +84,9 @@ struct ButtonShapeModifier: ViewModifier {
           variant: configuration.variant ?? theme.buttons.variant,
           size: configuration.size ?? theme.buttons.size,
           shape: configuration.shape ?? theme.buttons.shape,
-          font: configuration.font
+          font: configuration.font,
+          backgroundColor: configuration.backgroundColor,
+          foregroundColor: configuration.foregroundColor
         )
       )
       .environment(\.buttonConfiguration, configuration)
@@ -93,7 +105,9 @@ struct ButtonFontModifier: ViewModifier {
       variant: config.variant ?? theme.buttons.variant,
       shape: config.shape ?? theme.buttons.shape,
       size: config.size ?? theme.buttons.size,
-      font: token
+      font: token,
+      backgroundColor: config.backgroundColor,
+      foregroundColor: config.foregroundColor
     )
     content
       .buttonStyle(
@@ -101,7 +115,67 @@ struct ButtonFontModifier: ViewModifier {
           variant: configuration.variant ?? theme.buttons.variant,
           size: configuration.size ?? theme.buttons.size,
           shape: configuration.shape ?? theme.buttons.shape,
-          font: configuration.font
+          font: configuration.font,
+          backgroundColor: configuration.backgroundColor,
+          foregroundColor: configuration.foregroundColor
+        )
+      )
+      .environment(\.buttonConfiguration, configuration)
+  }
+}
+
+struct ButtonBackgroundModifier: ViewModifier {
+  @Environment(\.appTheme) private var theme
+  @Environment(\.buttonConfiguration) private var config
+  let color: Color
+
+  func body(content: Content) -> some View {
+    let configuration = ButtonConfiguration(
+      variant: config.variant ?? theme.buttons.variant,
+      shape: config.shape ?? theme.buttons.shape,
+      size: config.size ?? theme.buttons.size,
+      font: config.font,
+      backgroundColor: color,
+      foregroundColor: config.foregroundColor
+    )
+    content
+      .buttonStyle(
+        ThemeButtonStyle(
+          variant: configuration.variant ?? theme.buttons.variant,
+          size: configuration.size ?? theme.buttons.size,
+          shape: configuration.shape ?? theme.buttons.shape,
+          font: configuration.font,
+          backgroundColor: configuration.backgroundColor,
+          foregroundColor: configuration.foregroundColor
+        )
+      )
+      .environment(\.buttonConfiguration, configuration)
+  }
+}
+
+struct ButtonForegroundModifier: ViewModifier {
+  @Environment(\.appTheme) private var theme
+  @Environment(\.buttonConfiguration) private var config
+  let color: Color
+
+  func body(content: Content) -> some View {
+    let configuration = ButtonConfiguration(
+      variant: config.variant ?? theme.buttons.variant,
+      shape: config.shape ?? theme.buttons.shape,
+      size: config.size ?? theme.buttons.size,
+      font: config.font,
+      backgroundColor: config.backgroundColor,
+      foregroundColor: color
+    )
+    content
+      .buttonStyle(
+        ThemeButtonStyle(
+          variant: configuration.variant ?? theme.buttons.variant,
+          size: configuration.size ?? theme.buttons.size,
+          shape: configuration.shape ?? theme.buttons.shape,
+          font: configuration.font,
+          backgroundColor: configuration.backgroundColor,
+          foregroundColor: configuration.foregroundColor
         )
       )
       .environment(\.buttonConfiguration, configuration)

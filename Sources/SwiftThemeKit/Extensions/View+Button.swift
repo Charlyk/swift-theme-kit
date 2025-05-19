@@ -5,8 +5,6 @@ public extension View {
   ///
   /// This should be the base modifier applied to any Button that wants to use the theme system.
   /// It will apply the variant, size, and shape defined either explicitly or from `Theme.buttons`.
-  ///
-  /// It should be called **before** other modifiers like `.buttonVariant(...)`.
   @ViewBuilder
   func applyThemeButtonStyle() -> some View {
     self
@@ -64,5 +62,23 @@ public extension View {
   func buttonLabelStyle(_ token: TextStyleToken, weight: Font.Weight? = nil) -> some View {
     let fontToken = ThemeFontToken(token, weight: weight)
     self.modifier(ButtonFontModifier(token: fontToken))
+  }
+
+  /// Applies a custom background color to the button's label without affecting other styling
+  ///
+  /// - Parameters:
+  ///   - color: The color that you want to use as the background for the button
+  /// - Returns: A view with the background color applied to the label
+  func buttonBackgroundColor(_ color: Color) -> some View {
+    self.modifier(ButtonBackgroundModifier(color: color))
+  }
+
+  /// Applies a custom foreground color to the button's label without affecting other styling
+  ///
+  /// - Parameters:
+  ///   - color: The color that you want to use as the foreground for the button
+  /// - Returns: A view with the foreground color applied to the label
+  func buttonForegroundColor(_ color: Color) -> some View {
+    self.modifier(ButtonForegroundModifier(color: color))
   }
 }

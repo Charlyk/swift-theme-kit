@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  SwiftThemeKitDemo
-//
-//  Created by Eduard Albu on 16.05.2025.
-//
-
 import SwiftUI
 import SwiftThemeKit
 
