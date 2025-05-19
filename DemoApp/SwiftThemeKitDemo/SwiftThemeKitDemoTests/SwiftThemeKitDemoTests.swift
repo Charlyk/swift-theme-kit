@@ -23,7 +23,7 @@ struct SwiftThemeKitDemoTests {
     for (name, view) in views {
       let hostingController = UIHostingController(rootView: view)
       hostingController.view.backgroundColor = .clear
-      assertSnapshots(of: hostingController, as: [name: .image], record: true)
+      assertSnapshots(of: hostingController, as: [name: .image], record: false)
     }
   }
 }
