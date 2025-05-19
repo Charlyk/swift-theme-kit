@@ -28,19 +28,20 @@ struct GetStartedView: View {
         .padding(.bottom, theme.spacing.md)
 
       NavigationLink {
-        OnboardingGoalView()
+        HomeScreenView()
       } label: {
-        Text("Get Started")
+        Text("View components")
       }
       .buttonSize(.fullWidth)
 
       NavigationLink {
-        LoginView()
+
       } label: {
-        Text("Login")
+        Text("View examples")
       }
       .buttonVariant(.tonal)
       .buttonSize(.fullWidth)
+      .disabled(true)
     }
     .padding(.horizontal, .md)
     .backgroundColor(.surface, edgesIgnoringSafeArea: .all)

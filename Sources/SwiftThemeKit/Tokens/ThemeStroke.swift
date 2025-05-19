@@ -62,7 +62,7 @@ public struct ThemeStroke {
 }
 
 /// Stroke tokens for standardized access to stroke widths.
-public enum StrokeToken {
+public enum StrokeToken: String, CaseIterable {
   case none
   case xs   // 1pt
   case sm   // 2pt
