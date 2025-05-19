@@ -259,7 +259,7 @@ public struct ThemeColors {
   }
 }
 
-public enum ColorToken {
+public enum ColorToken: String, CaseIterable {
   case primary, onPrimary, primaryContainer, onPrimaryContainer
   case secondary, onSecondary, secondaryContainer, onSecondaryContainer
   case tertiary, onTertiary, tertiaryContainer, onTertiaryContainer

@@ -66,7 +66,7 @@ public struct ThemeShadows {
   }
 }
 
-public enum ShadowToken {
+public enum ShadowToken: String, CaseIterable {
   case none
   case sm
   case md
