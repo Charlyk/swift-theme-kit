@@ -2,10 +2,14 @@
 
 SwiftThemeKit is a powerful and flexible design system framework for SwiftUI that enables you to create consistent, themeable user interfaces with ease. It provides a comprehensive set of components and utilities that follow modern design principles while maintaining full customizability.
 
+<div style="display: flex; flex-wrap: wrap; gap: 12px;">
+  <img src="demo_app.png" alt="Demo app landing" width="300"/>
+  <img src="demo_app.gif" alt="Demo app animation" width="300"/>
+</div>
+
 ## Features
 
 - 🎨 Complete theming system with support for light and dark modes
-
 - 📱 Ready-to-use UI components following design system best practices
 - 🔧 Highly customizable tokens for colors, typography, spacing, and more
 - ♿️ Built with accessibility in mind
