@@ -1,4 +1,4 @@
-import Foundation
+import SwiftUI
 
 /// Represents a configuration for a themed button, allowing overrides for styling aspects such as variant, shape, size, and font.
 ///
@@ -20,4 +20,12 @@ struct ButtonConfiguration {
   /// The font style used for the button’s label, defined by a `ThemeFontToken`.
   /// If `nil`, the font will be chosen based on the button size or theme default.
   var font: ThemeFontToken? = nil
+
+  /// The color used as the background for the button. It overrides the colors applied
+  /// by button variant.
+  var backgroundColor: Color? = nil
+
+  /// The color used as the foreground for the button. It overrides the colors applied
+  /// by button variant.
+  var foregroundColor: Color? = nil
 }
