@@ -179,13 +179,13 @@ Click to view full-size previews from snapshot tests:
 ## 🤝 Contributing
 
 We welcome issues and PRs!  
-Check the [CONTRIBUTING.md](./CONTRIBUTING.md) for setup and guidelines.
+Check the [CONTRIBUTING.md](CONTRIBUTING.md) for setup and guidelines.
 
 ---
 
 ## 📄 License
 
-MIT. See [LICENSE](./LICENSE) for details.
+MIT. See [LICENSE](LICENCE) for details.
 
 ---
 
