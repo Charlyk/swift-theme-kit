@@ -23,6 +23,9 @@ public struct RadioButton<T: Hashable>: View {
   /// Optional label content displayed alongside the radio button.
   private var label: AnyView?
 
+  /// Specifies the size of the radio button icon and font.
+  private var size: RadioButtonSizeToken = .small
+
   /// Determines whether the label appears on the leading or trailing side.
   private var labelPosition: HorizontalPosition = .trailing
 
@@ -31,13 +34,16 @@ public struct RadioButton<T: Hashable>: View {
   /// - Parameters:
   ///   - selection: A binding to the currently selected value.
   ///   - value: The value this radio button represents.
+  ///   - size: The size of the radio button icon and font.
   ///   - labelPosition: The side on which the label should appear (defaults to `.trailing`).
   public init(selection: Binding<T>,
               value: T,
+              size: RadioButtonSizeToken = .small,
               labelPosition: HorizontalPosition = .trailing) {
     self._selection = selection
     self.value = value
     self.label = nil
+    self.size = size
     self.labelPosition = labelPosition
   }
 
@@ -46,14 +52,17 @@ public struct RadioButton<T: Hashable>: View {
   /// - Parameters:
   ///   - selection: A binding to the currently selected value.
   ///   - value: The value this radio button represents.
+  ///   - size: The size of the radio button icon and font.
   ///   - labelPosition: The side on which the label should appear (defaults to `.trailing`).
   ///   - label: A view builder providing the label content.
   public init<Label: View>(selection: Binding<T>,
                            value: T,
+                           size: RadioButtonSizeToken = .small,
                            labelPosition: HorizontalPosition = .trailing,
                            @ViewBuilder label: @escaping () -> Label) {
     self._selection = selection
     self.value = value
+    self.size = size
     self.labelPosition = labelPosition
     self.label = AnyView(label())
   }
@@ -63,34 +72,38 @@ public struct RadioButton<T: Hashable>: View {
   /// It displays a circle with an optional filled inner circle if selected,
   /// along with optional label content.
   public var body: some View {
+    let iconSize = theme.radioButtonSize[size].size
+    let spacing = theme.spacing[theme.radioButtonSize[size].labelSpacing]
+    let strokeWidth = theme.stroke[theme.radioButtonSize[size].stroke]
+
     Button(action: {
       selection = value
     }) {
-      HStack(spacing: theme.spacing.sm) {
+      HStack(spacing: spacing) {
         if let label, labelPosition == .leading {
           label
-            .foregroundColor(theme.colors.onSurface)
           Spacer()
         }
 
-        ZStack {
+        ZStack(alignment: .center) {
           Circle()
             .strokeBorder(
               selection == value ? theme.colors.primary : theme.colors.outline,
-              lineWidth: theme.stroke.sm
+              lineWidth: strokeWidth
             )
-            .frame(width: 24, height: 24)
+            .size(iconSize)
 
           if selection == value {
             Circle()
               .fill(theme.colors.primary)
-              .frame(width: 12, height: 12)
+              .size(iconSize / 3)
           }
         }
+        .size(iconSize)
+        .contentShape(Rectangle())
 
         if let label, labelPosition == .trailing {
           label
-            .foregroundColor(theme.colors.onSurface)
           Spacer()
         }
       }
