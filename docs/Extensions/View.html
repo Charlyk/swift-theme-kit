@@ -17,7 +17,7 @@
     <a title="View Extension Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftThemeKit Docs</a> (59% documented)</p>
+        <p><a href="../index.html">SwiftThemeKit Docs</a> (71% documented)</p>
         <div class="header-right">
           <form role="search" action="../search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -97,6 +97,9 @@
                 <a href="../Extensions/EnvironmentValues.html">EnvironmentValues</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/Shape.html">Shape</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/View.html">View</a>
               </li>
             </ul>
@@ -164,6 +167,9 @@
               <li class="nav-group-task">
                 <a href="../Structs/ThemedNavigationTitleModifier.html">ThemedNavigationTitleModifier</a>
               </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemedShape.html">ThemedShape</a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -197,12 +203,13 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Applies a complete themed button style using values from the environment or theme defaults.</p>
+                        <p>Applies the full SwiftThemeKit button style to the current view using the theme&rsquo;s button system.</p>
 
-<p>This should be the base modifier applied to any Button that wants to use the theme system.
-It will apply the variant, size, and shape defined either explicitly or from <code><a href="../Structs/Theme.html#/s:13SwiftThemeKit0B0V7buttonsAA0B14ButtonDefaultsVvp">Theme.buttons</a></code>.</p>
+<p>This modifier is <strong>optional</strong> but recommended when you want to use the default layout, padding,
+background, and interactive states provided by SwiftThemeKit.</p>
 
-<p>It should be called <strong>before</strong> other modifiers like <code><a href="../Extensions/View.html#/s:7SwiftUI4ViewP0A8ThemeKitE13buttonVariantyQrAD06ButtonG0OF">.buttonVariant(...)</a></code>.</p>
+<p>You can also apply individual overrides such as <code>buttonSize</code>, <code>buttonVariant</code>, or <code>buttonShape</code>
+without needing to use this modifier, especially if you are using your own custom button style.</p>
 
                       </div>
                       <div class="declaration">
@@ -214,6 +221,10 @@ It will apply the variant, size, and shape defined either explicitly or from <co
 <span class="kd">func</span> <span class="nf">applyThemeButtonStyle</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the themed button styling applied.</p>
                       </div>
                     </section>
                   </div>
@@ -231,7 +242,10 @@ It will apply the variant, size, and shape defined either explicitly or from <co
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Overrides the button variant (e.g., <code>.filled</code>, <code>.outline</code>, <code>.text</code>, etc.) for a single button.</p>
+                        <p>Overrides the button variant (e.g. <code>.filled</code>, <code>.outline</code>, <code>.text</code>) for this specific button.</p>
+
+<p>This is stored in the view environment and affects how <code><a href="../Extensions/View.html#/s:7SwiftUI4ViewP0A8ThemeKitE05applyD11ButtonStyleQryF">applyThemeButtonStyle()</a></code> renders the background,
+border, and interaction behavior.</p>
 
                       </div>
                       <div class="declaration">
@@ -256,7 +270,7 @@ It will apply the variant, size, and shape defined either explicitly or from <co
                               </td>
                               <td>
                                 <div>
-                                  <p>The variant of the button to use.</p>
+                                  <p>The desired button style variant.</p>
                                 </div>
                               </td>
                             </tr>
@@ -265,7 +279,7 @@ It will apply the variant, size, and shape defined either explicitly or from <co
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A view with the given variant stored in environment for styling resolution.</p>
+                        <p>A view with the custom variant applied to the button context.</p>
                       </div>
                     </section>
                   </div>
@@ -283,7 +297,9 @@ It will apply the variant, size, and shape defined either explicitly or from <co
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Overrides the button size (e.g., <code>.small</code>, <code>.medium</code>, <code>.large</code>, <code>.fullWidth</code>) for a single button.</p>
+                        <p>Overrides the button size (e.g. <code>.small</code>, <code>.medium</code>, <code>.large</code>, <code>.fullWidth</code>) for this button.</p>
+
+<p>The size affects height, padding, and possibly font size, based on the current theme configuration.</p>
 
                       </div>
                       <div class="declaration">
@@ -308,7 +324,7 @@ It will apply the variant, size, and shape defined either explicitly or from <co
                               </td>
                               <td>
                                 <div>
-                                  <p>The size of the button.</p>
+                                  <p>The size token to apply.</p>
                                 </div>
                               </td>
                             </tr>
@@ -317,7 +333,7 @@ It will apply the variant, size, and shape defined either explicitly or from <co
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A view with the given size stored in environment for use in layout and padding.</p>
+                        <p>A view with the custom size stored in the environment.</p>
                       </div>
                     </section>
                   </div>
@@ -335,7 +351,9 @@ It will apply the variant, size, and shape defined either explicitly or from <co
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Overrides the button shape (e.g., <code>.capsule</code>, <code>.rounded</code>, <code>.rectangle</code>) for a single button.</p>
+                        <p>Overrides the shape used for the button (e.g. <code>.capsule</code>, <code>.rounded</code>, <code>.rectangle</code>).</p>
+
+<p>This affects how the button is clipped and how the background and stroke are drawn.</p>
 
                       </div>
                       <div class="declaration">
@@ -360,7 +378,7 @@ It will apply the variant, size, and shape defined either explicitly or from <co
                               </td>
                               <td>
                                 <div>
-                                  <p>The shape style of the button.</p>
+                                  <p>The shape token to apply to this button.</p>
                                 </div>
                               </td>
                             </tr>
@@ -369,7 +387,7 @@ It will apply the variant, size, and shape defined either explicitly or from <co
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A view with the given shape stored in environment for consistent visual appearance.</p>
+                        <p>A view with the shape override applied.</p>
                       </div>
                     </section>
                   </div>
@@ -387,9 +405,10 @@ It will apply the variant, size, and shape defined either explicitly or from <co
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Applies a text-only button style with no padding or background.</p>
+                        <p>Applies a minimal, text-only button style without background, padding, or borders.</p>
 
-<p>Best used for links or minimal inline buttons. You can optionally override the font style and weight.</p>
+<p>Best for inline links or toolbar actions where no container styling is needed.
+Can still use theme typography tokens for consistent font sizing.</p>
 
                       </div>
                       <div class="declaration">
@@ -414,7 +433,7 @@ It will apply the variant, size, and shape defined either explicitly or from <co
                               </td>
                               <td>
                                 <div>
-                                  <p>The font style to use, defaults to <code>.buttonText</code>.</p>
+                                  <p>The typography style to apply (default is <code>.buttonText</code>).</p>
                                 </div>
                               </td>
                             </tr>
@@ -435,7 +454,7 @@ It will apply the variant, size, and shape defined either explicitly or from <co
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A view with minimal button styling applied.</p>
+                        <p>A button with stripped-down appearance and themed text.</p>
                       </div>
                     </section>
                   </div>
@@ -453,7 +472,9 @@ It will apply the variant, size, and shape defined either explicitly or from <co
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Applies a specific font style to the button&rsquo;s label without affecting other styling.</p>
+                        <p>Overrides only the font style of the button’s label while preserving all other styles (padding, background, etc.).</p>
+
+<p>Useful when you want to adjust the font of a button without affecting its variant or layout.</p>
 
                       </div>
                       <div class="declaration">
@@ -478,7 +499,7 @@ It will apply the variant, size, and shape defined either explicitly or from <co
                               </td>
                               <td>
                                 <div>
-                                  <p>The text style token from your theme typography.</p>
+                                  <p>The typography token to apply (e.g. <code>.labelLarge</code>, <code>.bodyMedium</code>).</p>
                                 </div>
                               </td>
                             </tr>
@@ -499,7 +520,114 @@ It will apply the variant, size, and shape defined either explicitly or from <co
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A view with the font applied to the label.</p>
+                        <p>A view with the custom font style applied to the label.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE21buttonBackgroundColoryQrAA0H0VF"></a>
+                    <a name="//apple_ref/swift/Method/buttonBackgroundColor(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE21buttonBackgroundColoryQrAA0H0VF">buttonBackgroundColor(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Overrides the background color of the button&rsquo;s label content.</p>
+
+<p>This can be used to apply a custom background color instead of the theme-defined one
+(e.g., for special states or brand-specific overrides).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">buttonBackgroundColor</span><span class="p">(</span><span class="n">_</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">Color</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The color to use as the label&rsquo;s background.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the background color applied to the button label.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE21buttonForegroundColoryQrAA0H0VF"></a>
+                    <a name="//apple_ref/swift/Method/buttonForegroundColor(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE21buttonForegroundColoryQrAA0H0VF">buttonForegroundColor(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Overrides the foreground (text/icon) color of the button&rsquo;s label content.</p>
+
+<p>This affects the text/icon rendering but does not override other theme styles.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">buttonForegroundColor</span><span class="p">(</span><span class="n">_</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">Color</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The color to use as the foreground.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the foreground color applied to the button label.</p>
                       </div>
                     </section>
                   </div>
@@ -517,12 +645,14 @@ It will apply the variant, size, and shape defined either explicitly or from <co
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Applies the theme&rsquo;s default text field style and propagates environment configuration
-like variant, size, shape, and font.</p>
+                        <p>Applies the full SwiftThemeKit text field style using the theme’s configuration system.</p>
 
-<p>Call this before other style-specific modifiers like <code>.textFieldVariant(_)</code> or <code>.textFieldFont(_)</code>.</p>
+<p>This modifier sets up the base layout, padding, shape, and interaction styling from the theme,
+using environment-provided values such as <code><a href="../Enums/TextFieldVariant.html">TextFieldVariant</a></code>, <code><a href="../Enums/TextFieldSize.html">TextFieldSize</a></code>, <code><a href="../Enums/TextFieldShape.html">TextFieldShape</a></code>, and typography tokens.</p>
 
-<p>Example:</p>
+<p>This is <strong>optional</strong> — you can use <code>textFieldVariant</code>, <code>textFieldSize</code>, or <code>textFieldFont</code> individually
+if you prefer to build a custom layout.</p>
+<h3 id='example' class='heading'>Example:</h3>
 <pre class="highlight swift"><code><span class="kt">TextField</span><span class="p">(</span><span class="s">"Email"</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="n">$email</span><span class="p">)</span>
   <span class="o">.</span><span class="nf">applyThemeTextFieldStyle</span><span class="p">()</span>
   <span class="o">.</span><span class="nf">textFieldVariant</span><span class="p">(</span><span class="o">.</span><span class="n">outlined</span><span class="p">)</span>
@@ -538,6 +668,10 @@ like variant, size, shape, and font.</p>
 <span class="kd">func</span> <span class="nf">applyThemeTextFieldStyle</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the themed text field style applied.</p>
                       </div>
                     </section>
                   </div>
@@ -555,7 +689,9 @@ like variant, size, shape, and font.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sets the visual variant of the text field (e.g., <code>.filled</code>, <code>.outlined</code>, <code>.underlined</code>).</p>
+                        <p>Sets the visual variant of the text field, such as <code>.filled</code>, <code>.outlined</code>, or <code>.underlined</code>.</p>
+
+<p>This determines the field&rsquo;s border, background, and focus styling.</p>
 
                       </div>
                       <div class="declaration">
@@ -580,7 +716,7 @@ like variant, size, shape, and font.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The style variant to apply.</p>
+                                  <p>The desired text field variant.</p>
                                 </div>
                               </td>
                             </tr>
@@ -589,7 +725,7 @@ like variant, size, shape, and font.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A view with the variant applied.</p>
+                        <p>A view with the variant applied to the environment.</p>
                       </div>
                     </section>
                   </div>
@@ -607,9 +743,9 @@ like variant, size, shape, and font.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sets the sizing token for the text field (e.g., <code>.small</code>, <code>.medium</code>, <code>.large</code>).</p>
+                        <p>Overrides the size of the text field, such as <code>.small</code>, <code>.medium</code>, or <code>.large</code>.</p>
 
-<p>This affects padding and default font unless overridden explicitly.</p>
+<p>This affects internal padding, height, and default font unless overridden with <code>textFieldFont</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -634,7 +770,7 @@ like variant, size, shape, and font.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The size token to apply.</p>
+                                  <p>The desired size token.</p>
                                 </div>
                               </td>
                             </tr>
@@ -661,7 +797,9 @@ like variant, size, shape, and font.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sets the corner shape of the text field (e.g., <code>.rounded</code>, <code>.square</code>, <code>.capsule</code>).</p>
+                        <p>Sets the corner shape of the text field (e.g., <code>.rounded</code>, <code>.capsule</code>, <code>.rectangle</code>).</p>
+
+<p>The shape is applied to the background or outline and affects how the field is clipped.</p>
 
                       </div>
                       <div class="declaration">
@@ -713,7 +851,9 @@ like variant, size, shape, and font.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Marks the text field as being in an error state, typically changing the border color.</p>
+                        <p>Flags the text field as being in an error state, typically changing its color or border.</p>
+
+<p>Use this to visually indicate validation failure or incorrect input.</p>
 
                       </div>
                       <div class="declaration">
@@ -738,7 +878,7 @@ like variant, size, shape, and font.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>A Boolean indicating if the field is in error state.</p>
+                                  <p>A Boolean value indicating if the field is in error.</p>
                                 </div>
                               </td>
                             </tr>
@@ -747,7 +887,7 @@ like variant, size, shape, and font.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A view reflecting the error styling.</p>
+                        <p>A view with error styling conditionally applied.</p>
                       </div>
                     </section>
                   </div>
@@ -765,9 +905,9 @@ like variant, size, shape, and font.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Applies a specific font style from the theme typography to the text field.</p>
+                        <p>Applies a specific font style to the text field label/content using the theme&rsquo;s typography system.</p>
 
-<p>This only modifies the font and leaves other field appearance unaffected.</p>
+<p>This only affects the font (size, weight, line height) and does not change layout or padding.</p>
 
                       </div>
                       <div class="declaration">
@@ -792,7 +932,7 @@ like variant, size, shape, and font.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The typography token (e.g., <code>.bodySmall</code>, <code>.labelLarge</code>).</p>
+                                  <p>The text style token to apply (e.g., <code>.bodySmall</code>, <code>.labelLarge</code>).</p>
                                 </div>
                               </td>
                             </tr>
@@ -804,7 +944,7 @@ like variant, size, shape, and font.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>An optional font weight override.</p>
+                                  <p>Optional custom font weight (e.g., <code>.medium</code>, <code>.semibold</code>).</p>
                                 </div>
                               </td>
                             </tr>
@@ -813,7 +953,7 @@ like variant, size, shape, and font.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A view with the font applied.</p>
+                        <p>A view with the font styling applied.</p>
                       </div>
                     </section>
                   </div>
@@ -832,6 +972,8 @@ like variant, size, shape, and font.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Applies a shadow to the view using a predefined <code><a href="../Enums/ShadowToken.html">ShadowToken</a></code> from the current theme.</p>
+
+<p>The shadow style (color, radius, offset) is defined in the current theme.</p>
 
                       </div>
                       <div class="declaration">
@@ -856,7 +998,7 @@ like variant, size, shape, and font.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The shadow scale to apply (e.g. <code>.sm</code>, <code>.md</code>, <code>.focus</code>).</p>
+                                  <p>The shadow token to apply (e.g. <code>.sm</code>, <code>.md</code>, <code>.focus</code>).</p>
                                 </div>
                               </td>
                             </tr>
@@ -865,7 +1007,7 @@ like variant, size, shape, and font.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A view with the shadow applied.</p>
+                        <p>A view with the theme shadow applied.</p>
                       </div>
                     </section>
                   </div>
@@ -883,7 +1025,9 @@ like variant, size, shape, and font.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Applies a font style from the current theme using a <code><a href="../Enums/TextStyleToken.html">TextStyleToken</a></code>.</p>
+                        <p>Applies a themed font style from the current theme using a <code><a href="../Enums/TextStyleToken.html">TextStyleToken</a></code>.</p>
+
+<p>The font size, weight, and line height are defined by the token.</p>
 
                       </div>
                       <div class="declaration">
@@ -912,6 +1056,18 @@ like variant, size, shape, and font.</p>
                                 </div>
                               </td>
                             </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>weight</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional override for font weight (e.g., <code>.semibold</code>, <code>.regular</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
                           </tbody>
                         </table>
                       </div>
@@ -935,7 +1091,7 @@ like variant, size, shape, and font.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Applies a foreground text or icon color using a theme-defined <code><a href="../Enums/ColorToken.html">ColorToken</a></code>.</p>
+                        <p>Applies a themed foreground color (text, icon, etc.) using a <code><a href="../Enums/ColorToken.html">ColorToken</a></code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -969,7 +1125,7 @@ like variant, size, shape, and font.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A view with the foreground color applied.</p>
+                        <p>A view with the specified foreground color.</p>
                       </div>
                     </section>
                   </div>
@@ -1039,7 +1195,7 @@ like variant, size, shape, and font.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Applies a background fill color using a theme-defined <code><a href="../Enums/ColorToken.html">ColorToken</a></code>.</p>
+                        <p>Applies a background fill color using a theme-defined <code><a href="../Enums/ColorToken.html">ColorToken</a></code>, ignoring safe area on specified edges.</p>
 
                       </div>
                       <div class="declaration">
@@ -1064,7 +1220,7 @@ like variant, size, shape, and font.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The color token to apply (e.g. <code>.surface</code>, <code>.primaryContainer</code>).</p>
+                                  <p>The color token to apply.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1076,7 +1232,7 @@ like variant, size, shape, and font.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>Edges that should be ignored by the background color</p>
+                                  <p>The edges where the safe area should be ignored.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1086,6 +1242,146 @@ like variant, size, shape, and font.</p>
                       <div>
                         <h4>Return Value</h4>
                         <p>A view with the background color applied.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE15backgroundShape_5colorQrAD0G5TokenO_AD05ColorI0OSgtF"></a>
+                    <a name="//apple_ref/swift/Method/backgroundShape(_:color:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE15backgroundShape_5colorQrAD0G5TokenO_AD05ColorI0OSgtF">backgroundShape(_:<wbr>color:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies a background shape with optional fill color using theme-defined tokens.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">backgroundShape</span><span class="p">(</span><span class="n">_</span> <span class="nv">token</span><span class="p">:</span> <span class="kt"><a href="../Enums/ShapeToken.html">ShapeToken</a></span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt"><a href="../Enums/ColorToken.html">ColorToken</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The shape token to apply (e.g. <code>.sm</code>, <code>.md</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional fill color for the shape.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with a shaped background.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE15backgroundShape_5color21edgesIgnoringSafeAreaQrAD0G5TokenO_AD05ColorM0OSgAA4EdgeO3SetVtF"></a>
+                    <a name="//apple_ref/swift/Method/backgroundShape(_:color:edgesIgnoringSafeArea:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE15backgroundShape_5color21edgesIgnoringSafeAreaQrAD0G5TokenO_AD05ColorM0OSgAA4EdgeO3SetVtF">backgroundShape(_:<wbr>color:<wbr>edgesIgnoringSafeArea:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies a background shape with optional fill color and safe area edge control.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">backgroundShape</span><span class="p">(</span><span class="n">_</span> <span class="nv">token</span><span class="p">:</span> <span class="kt"><a href="../Enums/ShapeToken.html">ShapeToken</a></span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt"><a href="../Enums/ColorToken.html">ColorToken</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">edgesIgnoringSafeArea</span><span class="p">:</span> <span class="kt">Edge</span><span class="o">.</span><span class="kt">Set</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The shape token to apply.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional fill color.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>edgesIgnoringSafeArea</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The edges where safe area should be ignored.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the shaped background.</p>
                       </div>
                     </section>
                   </div>
@@ -1103,7 +1399,7 @@ like variant, size, shape, and font.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Applies padding using a <code><a href="../Enums/SpacingToken.html">SpacingToken</a></code> from the theme and optional edge set.</p>
+                        <p>Applies padding using a <code><a href="../Enums/SpacingToken.html">SpacingToken</a></code> from the theme on specified edges.</p>
 
                       </div>
                       <div class="declaration">
@@ -1149,7 +1445,59 @@ like variant, size, shape, and font.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A view with the specified padding applied.</p>
+                        <p>A view with themed padding.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE7paddingyQrAD12SpacingTokenOF"></a>
+                    <a name="//apple_ref/swift/Method/padding(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE7paddingyQrAD12SpacingTokenOF">padding(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies uniform padding using a <code><a href="../Enums/SpacingToken.html">SpacingToken</a></code> from the theme.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">padding</span><span class="p">(</span><span class="n">_</span> <span class="nv">token</span><span class="p">:</span> <span class="kt"><a href="../Enums/SpacingToken.html">SpacingToken</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The spacing token to use.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with themed padding.</p>
                       </div>
                     </section>
                   </div>
@@ -1219,7 +1567,7 @@ like variant, size, shape, and font.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Clips the view using a <code>RoundedRectangle</code> shape with radius defined by a <code><a href="../Enums/RadiusToken.html">RadiusToken</a></code>.</p>
+                        <p>Clips the view to a rounded rectangle using a <code><a href="../Enums/RadiusToken.html">RadiusToken</a></code> and optional style.</p>
 
                       </div>
                       <div class="declaration">
@@ -1244,7 +1592,7 @@ like variant, size, shape, and font.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The radius token to apply (e.g. <code>.lg</code>, <code>.pill</code>).</p>
+                                  <p>The radius token to use.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1256,7 +1604,7 @@ like variant, size, shape, and font.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The corner style (<code>.circular</code> or <code>.continuous</code>). Default is <code>.circular</code>.</p>
+                                  <p>The corner style, either <code>.circular</code> or <code>.continuous</code>.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1265,7 +1613,7 @@ like variant, size, shape, and font.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A view clipped to a rounded shape.</p>
+                        <p>A clipped view.</p>
                       </div>
                     </section>
                   </div>
@@ -1283,7 +1631,7 @@ like variant, size, shape, and font.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Applies a themed stroke (border) to the current view.</p>
+                        <p>Applies a themed border stroke using stroke width, corner radius, and color from the theme.</p>
 
                       </div>
                       <div class="declaration">
@@ -1312,7 +1660,7 @@ like variant, size, shape, and font.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>A <code><a href="../Enums/StrokeToken.html">StrokeToken</a></code> representing the stroke width from the theme.</p>
+                                  <p>The stroke width from the theme.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1324,7 +1672,7 @@ like variant, size, shape, and font.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>A <code><a href="../Enums/RadiusToken.html">RadiusToken</a></code> representing the corner radius. Default is <code>.md</code>.</p>
+                                  <p>The corner radius from the theme (default is <code>.md</code>).</p>
                                 </div>
                               </td>
                             </tr>
@@ -1336,12 +1684,16 @@ like variant, size, shape, and font.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>A <code><a href="../Enums/ColorToken.html">ColorToken</a></code> for stroke color. Default is <code>.primary</code>.</p>
+                                  <p>The border color from the theme (default is <code>.primary</code>).</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the border stroke applied.</p>
                       </div>
                     </section>
                   </div>
@@ -1359,7 +1711,7 @@ like variant, size, shape, and font.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Applies a theme shape to the current view</p>
+                        <p>Clips the view using a shape defined in the current theme.</p>
 
                       </div>
                       <div class="declaration">
@@ -1379,17 +1731,21 @@ like variant, size, shape, and font.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>toke</em>
+                                <em>token</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>A <code><a href="../Enums/ShapeToken.html">ShapeToken</a></code> representing the shape from the theme,</p>
+                                  <p>A <code><a href="../Enums/ShapeToken.html">ShapeToken</a></code> from the theme.</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view clipped to the given shape.</p>
                       </div>
                     </section>
                   </div>
@@ -1407,16 +1763,7 @@ like variant, size, shape, and font.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Sets a custom navigation title using the theme&rsquo;s typography system.</p>
-
-<p>This modifier allows you to style the navigation bar title with a specific text style
-from your theme, and optionally apply a font weight.</p>
-<h3 id='example' class='heading'>Example:</h3>
-<pre class="highlight swift"><code><span class="kt">NavigationStack</span> <span class="p">{</span>
-  <span class="kt">MyView</span><span class="p">()</span>
-    <span class="o">.</span><span class="nf">navigationTitle</span><span class="p">(</span><span class="s">"Settings"</span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="o">.</span><span class="n">titleLarge</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">semibold</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre>
+                        <p>Sets a navigation title styled using the theme’s typography.</p>
 
                       </div>
                       <div class="declaration">
@@ -1444,7 +1791,7 @@ from your theme, and optionally apply a font weight.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The string to display as the navigation title.</p>
+                                  <p>The string to display.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1456,7 +1803,7 @@ from your theme, and optionally apply a font weight.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The typography style token from your theme (e.g., <code>.headlineLarge</code>, <code>.titleMedium</code>). Defaults to <code>.headlineLarge</code>.</p>
+                                  <p>Typography token (e.g. <code>.titleLarge</code>).</p>
                                 </div>
                               </td>
                             </tr>
@@ -1468,7 +1815,7 @@ from your theme, and optionally apply a font weight.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>An optional font weight override (e.g., <code>.bold</code>, <code>.medium</code>).</p>
+                                  <p>Optional custom weight override.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1477,7 +1824,276 @@ from your theme, and optionally apply a font weight.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A view with a themed navigation title applied.</p>
+                        <p>A view with the themed navigation title.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE6weightyQrSdF"></a>
+                    <a name="//apple_ref/swift/Method/weight(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE6weightyQrSdF">weight(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies layout weight and expands the view to fill available space.</p>
+
+<p>Inspired by Jetpack Compose&rsquo;s <code>weight()</code>, useful in <code>HStack</code>/<code>VStack</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">weight</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The proportional layout weight.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A weighted view.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE11fillMaxSize9alignmentQrAA9AlignmentV_tF"></a>
+                    <a name="//apple_ref/swift/Method/fillMaxSize(alignment:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE11fillMaxSize9alignmentQrAA9AlignmentV_tF">fillMaxSize(alignment:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Expands the view to fill available width and height, aligned as specified.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">fillMaxSize</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="kt">Alignment</span> <span class="o">=</span> <span class="o">.</span><span class="n">leading</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alignment</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The alignment within the space. Default is <code>.leading</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A fully expanded view.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE12fillMaxWidth9alignmentQrAA9AlignmentV_tF"></a>
+                    <a name="//apple_ref/swift/Method/fillMaxWidth(alignment:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE12fillMaxWidth9alignmentQrAA9AlignmentV_tF">fillMaxWidth(alignment:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Expands the view to fill the maximum width, aligned as specified.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">fillMaxWidth</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="kt">Alignment</span> <span class="o">=</span> <span class="o">.</span><span class="n">leading</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alignment</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The alignment within the space. Default is <code>.leading</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view that fills the max width.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE13fillMaxHeight9alignmentQrAA9AlignmentV_tF"></a>
+                    <a name="//apple_ref/swift/Method/fillMaxHeight(alignment:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE13fillMaxHeight9alignmentQrAA9AlignmentV_tF">fillMaxHeight(alignment:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Expands the view to fill the maximum height, aligned as specified.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">fillMaxHeight</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="kt">Alignment</span> <span class="o">=</span> <span class="o">.</span><span class="n">leading</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alignment</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The alignment within the space. Default is <code>.leading</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view that fills the max height.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE4size_9alignmentQr14CoreFoundation7CGFloatV_AA9AlignmentVtF"></a>
+                    <a name="//apple_ref/swift/Method/size(_:alignment:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE4size_9alignmentQr14CoreFoundation7CGFloatV_AA9AlignmentVtF">size(_:<wbr>alignment:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets an exact square size for the view using the same value for width and height.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">size</span><span class="p">(</span><span class="n">_</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">alignment</span><span class="p">:</span> <span class="kt">Alignment</span> <span class="o">=</span> <span class="o">.</span><span class="n">center</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>size</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The size to apply for both width and height.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alignment</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The alignment inside the frame. Default is <code>.center</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with fixed size.</p>
                       </div>
                     </section>
                   </div>
@@ -1495,7 +2111,13 @@ from your theme, and optionally apply a font weight.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Applies the given transform if the given condition evaluates to <code>true</code>.</p>
+                        <p>Conditionally applies a view transformation when a condition is <code>true</code>.</p>
+
+<p>This is useful for chaining conditional modifiers in a clean and readable way.</p>
+<h3 id='example' class='heading'>Example:</h3>
+<pre class="highlight swift"><code><span class="kt">Text</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">)</span>
+  <span class="o">.</span><span class="k">if</span><span class="p">(</span><span class="n">isHighlighted</span><span class="p">)</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">red</span><span class="p">)</span> <span class="p">}</span>
+</code></pre>
 
                       </div>
                       <div class="declaration">
@@ -1520,7 +2142,7 @@ from your theme, and optionally apply a font weight.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The condition to evaluate.</p>
+                                  <p>A Boolean value that determines whether the transform is applied.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1532,7 +2154,7 @@ from your theme, and optionally apply a font weight.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The transform to apply to the source <code>View</code>.</p>
+                                  <p>A closure that takes the original view and returns a modified view.</p>
                                 </div>
                               </td>
                             </tr>
@@ -1541,7 +2163,65 @@ from your theme, and optionally apply a font weight.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>Either the original <code>View</code> or the modified <code>View</code> if the condition is <code>true</code>.</p>
+                        <p>Either the original view or the transformed view if the condition is <code>true</code>.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE7measureyQrAA7BindingVySo6CGSizeVGF"></a>
+                    <a name="//apple_ref/swift/Method/measure(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE7measureyQrAA7BindingVySo6CGSizeVGF">measure(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Measures the size of the view and writes it to a bound <code>CGSize</code>.</p>
+
+<p>This can be used to capture layout dimensions for alignment, animation,
+or dynamic layout decisions.</p>
+<h3 id='example' class='heading'>Example:</h3>
+<pre class="highlight swift"><code><span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">CGSize</span> <span class="o">=</span> <span class="o">.</span><span class="n">zero</span>
+
+<span class="kt">Text</span><span class="p">(</span><span class="s">"Resizable"</span><span class="p">)</span>
+  <span class="o">.</span><span class="nf">measure</span><span class="p">(</span><span class="n">$size</span><span class="p">)</span>
+  <span class="o">.</span><span class="nf">onChange</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">size</span><span class="p">)</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span><span class="s">"New size: </span><span class="se">\(</span><span class="nv">$0</span><span class="se">)</span><span class="s">"</span><span class="p">)</span> <span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">measure</span><span class="p">(</span><span class="n">_</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">Binding</span><span class="o">&lt;</span><span class="kt">CGSize</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>size</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A binding to a <code>CGSize</code> value that will be updated with the view’s size.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -1551,7 +2231,7 @@ from your theme, and optionally apply a font weight.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2025 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2025-05-16)</p>
+          <p>&copy; 2025 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2025-05-20)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>

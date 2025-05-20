@@ -19,7 +19,7 @@ public struct ThemeStroke {
   public let lg: CGFloat
   
   /// The default set of stroke widths for light mode.
-  public static let defaultLignt = ThemeStroke(
+  public static let defaultLight = ThemeStroke(
     none: 0,
     xs: 1,
     sm: 2,
