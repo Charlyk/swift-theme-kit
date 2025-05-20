@@ -1,7 +1,13 @@
 import SwiftUI
 
-/// A view modifier that applies a specific `ButtonVariant` to a view while preserving
-/// other button styling properties from the theme or existing environment configuration.
+/// A view modifier that overrides the button's visual style variant (e.g., `.filled`, `.outline`, `.text`).
+///
+/// This modifier updates the button configuration in the environment and reapplies
+/// the `ThemeButtonStyle` with the new variant, preserving any previously applied
+/// size, shape, font, or color settings.
+///
+/// - Note: This modifier is typically used in combination with `applyThemeButtonStyle()` or independently
+/// if you build your button composition manually.
 struct ButtonVariantModifier: ViewModifier {
   @Environment(\.appTheme) private var theme
   @Environment(\.buttonConfiguration) private var config
@@ -16,6 +22,7 @@ struct ButtonVariantModifier: ViewModifier {
       backgroundColor: config.backgroundColor,
       foregroundColor: config.foregroundColor
     )
+
     content
       .buttonStyle(
         ThemeButtonStyle(
@@ -31,8 +38,10 @@ struct ButtonVariantModifier: ViewModifier {
   }
 }
 
-/// A view modifier that applies a specific `ButtonSize` to a view while retaining
-/// the current shape, variant, and font from the environment or theme.
+/// A view modifier that overrides the button's size (e.g., `.small`, `.medium`, `.large`, `.fullWidth`).
+///
+/// The size impacts layout dimensions and padding, and may also influence the default font
+/// unless explicitly overridden.
 struct ButtonSizeModifier: ViewModifier {
   @Environment(\.appTheme) private var theme
   @Environment(\.buttonConfiguration) private var config
@@ -47,6 +56,7 @@ struct ButtonSizeModifier: ViewModifier {
       backgroundColor: config.backgroundColor,
       foregroundColor: config.foregroundColor
     )
+
     content
       .buttonStyle(
         ThemeButtonStyle(
@@ -62,8 +72,9 @@ struct ButtonSizeModifier: ViewModifier {
   }
 }
 
-/// A view modifier that applies a specific `ButtonShape` to a view while preserving
-/// the current variant, size, and font configuration from the environment or theme.
+/// A view modifier that overrides the button's shape (e.g., `.capsule`, `.rounded`, `.rectangle`).
+///
+/// This modifier updates the clipping shape and background styling based on the shape token.
 struct ButtonShapeModifier: ViewModifier {
   @Environment(\.appTheme) private var theme
   @Environment(\.buttonConfiguration) private var config
@@ -78,6 +89,7 @@ struct ButtonShapeModifier: ViewModifier {
       backgroundColor: config.backgroundColor,
       foregroundColor: config.foregroundColor
     )
+
     content
       .buttonStyle(
         ThemeButtonStyle(
@@ -93,8 +105,9 @@ struct ButtonShapeModifier: ViewModifier {
   }
 }
 
-/// A view modifier that applies a custom `ThemeFontToken` to a button's text style
-/// without overriding its size, variant, or shape.
+/// A view modifier that applies a custom `ThemeFontToken` to the button’s label text.
+///
+/// This allows for fine-grained control over typography independent of the button size.
 struct ButtonFontModifier: ViewModifier {
   @Environment(\.appTheme) private var theme
   @Environment(\.buttonConfiguration) private var config
@@ -109,6 +122,7 @@ struct ButtonFontModifier: ViewModifier {
       backgroundColor: config.backgroundColor,
       foregroundColor: config.foregroundColor
     )
+
     content
       .buttonStyle(
         ThemeButtonStyle(
@@ -124,6 +138,9 @@ struct ButtonFontModifier: ViewModifier {
   }
 }
 
+/// A view modifier that overrides the background color of a button, regardless of its variant.
+///
+/// This is useful for applying a custom color in special states or brand-specific overrides.
 struct ButtonBackgroundModifier: ViewModifier {
   @Environment(\.appTheme) private var theme
   @Environment(\.buttonConfiguration) private var config
@@ -138,6 +155,7 @@ struct ButtonBackgroundModifier: ViewModifier {
       backgroundColor: color,
       foregroundColor: config.foregroundColor
     )
+
     content
       .buttonStyle(
         ThemeButtonStyle(
@@ -153,6 +171,9 @@ struct ButtonBackgroundModifier: ViewModifier {
   }
 }
 
+/// A view modifier that overrides the foreground color (text/icon) of a button.
+///
+/// This takes precedence over the color defined by the theme or variant.
 struct ButtonForegroundModifier: ViewModifier {
   @Environment(\.appTheme) private var theme
   @Environment(\.buttonConfiguration) private var config
@@ -167,6 +188,7 @@ struct ButtonForegroundModifier: ViewModifier {
       backgroundColor: config.backgroundColor,
       foregroundColor: color
     )
+
     content
       .buttonStyle(
         ThemeButtonStyle(
