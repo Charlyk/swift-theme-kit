@@ -34,23 +34,16 @@ public struct ThemeProvider<Content: View>: View {
     self.darkTheme = dark
     self.content = content
   }
-
+  
   /// The view body that injects the current theme into the environment
   /// based on the active color scheme.
   public var body: some View {
-    Group {
-      if colorScheme == .dark {
-        content()
-          .transition(.opacity)
-          .tint(darkTheme.colors.primary)
-          .environment(\.appTheme, darkTheme)
-      } else {
-        content()
-          .transition(.opacity)
-          .tint(lightTheme.colors.primary)
-          .environment(\.appTheme, lightTheme)
-      }
-    }
-    .animation(.easeInOut, value: colorScheme)
+    let currentTheme = (colorScheme == .dark) ? darkTheme : lightTheme
+    let currentTint = currentTheme.colors.primary
+
+    return content()
+      .environment(\.appTheme, currentTheme)
+      .tint(currentTint)
+      .animation(.easeInOut, value: colorScheme)
   }
 }
