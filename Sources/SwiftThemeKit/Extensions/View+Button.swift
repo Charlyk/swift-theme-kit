@@ -1,68 +1,102 @@
 import SwiftUI
 
 public extension View {
-  /// Applies a complete themed button style using values from the environment or theme defaults.
+  /// Applies the full SwiftThemeKit button style to the current view using the theme's button system.
   ///
-  /// This should be the base modifier applied to any Button that wants to use the theme system.
-  /// It will apply the variant, size, and shape defined either explicitly or from `Theme.buttons`.
+  /// This modifier is **optional** but recommended when you want to use the default layout, padding,
+  /// background, and interactive states provided by SwiftThemeKit.
   ///
-  /// It should be called **before** other modifiers like `.buttonVariant(...)`.
+  /// You can also apply individual overrides such as `buttonSize`, `buttonVariant`, or `buttonShape`
+  /// without needing to use this modifier, especially if you are using your own custom button style.
+  ///
+  /// - Returns: A view with the themed button styling applied.
   @ViewBuilder
   func applyThemeButtonStyle() -> some View {
     self
       .modifier(ThemedButtonModifier())
       .modifier(ApplyFinalButtonStyleModifier())
   }
-
-  /// Overrides the button variant (e.g., `.filled`, `.outline`, `.text`, etc.) for a single button.
+  
+  /// Overrides the button variant (e.g. `.filled`, `.outline`, `.text`) for this specific button.
   ///
-  /// - Parameter variant: The variant of the button to use.
-  /// - Returns: A view with the given variant stored in environment for styling resolution.
+  /// This is stored in the view environment and affects how `applyThemeButtonStyle()` renders the background,
+  /// border, and interaction behavior.
+  ///
+  /// - Parameter variant: The desired button style variant.
+  /// - Returns: A view with the custom variant applied to the button context.
   @ViewBuilder
   func buttonVariant(_ variant: ButtonVariant) -> some View {
     self.modifier(ButtonVariantModifier(token: variant))
   }
-
-  /// Overrides the button size (e.g., `.small`, `.medium`, `.large`, `.fullWidth`) for a single button.
+  
+  /// Overrides the button size (e.g. `.small`, `.medium`, `.large`, `.fullWidth`) for this button.
   ///
-  /// - Parameter size: The size of the button.
-  /// - Returns: A view with the given size stored in environment for use in layout and padding.
+  /// The size affects height, padding, and possibly font size, based on the current theme configuration.
+  ///
+  /// - Parameter size: The size token to apply.
+  /// - Returns: A view with the custom size stored in the environment.
   @ViewBuilder
   func buttonSize(_ size: ButtonSize) -> some View {
     self.modifier(ButtonSizeModifier(token: size))
   }
-
-  /// Overrides the button shape (e.g., `.capsule`, `.rounded`, `.rectangle`) for a single button.
+  
+  /// Overrides the shape used for the button (e.g. `.capsule`, `.rounded`, `.rectangle`).
   ///
-  /// - Parameter shape: The shape style of the button.
-  /// - Returns: A view with the given shape stored in environment for consistent visual appearance.
+  /// This affects how the button is clipped and how the background and stroke are drawn.
+  ///
+  /// - Parameter shape: The shape token to apply to this button.
+  /// - Returns: A view with the shape override applied.
   @ViewBuilder
   func buttonShape(_ shape: ButtonShape) -> some View {
     self.modifier(ButtonShapeModifier(token: shape))
   }
-
-  /// Applies a text-only button style with no padding or background.
+  
+  /// Applies a minimal, text-only button style without background, padding, or borders.
   ///
-  /// Best used for links or minimal inline buttons. You can optionally override the font style and weight.
+  /// Best for inline links or toolbar actions where no container styling is needed.
+  /// Can still use theme typography tokens for consistent font sizing.
   ///
   /// - Parameters:
-  ///   - style: The font style to use, defaults to `.buttonText`.
+  ///   - style: The typography style to apply (default is `.buttonText`).
   ///   - weight: Optional font weight override.
-  /// - Returns: A view with minimal button styling applied.
+  /// - Returns: A button with stripped-down appearance and themed text.
   @ViewBuilder
   func plainTextButton(_ style: TextStyleToken = .buttonText, weight: Font.Weight? = nil) -> some View {
     self.buttonStyle(PlainTextButtonStyle(token: ThemeFontToken(style, weight: weight)))
   }
-
-  /// Applies a specific font style to the button's label without affecting other styling.
+  
+  /// Overrides only the font style of the button’s label while preserving all other styles (padding, background, etc.).
+  ///
+  /// Useful when you want to adjust the font of a button without affecting its variant or layout.
   ///
   /// - Parameters:
-  ///   - token: The text style token from your theme typography.
+  ///   - token: The typography token to apply (e.g. `.labelLarge`, `.bodyMedium`).
   ///   - weight: Optional font weight override.
-  /// - Returns: A view with the font applied to the label.
+  /// - Returns: A view with the custom font style applied to the label.
   @ViewBuilder
   func buttonLabelStyle(_ token: TextStyleToken, weight: Font.Weight? = nil) -> some View {
     let fontToken = ThemeFontToken(token, weight: weight)
     self.modifier(ButtonFontModifier(token: fontToken))
+  }
+  
+  /// Overrides the background color of the button's label content.
+  ///
+  /// This can be used to apply a custom background color instead of the theme-defined one
+  /// (e.g., for special states or brand-specific overrides).
+  ///
+  /// - Parameter color: The color to use as the label's background.
+  /// - Returns: A view with the background color applied to the button label.
+  func buttonBackgroundColor(_ color: Color) -> some View {
+    self.modifier(ButtonBackgroundModifier(color: color))
+  }
+  
+  /// Overrides the foreground (text/icon) color of the button's label content.
+  ///
+  /// This affects the text/icon rendering but does not override other theme styles.
+  ///
+  /// - Parameter color: The color to use as the foreground.
+  /// - Returns: A view with the foreground color applied to the button label.
+  func buttonForegroundColor(_ color: Color) -> some View {
+    self.modifier(ButtonForegroundModifier(color: color))
   }
 }

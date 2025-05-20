@@ -28,6 +28,8 @@ public struct ThemeButtonStyle: ButtonStyle {
   let size: ButtonSize
   let shape: ButtonShape
   let font: ThemeFontToken?
+  let backgroundColor: Color?
+  let foregroundColor: Color?
 
   @Environment(\.appTheme) private var theme
   @Environment(\.isEnabled) private var isEnabled
@@ -36,63 +38,50 @@ public struct ThemeButtonStyle: ButtonStyle {
     variant: ButtonVariant = .filled,
     size: ButtonSize = .medium,
     shape: ButtonShape = .rounded,
-    font: ThemeFontToken? = nil
+    font: ThemeFontToken? = nil,
+    backgroundColor: Color? = nil,
+    foregroundColor: Color? = nil
   ) {
     self.variant = variant
     self.size = size
     self.shape = shape
     self.font = font
+    self.backgroundColor = backgroundColor
+    self.foregroundColor = foregroundColor
   }
 
   public func makeBody(configuration: Configuration) -> some View {
     let isPressed = configuration.isPressed
     let isDestructive = configuration.role == .destructive
 
-    let bgColor: Color
-    let borderColor: Color
-    let fgColor: Color
+    let bgColor = variant.backgroundColor(
+      for: theme,
+      isPressed: isPressed,
+      role: configuration.role,
+      overrideColor: backgroundColor
+    )
+
+    let borderColor = variant.borderColor(
+      for: theme,
+      role: configuration.role,
+      overrideColor: variant == .outline ? backgroundColor : nil
+    )
+
+    let fgColor = variant.foregroundColor(
+      for: theme,
+      role: configuration.role,
+      overrideColor: foregroundColor
+    )
+    
+    let padding = size.paddingValues(for: theme)
+
     var shadow: ThemeShadow? = nil
-    let padding: EdgeInsets
 
-    // Configure button colors and shadows based on variant
     switch variant {
-    case .filled:
-      let typedBgColor = isDestructive ? theme.colors.error : theme.colors.primary
-      bgColor = isPressed ? typedBgColor.lighten(by: 0.1) : typedBgColor
-      borderColor = .clear
-      fgColor = isDestructive ? theme.colors.onError : theme.colors.onPrimary
-      padding = size.paddingValues(for: theme)
-
-    case .tonal:
-      let typedBgColor = isDestructive ? theme.colors.errorContainer : theme.colors.secondaryContainer
-      bgColor = isPressed ? typedBgColor.lighten(by: 0.1) : typedBgColor
-      borderColor = .clear
-      fgColor = isDestructive ? theme.colors.onErrorContainer : theme.colors.onSecondaryContainer
-      padding = size.paddingValues(for: theme)
-
-    case .outline:
-      let pressedBgColor = isDestructive
-        ? theme.colors.error.opacity(0.05)
-        : theme.colors.primary.opacity(0.05)
-      bgColor = isPressed ? pressedBgColor : .clear
-      borderColor = isDestructive ? theme.colors.error : theme.colors.outlineVariant
-      fgColor = isDestructive ? theme.colors.error : theme.colors.onSurfaceVariant
-      padding = size.paddingValues(for: theme)
-
+    case .filled, .tonal, .outline, .text:
+      shadow = nil
     case .elevated:
-      bgColor = isPressed
-        ? theme.colors.surfaceContainerLow.darken(by: 0.1)
-        : theme.colors.surfaceContainerLow
-      borderColor = .clear
-      fgColor = isDestructive ? theme.colors.error : theme.colors.primary
-      padding = size.paddingValues(for: theme)
       shadow = theme.shadows.md
-
-    case .text:
-      bgColor = .clear
-      borderColor = .clear
-      fgColor = isDestructive ? theme.colors.error : theme.colors.primary
-      padding = size.paddingValues(for: theme)
     }
 
     // Adjust colors for disabled state

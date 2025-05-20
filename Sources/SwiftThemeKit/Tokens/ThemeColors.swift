@@ -1,59 +1,137 @@
 import SwiftUI
 
+/// A struct that defines all semantic colors used across the UI theme.
+///
+/// Colors follow the Material Design 3 specification and are resolved from a `Theme`.
+/// These values can be accessed via environment using `@Environment(\.appTheme).colors`
+/// or via subscript using a `ColorToken`.
 public struct ThemeColors {
-  
   // MARK: - Primary
+
+  /// Primary brand color. Used for filled buttons, toggles, sliders, and active states.
   public let primary: Color
+
+  /// Foreground color for content displayed on top of the primary color.
+  /// Used in filled buttons, icons, and text on `primary`.
   public let onPrimary: Color
+
+  /// A container version of `primary`. Used for tonal buttons and cards.
   public let primaryContainer: Color
+
+  /// Foreground color for content on `primaryContainer`.
   public let onPrimaryContainer: Color
-  
+
   // MARK: - Secondary
+
+  /// Secondary brand color. Used for complementary accents and UI elements.
   public let secondary: Color
+
+  /// Foreground color on `secondary`.
   public let onSecondary: Color
+
+  /// Container version of `secondary`. Used in tonal buttons and backgrounds.
   public let secondaryContainer: Color
+
+  /// Foreground color for content on `secondaryContainer`.
   public let onSecondaryContainer: Color
-  
+
   // MARK: - Tertiary
+
+  /// Tertiary color used for less prominent accents and optional areas of UI.
   public let tertiary: Color
+
+  /// Foreground color on `tertiary`.
   public let onTertiary: Color
+
+  /// Container version of `tertiary`. Often used in tertiary or tonal button variants.
   public let tertiaryContainer: Color
+
+  /// Foreground color for content on `tertiaryContainer`.
   public let onTertiaryContainer: Color
-  
+
+  // MARK: - Background
+
+  /// General background color for screens and surfaces.
   public let background: Color
+
+  /// Foreground color for content placed directly on the background.
   public let onBackground: Color
-  
+
   // MARK: - Error
+
+  /// The error color used to indicate critical states or invalid input.
+  /// Used in buttons with role `.destructive`, text field error states, etc.
   public let error: Color
+
+  /// Foreground color for content on top of the `error` color.
   public let onError: Color
+
+  /// Container version of `error`. Used in buttons, alerts, and error highlights.
   public let errorContainer: Color
+
+  /// Foreground color for content on `errorContainer`.
   public let onErrorContainer: Color
-  
+
   // MARK: - Inverse
+
+  /// Surface color used for inverse components (e.g., bottom sheets, overlays).
   public let inverseSurface: Color
+
+  /// Foreground color used on top of `inverseSurface`.
   public let inverseOnSurface: Color
+
+  /// Primary brand color adapted for use on inverse surfaces.
   public let inversePrimary: Color
-  
+
   // MARK: - Surface
+
+  /// Base surface color. Used for cards, sheets, dialogs, and containers.
   public let surface: Color
+
+  /// Foreground content (text, icons) on top of `surface`.
   public let onSurface: Color
+
+  /// A variant of the surface used for borders, dividers, and low-emphasis backgrounds.
   public let surfaceVariant: Color
+
+  /// Foreground color for content on `surfaceVariant`.
   public let onSurfaceVariant: Color
-  
+
+  /// Used for dimmed surface backgrounds (e.g., navigation bars or background states).
   public let surfaceDim: Color
+
+  /// Used for bright surface states (e.g., elevated containers).
   public let surfaceBright: Color
+
+  /// The lowest elevation container surface (typically full-white or full-black).
   public let surfaceContainerLowest: Color
+
+  /// Low-elevation container surface (1dp–2dp).
   public let surfaceContainerLow: Color
+
+  /// Medium-elevation container surface (3dp–4dp).
   public let surfaceContainer: Color
+
+  /// High-elevation container surface (6dp–8dp).
   public let surfaceContainerHigh: Color
+
+  /// Highest-elevation container surface (above 8dp).
   public let surfaceContainerHighest: Color
-  
+
   // MARK: - Outline & Utility
+
+  /// Used for strokes, borders, and outlines (1dp emphasis).
   public let outline: Color
+
+  /// A lower-contrast version of `outline`. Used for less prominent borders or visual separation.
   public let outlineVariant: Color
+
+  /// Used to block interaction (e.g., modal scrims or overlays).
   public let scrim: Color
+
+  /// The shadow color used in elevation and shadow rendering.
   public let shadow: Color
-  
+
   public static let defaultLight = ThemeColors(
     primary: .init(hex: "#5F5791"),
     onPrimary: .init(hex: "#FFFFFF"),
@@ -92,7 +170,7 @@ public struct ThemeColors {
     scrim: .init(hex: "#000000"),
     shadow: .init(hex: "#6941C6")
   )
-  
+
   public static let defaultDark = ThemeColors(
     primary: .init(hex: "#F3EDFF"),
     onPrimary: .init(hex: "#30285F"),
@@ -131,7 +209,7 @@ public struct ThemeColors {
     scrim: .init(hex: "#000000"),
     shadow: .init(hex: "#B692F6")
   )
-  
+
   public init(
     primary: Color,
     onPrimary: Color,
@@ -207,50 +285,56 @@ public struct ThemeColors {
     self.scrim = scrim
     self.shadow = shadow
   }
-  
+
+  /// Accesses the color via a `ColorToken`.
+  ///
+  /// Example:
+  /// ```swift
+  /// theme.colors[.primary]
+  /// ```
   subscript(_ token: ColorToken) -> Color {
     switch token {
     case .primary: return primary
     case .onPrimary: return onPrimary
     case .primaryContainer: return primaryContainer
     case .onPrimaryContainer: return onPrimaryContainer
-      
+
     case .secondary: return secondary
     case .onSecondary: return onSecondary
     case .secondaryContainer: return secondaryContainer
     case .onSecondaryContainer: return onSecondaryContainer
-      
+
     case .tertiary: return tertiary
     case .onTertiary: return onTertiary
     case .tertiaryContainer: return tertiaryContainer
     case .onTertiaryContainer: return onTertiaryContainer
-      
+
     case .background: return background
     case .onBackground: return onBackground
-      
+
     case .error: return error
     case .onError: return onError
     case .errorContainer: return errorContainer
     case .onErrorContainer: return onErrorContainer
-      
+
     case .inverseSurface: return inverseSurface
     case .inverseOnSurface: return inverseOnSurface
     case .inversePrimary: return inversePrimary
-      
+
     case .surface: return surface
     case .onSurface: return onSurface
     case .surfaceVariant: return surfaceVariant
     case .onSurfaceVariant: return onSurfaceVariant
-      
+
     case .surfaceDim: return surfaceDim
     case .surfaceBright: return surfaceBright
-      
+
     case .surfaceContainerLowest: return surfaceContainerLowest
     case .surfaceContainerLow: return surfaceContainerLow
     case .surfaceContainer: return surfaceContainer
     case .surfaceContainerHigh: return surfaceContainerHigh
     case .surfaceContainerHighest: return surfaceContainerHighest
-      
+
     case .outline: return outline
     case .outlineVariant: return outlineVariant
     case .scrim: return scrim
@@ -259,7 +343,7 @@ public struct ThemeColors {
   }
 }
 
-public enum ColorToken {
+public enum ColorToken: String, CaseIterable {
   case primary, onPrimary, primaryContainer, onPrimaryContainer
   case secondary, onSecondary, secondaryContainer, onSecondaryContainer
   case tertiary, onTertiary, tertiaryContainer, onTertiaryContainer

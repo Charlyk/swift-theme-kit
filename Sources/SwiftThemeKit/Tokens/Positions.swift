@@ -8,7 +8,7 @@ import Foundation
 ///   ```swift
 ///   Checkbox(isChecked: $checked, label: "Accept Terms", labelPosition: .leading)
 ///   ```
-public enum HorizontalPosition {
+public enum HorizontalPosition: CaseIterable {
   /// Leading edge (left in left-to-right layouts).
   case leading
 
@@ -24,7 +24,7 @@ public enum HorizontalPosition {
 ///   ```swift
 ///   Tooltip(position: .top)
 ///   ```
-public enum VerticalPosition {
+public enum VerticalPosition: CaseIterable {
   /// Top edge — places the content above the reference view.
   case top
 

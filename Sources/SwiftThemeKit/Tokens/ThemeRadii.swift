@@ -67,7 +67,7 @@ public struct ThemeRadii {
   }
 }
 
-public enum RadiusToken {
+public enum RadiusToken: String, CaseIterable {
   case none
   case xs
   case sm
