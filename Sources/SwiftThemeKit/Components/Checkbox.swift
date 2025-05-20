@@ -97,7 +97,7 @@ public struct Checkbox: View {
       HStack(alignment: .center, spacing: spacing) {
         Image(systemName: isChecked ? "checkmark" : "")
           .frame(width: 24, height: 24)
-          .foregroundColor(.white)
+          .foregroundColor(theme.colors.onPrimary)
           .if(isChecked) {
             $0.background(theme.colors.primary)
           }
