@@ -29,8 +29,14 @@ public struct Theme {
   /// The set of buttons default configurations
   public let buttons: ThemeButtonDefaults
   
-  /// The set of buttons default configurations
+  /// The set of text field default configurations
   public let textFields: ThemeTextFieldDefaults
+
+  /// The set of checkbox size styles
+  public let checkboxSize: ThemeCheckboxSize
+
+  /// The platform on which the app is running. Default is `.current`.
+  public let platform: ThemePlatform
 
   /// Initializes a new theme instance with custom tokens.
   ///
@@ -42,7 +48,10 @@ public struct Theme {
   ///   - shadows: The shadow styles for various elevations.
   ///   - stroke: The stroke styles.
   ///   - shapes: The shapes styles used for various components.
-  ///   - buttons: The buttons default values used when no modifier applied
+  ///   - buttons: The buttons default values used when no modifier applied.
+  ///   - textFields: The text fields default configuration used when no modifier applied.
+  ///   - checkboxSize: The set of checkbox size styles.
+  ///   - platform: The platform on which the app is running. Default is `.current`.
   public init(
     colors: ThemeColors,
     typography: ThemeTypography,
@@ -52,7 +61,9 @@ public struct Theme {
     stroke: ThemeStroke,
     shapes: ThemeShapes,
     buttons: ThemeButtonDefaults,
-    textFields: ThemeTextFieldDefaults
+    textFields: ThemeTextFieldDefaults,
+    checkboxSize: ThemeCheckboxSize,
+    platform: ThemePlatform = .current
   ) {
     self.colors = colors
     self.typography = typography
@@ -63,6 +74,8 @@ public struct Theme {
     self.shapes = shapes
     self.buttons = buttons
     self.textFields = textFields
+    self.checkboxSize = checkboxSize
+    self.platform = platform
   }
   
   /// The default theme configuration optimized for light mode.
@@ -76,7 +89,9 @@ public struct Theme {
     stroke: .defaultLight,
     shapes: .defaultLight,
     buttons: .defaultLight,
-    textFields: .defaultLight
+    textFields: .defaultLight,
+    checkboxSize: .defaultLight,
+    platform: .current
   )
   
   /// The default theme configuration optimized for dark mode.
@@ -90,6 +105,8 @@ public struct Theme {
     stroke: .defaultDark,
     shapes: .defaultDark,
     buttons: .defaultDark,
-    textFields: .defaultDark
+    textFields: .defaultDark,
+    checkboxSize: .defaultDark,
+    platform: .current
   )
 }

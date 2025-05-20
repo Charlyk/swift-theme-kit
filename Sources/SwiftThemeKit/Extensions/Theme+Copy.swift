@@ -13,6 +13,8 @@ public extension Theme {
   ///   - shapes: The shapes styles used for various components.
   ///   - buttons: The buttons default values used when no modifier applied
   ///   - textFields: The text field default values used when no modifier applied
+  ///   - checkboxSize: The size styles for the checkboxes
+  ///   - platform: The platform on which the app is running.
   func copy(
     colors: ThemeColors? = nil,
     typography: ThemeTypography? = nil,
@@ -22,7 +24,9 @@ public extension Theme {
     stroke: ThemeStroke? = nil,
     shapes: ThemeShapes? = nil,
     buttons: ThemeButtonDefaults? = nil,
-    textFields: ThemeTextFieldDefaults? = nil
+    textFields: ThemeTextFieldDefaults? = nil,
+    checkboxSize: ThemeCheckboxSize? = nil,
+    platform: ThemePlatform? = nil
   ) -> Theme {
     Theme(
       colors: colors ?? self.colors,
@@ -33,7 +37,9 @@ public extension Theme {
       stroke: stroke ?? self.stroke,
       shapes: shapes ?? self.shapes,
       buttons: buttons ?? self.buttons,
-      textFields: textFields ?? self.textFields
+      textFields: textFields ?? self.textFields,
+      checkboxSize: checkboxSize ?? self.checkboxSize,
+      platform: platform ?? self.platform
     )
   }
 }
