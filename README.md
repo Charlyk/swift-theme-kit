@@ -7,6 +7,7 @@ Easily create consistent, themeable user interfaces with full customization powe
 
 [![SwiftPM](https://img.shields.io/badge/SwiftPM-Compatible-blue)]()
 [![iOS](https://img.shields.io/badge/iOS-14.0%2B-lightgrey)]()
+[![Version](https://img.shields.io/github/v/tag/Charlyk/swift-theme-kit?label=Version)]()
 [![License](https://img.shields.io/badge/License-MIT-yellow)]()
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px;">
@@ -138,11 +139,11 @@ MyView()
 
 ## 📦 Installation
 
-Use Swift Package Manager:
+Use [Swift Package Manager](https://swift.org/package-manager/) and select the latest release:
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/Charlyk/swift-theme-kit.git", from: "1.0.0")
+  .package(url: "https://github.com/Charlyk/swift-theme-kit.git", from: "<latest_version>")
 ]
 ```
 
