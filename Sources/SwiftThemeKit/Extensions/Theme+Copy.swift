@@ -14,6 +14,7 @@ public extension Theme {
   ///   - buttons: The buttons default values used when no modifier applied
   ///   - textFields: The text field default values used when no modifier applied
   ///   - checkboxSize: The size styles for the checkboxes
+  ///   - radioButtonSize: The size styles for the radio button
   ///   - platform: The platform on which the app is running.
   func copy(
     colors: ThemeColors? = nil,
@@ -26,6 +27,7 @@ public extension Theme {
     buttons: ThemeButtonDefaults? = nil,
     textFields: ThemeTextFieldDefaults? = nil,
     checkboxSize: ThemeCheckboxSize? = nil,
+    radioButtonSize: ThemeRadioButtonSize? = nil,
     platform: ThemePlatform? = nil
   ) -> Theme {
     Theme(
@@ -39,6 +41,7 @@ public extension Theme {
       buttons: buttons ?? self.buttons,
       textFields: textFields ?? self.textFields,
       checkboxSize: checkboxSize ?? self.checkboxSize,
+      radioButtonSize: radioButtonSize ?? self.radioButtonSize,
       platform: platform ?? self.platform
     )
   }
