@@ -26,10 +26,10 @@ public struct Card<Content: View>: View {
   /// - Parameters:
   ///   - elevation: The shadow elevation applied to the card. Defaults to `.md`.
   ///   - padding: Optional custom padding for the card’s content. If `nil`, uses default theme spacing.
-  ///   - backgroundColor: Optional override for the card's background color. Defaults to `theme.colors.surfaceVariant`.
+  ///   - backgroundColor: Optional override for the card's background color. Defaults to `theme.colors.surfaceContainerHigh`.
   ///   - content: A view builder closure containing the card's inner content.
   public init(
-    elevation: ShadowToken = .md,
+    elevation: ShadowToken = .sm,
     padding: EdgeInsets? = nil,
     backgroundColor: Color? = nil,
     @ViewBuilder content: @escaping () -> Content
@@ -52,7 +52,7 @@ public struct Card<Content: View>: View {
       trailing: theme.spacing.md
     )
 
-    let bgColor = backgroundColor ?? theme.colors.surfaceVariant
+    let bgColor = backgroundColor ?? theme.colors.surfaceContainerHigh
 
     content()
       .padding(contentPadding)

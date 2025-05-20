@@ -1,29 +1,45 @@
-# SwiftThemeKit - A Modern Design System Framework for SwiftUI
+![logo](logo.png)
 
-SwiftThemeKit is a powerful and flexible design system framework for SwiftUI that enables you to create consistent, themeable user interfaces with ease. It provides a comprehensive set of components and utilities that follow modern design principles while maintaining full customizability.
+# SwiftThemeKit
 
-## Features
+**A modern, token-driven design system framework for SwiftUI**  
+Easily create consistent, themeable user interfaces with full customization power — powered by a scalable design token system and environment-based styling.
 
-- 🎨 Complete theming system with support for light and dark modes
+[![SwiftPM](https://img.shields.io/badge/SwiftPM-Compatible-blue)]()
+[![iOS](https://img.shields.io/badge/iOS-14.0%2B-lightgrey)]()
+[![License](https://img.shields.io/badge/License-MIT-yellow)]()
 
-- 📱 Ready-to-use UI components following design system best practices
-- 🔧 Highly customizable tokens for colors, typography, spacing, and more
-- ♿️ Built with accessibility in mind
-- 📦 Easy to integrate and use in SwiftUI projects
+<div style="display: flex; flex-wrap: wrap; gap: 12px;">
+  <img src="demo_app.png" alt="Demo app landing" width="300"/>
+  <img src="demo_app.gif" alt="Demo app animation" width="300"/>
+</div>
 
-## Installation
+---
 
-Add SwiftThemeKit to your project using Swift Package Manager:
+## ✨ Why SwiftThemeKit?
 
-```swift
-dependencies: [
-    .package(url: "https://github.com/Charlyk/swift-theme-kit.git", from: "1.0.0")
-]
-```
+SwiftUI offers flexibility, but theming across an entire app is hard to scale. SwiftThemeKit solves this by:
 
-## Quick Start
+- 🔄 Applying themes globally using `@Environment`
+- 🧱 Using design tokens (color, spacing, typography, shape, etc.)
+- 🔧 Letting you override *just what you need*—no subclassing or brittle modifiers
+- 🧪 Supporting previewing themes and snapshot testing
 
-1. Wrap your root view with ThemeProvider:
+---
+
+## 🔧 Features
+
+- 🎨 Complete light & dark theming system with token override support
+- 🧩 Drop-in UI components: `Button`, `TextField`, `Checkbox`, `Card`, `RadioGroup`, etc.
+- 💡 Declarative `.applyTheme*Style()` modifiers for composability
+- ♿️ Built with accessibility and contrast in mind
+- 🔌 Plug-and-play: just add `ThemeProvider` and you're ready
+
+---
+
+## 🚀 Quick Start
+
+1. **Wrap your root view with `ThemeProvider`:**
 
 ```swift
 @main
@@ -38,18 +54,17 @@ struct MyApp: App {
 }
 ```
 
-1. Use themed components in your views:
+2. **Use themed components:**
 
 ```swift
 struct ContentView: View {
     @State private var isEnabled = false
+    @State private var username = ""
 
     var body: some View {
         VStack {
-            Button("Primary Button") {
-                // Action
-            }
-            .applyThemeButtonStyle()
+            Button("Primary Button") { }
+                .applyThemeButtonStyle()
 
             Checkbox(isChecked: $isEnabled, label: "Enable Feature")
 
@@ -60,98 +75,119 @@ struct ContentView: View {
 }
 ```
 
-## Core Components
+---
 
-### Buttons
+## 🎨 Design Tokens
 
-SwiftThemeKit provides various button styles and variants:
+SwiftThemeKit uses a modular token-based system:
 
-- Filled
-- Tonal
-- Outlined
-- Elevated
-- Text
+### 🖌 Color Tokens
+- `primary`, `secondary`, `error`, `background`, `surface`
+- On-color variants: `onPrimary`, `onError`, etc.
 
-### Form Controls
+### 🔤 Typography
+- Display, headline, body, label, button fonts
+- Font sizes, weights, line spacing
 
-Ready-to-use form components:
+### 📏 Spacing & Shape
+- Spacing: `xs`, `sm`, `md`, `lg`, `xl`, `xxl`
+- Radius: corner tokens (`sm`, `md`, `lg`)
+- Shadow elevations: `level1`, `level2`, `none`
 
-- Checkbox with customizable shapes and labels
-- Radio buttons and radio groups
-- Text fields with multiple variants (outlined, filled, underlined)
+---
 
-### Cards
+## 🧩 Core Components
 
-Flexible card components with support for:
+### ✅ Buttons
+- Variants: `.filled`, `.tonal`, `.outlined`, `.elevated`, `.text`
+- Role support (e.g., `.destructive` uses error color tokens)
 
-- Custom padding and elevation
-- Background color customization
-- Shadow configuration
+### ✅ Inputs
+- `TextField`: outlined, filled, underlined
+- `Checkbox`, `RadioButton`, `RadioGroup`
 
-## Theming System
+### ✅ Card
+- Customizable padding, elevation, background
+- Shadow and shape tokens applied via environment
 
-SwiftThemeKit uses a token-based approach for consistent styling:
+---
 
-### Color Tokens
+## 🛠 Customizing Themes
 
-- Primary and secondary colors with variants
-- Surface colors for different elevations
-- State colors (error, success, etc.)
-- On-color variants for proper contrast
-
-### Typography Scale
-
-- Display styles (large, medium, small)
-- Headline styles
-- Body text styles
-- Label and button text styles
-
-### Spacing and Shape
-
-- Consistent spacing scale (xs to xxl)
-- Corner radius tokens
-- Shadow elevation system
-
-## Customization
-
-Create custom themes by extending the default configuration:
+You can create your own themes using token structs:
 
 ```swift
 let customTheme = Theme(
     colors: .customColors,
     typography: .customTypography,
     spacing: .customSpacing,
-    // ... other configurations
+    shapes: .customShapes
 )
 ```
 
-## Best Practices
+Or override parts of the environment:
 
-- Use the provided environment values for consistent theming
-- Leverage the modifier system for component customization
-- Follow the token-based approach for maintaining consistency
-- Use semantic color tokens instead of direct color values
+```swift
+MyView()
+    .themeFont(.headlineMedium)
+    .themeSpacing(.xl)
+    .themeShape(.roundedLarge)
+```
 
-## Documentation
+---
 
-See the full documentation [here](https://charlyk.github.io/swift-theme-kit/)
+## 📦 Installation
 
-## Requirements
+Use Swift Package Manager:
 
-- iOS 14.0+
-- macOS 11.0+
-- tvOS 15.0+
-- watchOS 7.0+
+```swift
+dependencies: [
+  .package(url: "https://github.com/Charlyk/swift-theme-kit.git", from: "1.0.0")
+]
+```
+
+---
+
+## 🧪 Screenshots
+
+Click to view full-size previews from snapshot tests:
+
+- [Typography](DemoApp/SwiftThemeKitDemo/SwiftThemeKitDemoTests/__Snapshots__/SwiftThemeKitDemoTests/testExampleViewSnapshot.TypographyView.png)
+- [Buttons](DemoApp/SwiftThemeKitDemo/SwiftThemeKitDemoTests/__Snapshots__/SwiftThemeKitDemoTests/testExampleViewSnapshot.ButtonsView.png)
+- [Cards](DemoApp/SwiftThemeKitDemo/SwiftThemeKitDemoTests/__Snapshots__/SwiftThemeKitDemoTests/testExampleViewSnapshot.ShapesView.png)
+- [Checkboxes](DemoApp/SwiftThemeKitDemo/SwiftThemeKitDemoTests/__Snapshots__/SwiftThemeKitDemoTests/testExampleViewSnapshot.CheckboxesView.png)
+
+---
+
+## 🧠 Best Practices
+
+- Prefer `.applyTheme*Style()` over custom modifiers
+- Use semantic tokens (e.g., `themeColor.primary`) instead of raw colors
+- Override per-view styles using `View.theme*()` modifiers
+- Preview multiple themes using SwiftUI `ForEach`
+
+---
+
+## 📋 Requirements
+
+- iOS 14+, macOS 11+, tvOS 15+, watchOS 7+
 - Swift 5.5+
 
-## Contributing
+---
 
-We welcome contributions! Please read our [contributing guidelines](https://github.com/Charlyk/swift-theme-kit/blob/master/CONTRIBUTING.md) before submitting pull requests.
+## 🤝 Contributing
 
-## License
+We welcome issues and PRs!  
+Check the [CONTRIBUTING.md](./CONTRIBUTING.md) for setup and guidelines.
 
-SwiftThemeKit is available under the MIT license. See the [LICENSE file](https://github.com/Charlyk/swift-theme-kit/blob/master/LICENCE) for more info.
+---
 
-## Keywords
+## 📄 License
 
-swift, swiftui, design-system, theme, ui-components, ios, macos, tvos, watchos, dark-mode, accessibility, design-tokens, styling, ui-framework, swift-package
+MIT. See [LICENSE](./LICENSE) for details.
+
+---
+
+## 🔍 Keywords
+
+`swift`, `swiftui`, `design-system`, `ui-kit`, `dark-mode`, `theme`, `component-library`, `design-token`, `sdk`

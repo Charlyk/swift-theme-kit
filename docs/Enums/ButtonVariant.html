@@ -17,7 +17,7 @@
     <a title="ButtonVariant Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">SwiftThemeKit Docs</a> (59% documented)</p>
+        <p><a href="../index.html">SwiftThemeKit Docs</a> (71% documented)</p>
         <div class="header-right">
           <form role="search" action="../search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -97,6 +97,9 @@
                 <a href="../Extensions/EnvironmentValues.html">EnvironmentValues</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Extensions/Shape.html">Shape</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/View.html">View</a>
               </li>
             </ul>
@@ -164,6 +167,9 @@
               <li class="nav-group-task">
                 <a href="../Structs/ThemedNavigationTitleModifier.html">ThemedNavigationTitleModifier</a>
               </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemedShape.html">ThemedShape</a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -179,10 +185,13 @@
 
                 </div>
               </div>
-            <p>Defines the visual style variants available for themed buttons.</p>
+            <p>Defines the available visual style variants for themed buttons in SwiftThemeKit.</p>
 
-<p><code>ButtonVariant</code> determines the background, border, and elevation behavior
-of a button in combination with its role (e.g., <code>.destructive</code>).</p>
+<p><code>ButtonVariant</code> controls the button&rsquo;s background, foreground, border, and elevation behavior
+in conjunction with its semantic role (such as <code>.destructive</code>) and pressed state.</p>
+
+<p>These variants can be configured per button using <code>.buttonVariant(_)</code> or via
+<code>Theme.buttons.variant</code> for global defaults.</p>
 
           </section>
           <section class="section task-group-section">
@@ -201,7 +210,12 @@ of a button in combination with its role (e.g., <code>.destructive</code>).</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A solid-filled button. Most prominent and commonly used for primary actions.</p>
+                        <p>A solid-filled button.</p>
+
+<ul>
+<li>Appearance: Prominent background, high contrast foreground, no border.</li>
+<li>Use case: Primary call-to-action buttons (e.g. &ldquo;Continue&rdquo;, &ldquo;Submit&rdquo;).</li>
+</ul>
 
                       </div>
                       <div class="declaration">
@@ -228,8 +242,12 @@ of a button in combination with its role (e.g., <code>.destructive</code>).</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A tonal button with background color and no elevation or border.
-Usually a softer alternative to <code><a href="../Enums/ButtonVariant.html#/s:13SwiftThemeKit13ButtonVariantO6filledyA2CmF">.filled</a></code>, often using a container color.</p>
+                        <p>A button with a soft background and no elevation or border.</p>
+
+<ul>
+<li>Appearance: Typically uses a secondary container color.</li>
+<li>Use case: Secondary actions with visual grouping (e.g. cards, forms).</li>
+</ul>
 
                       </div>
                       <div class="declaration">
@@ -256,8 +274,12 @@ Usually a softer alternative to <code><a href="../Enums/ButtonVariant.html#/s:13
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A button with an outlined border and no background fill.
-Best suited for secondary or tertiary actions.</p>
+                        <p>A button with a border and no background fill.</p>
+
+<ul>
+<li>Appearance: Transparent background, 1pt border.</li>
+<li>Use case: Tertiary or optional actions, often used in inline layouts.</li>
+</ul>
 
                       </div>
                       <div class="declaration">
@@ -284,8 +306,12 @@ Best suited for secondary or tertiary actions.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A lightly elevated button with a subtle background and shadow.
-Designed for medium emphasis actions that still need visual lift.</p>
+                        <p>A lightly elevated button with a subtle shadow and surface background.</p>
+
+<ul>
+<li>Appearance: Surface-tinted background with elevation; no border.</li>
+<li>Use case: Medium-emphasis actions that need visual lift but not full prominence.</li>
+</ul>
 
                       </div>
                       <div class="declaration">
@@ -312,8 +338,12 @@ Designed for medium emphasis actions that still need visual lift.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A minimal button with no background, border, or elevation.
-Best used for inline or low-emphasis actions.</p>
+                        <p>A minimal button with no background, border, or elevation.</p>
+
+<ul>
+<li>Appearance: Text only.</li>
+<li>Use case: Inline or low-emphasis actions (e.g. &ldquo;Cancel&rdquo;, links).</li>
+</ul>
 
                       </div>
                       <div class="declaration">
@@ -327,74 +357,12 @@ Best used for inline or low-emphasis actions.</p>
                     </section>
                   </div>
                 </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:13SwiftThemeKit13ButtonVariantO11borderColor3for4role0A2UI0G0VAA0B0V_AG0D4RoleVSgtF"></a>
-                    <a name="//apple_ref/swift/Method/borderColor(for:role:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13SwiftThemeKit13ButtonVariantO11borderColor3for4role0A2UI0G0VAA0B0V_AG0D4RoleVSgtF">borderColor(for:<wbr>role:<wbr>)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Determines the border color to apply based on the variant and button role.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">borderColor</span><span class="p">(</span><span class="k">for</span> <span class="nv">theme</span><span class="p">:</span> <span class="kt"><a href="../Structs/Theme.html">Theme</a></span><span class="p">,</span> <span class="nv">role</span><span class="p">:</span> <span class="kt">ButtonRole</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Color</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>theme</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The current <code><a href="../Structs/Theme.html">Theme</a></code> instance, which provides color tokens.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>role</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An optional <code>ButtonRole</code> such as <code>.destructive</code>, which can override styling.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>A <code>Color</code> to use as the button&rsquo;s border.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2025 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2025-05-16)</p>
+          <p>&copy; 2025 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2025-05-20)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>

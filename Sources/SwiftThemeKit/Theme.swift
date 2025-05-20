@@ -73,7 +73,7 @@ public struct Theme {
     spacing: .defaultLight,
     radii: .defaultLight,
     shadows: .defaultLight,
-    stroke: .defaultLignt,
+    stroke: .defaultLight,
     shapes: .defaultLight,
     buttons: .defaultLight,
     textFields: .defaultLight

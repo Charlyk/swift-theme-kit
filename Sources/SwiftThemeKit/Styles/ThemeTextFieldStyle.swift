@@ -78,10 +78,10 @@ public struct ThemeTextFieldStyle: TextFieldStyle {
     switch variant {
     case .outlined:
       shape.shape(theme: theme)
-        .strokeBorder(color, lineWidth: isFocused ? 2 : 1)
+        .strokeBorder(color, lineWidth: isFocused ? theme.stroke.sm : theme.stroke.xs)
     case .underlined:
       Rectangle()
-        .frame(height: isFocused ? 2 : 1)
+        .frame(height: isFocused ? theme.stroke.sm : theme.stroke.xs)
         .foregroundColor(color)
         .padding(.top, fieldSize.height) // Push underline to bottom
     default:
