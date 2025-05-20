@@ -130,9 +130,9 @@ Or override parts of the environment:
 
 ```swift
 MyView()
-    .themeFont(.headlineMedium)
-    .themeSpacing(.xl)
-    .themeShape(.roundedLarge)
+    .font(.headlineMedium)
+    .padding(.xl)
+    .clipShape(.rounded)
 ```
 
 ---
