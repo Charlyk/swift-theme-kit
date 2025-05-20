@@ -35,6 +35,9 @@ public struct Theme {
   /// The set of checkbox size styles
   public let checkboxSize: ThemeCheckboxSize
 
+  /// The set of radio button size styles
+  public let radioButtonSize: ThemeRadioButtonSize
+
   /// The platform on which the app is running. Default is `.current`.
   public let platform: ThemePlatform
 
@@ -51,6 +54,7 @@ public struct Theme {
   ///   - buttons: The buttons default values used when no modifier applied.
   ///   - textFields: The text fields default configuration used when no modifier applied.
   ///   - checkboxSize: The set of checkbox size styles.
+  ///   - radioButtonSize: The set of radio button size styles.
   ///   - platform: The platform on which the app is running. Default is `.current`.
   public init(
     colors: ThemeColors,
@@ -63,6 +67,7 @@ public struct Theme {
     buttons: ThemeButtonDefaults,
     textFields: ThemeTextFieldDefaults,
     checkboxSize: ThemeCheckboxSize,
+    radioButtonSize: ThemeRadioButtonSize,
     platform: ThemePlatform = .current
   ) {
     self.colors = colors
@@ -75,6 +80,7 @@ public struct Theme {
     self.buttons = buttons
     self.textFields = textFields
     self.checkboxSize = checkboxSize
+    self.radioButtonSize = radioButtonSize
     self.platform = platform
   }
   
@@ -91,6 +97,7 @@ public struct Theme {
     buttons: .defaultLight,
     textFields: .defaultLight,
     checkboxSize: .defaultLight,
+    radioButtonSize: .defaultLight,
     platform: .current
   )
   
@@ -107,6 +114,7 @@ public struct Theme {
     buttons: .defaultDark,
     textFields: .defaultDark,
     checkboxSize: .defaultDark,
+    radioButtonSize: .defaultDark,
     platform: .current
   )
 }
