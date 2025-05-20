@@ -4,6 +4,7 @@ import SwiftUI
 ///
 /// Use `ThemeProvider` to wrap your app or specific view hierarchies and enable access to the current theme
 /// via `@Environment(\.appTheme)`. It automatically switches between light and dark theme variants.
+@MainActor
 public struct ThemeProvider<Content: View>: View {
 
   /// Reads the system color scheme (light or dark).

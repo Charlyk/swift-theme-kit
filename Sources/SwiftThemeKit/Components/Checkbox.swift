@@ -34,6 +34,9 @@ public struct Checkbox: View {
   /// Determines whether the label appears on the leading or trailing side.
   private var labelPosition: HorizontalPosition = .trailing
 
+  /// Determines the spacing between the checkbox and its label
+  private var labelSpacing: SpacingToken = .none
+
   /// Initializes a standalone checkbox without a label.
   ///
   /// - Parameter isChecked: A binding to the checkbox state.
@@ -50,9 +53,11 @@ public struct Checkbox: View {
   ///   - labelPosition: Position of the label relative to the checkbox (defaults to `.trailing`).
   public init(isChecked: Binding<Bool>,
               label: String,
+              labelSpacing: SpacingToken = .sm,
               labelPosition: HorizontalPosition = .trailing) {
     self._isChecked = isChecked
     self.labelPosition = labelPosition
+    self.labelSpacing = labelSpacing
     self.label = AnyView(
       Text(label)
         .font(.bodyMedium)
@@ -66,9 +71,11 @@ public struct Checkbox: View {
   ///   - labelPosition: Position of the label relative to the checkbox (defaults to `.trailing`).
   ///   - label: A view builder that defines the label content.
   public init<Label: View>(isChecked: Binding<Bool>,
+                           labelSpacing: SpacingToken = .sm,
                            labelPosition: HorizontalPosition = .trailing,
                            @ViewBuilder label: @escaping () -> Label) {
     self._isChecked = isChecked
+    self.labelSpacing = labelSpacing
     self.labelPosition = labelPosition
     self.label = AnyView(label())
   }
@@ -77,15 +84,17 @@ public struct Checkbox: View {
   ///
   /// This includes the checkbox shape, checkmark, background fill, and optional label.
   public var body: some View {
-    Button(action: {
+    Button {
       isChecked.toggle()
-    }) {
+    } label: {
       if let label, labelPosition == .leading {
         label
         Spacer()
       }
 
-      HStack(alignment: .center, spacing: 0) {
+      let spacing = theme.spacing[labelSpacing]
+
+      HStack(alignment: .center, spacing: spacing) {
         Image(systemName: isChecked ? "checkmark" : "")
           .frame(width: 24, height: 24)
           .foregroundColor(.white)

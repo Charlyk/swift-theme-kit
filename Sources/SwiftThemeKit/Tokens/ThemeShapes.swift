@@ -51,7 +51,7 @@ public struct ThemeShapes {
   }
 }
 
-public enum ShapeToken {
+public enum ShapeToken: String, CaseIterable {
   case xs
   case sm
   case md

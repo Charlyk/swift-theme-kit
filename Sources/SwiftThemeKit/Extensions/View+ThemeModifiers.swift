@@ -3,16 +3,22 @@ import SwiftUI
 public extension View {
   /// Applies a shadow to the view using a predefined `ShadowToken` from the current theme.
   ///
-  /// - Parameter token: The shadow scale to apply (e.g. `.sm`, `.md`, `.focus`).
-  /// - Returns: A view with the shadow applied.
+  /// The shadow style (color, radius, offset) is defined in the current theme.
+  ///
+  /// - Parameter token: The shadow token to apply (e.g. `.sm`, `.md`, `.focus`).
+  /// - Returns: A view with the theme shadow applied.
   @ViewBuilder
   func shadow(_ token: ShadowToken) -> some View {
     self.modifier(ShadowModifier(token: token))
   }
 
-  /// Applies a font style from the current theme using a `TextStyleToken`.
+  /// Applies a themed font style from the current theme using a `TextStyleToken`.
   ///
-  /// - Parameter token: The typography style to use (e.g. `.headlineMedium`, `.labelSmall`).
+  /// The font size, weight, and line height are defined by the token.
+  ///
+  /// - Parameters:
+  ///   - token: The typography style to use (e.g. `.headlineMedium`, `.labelSmall`).
+  ///   - weight: Optional override for font weight (e.g., `.semibold`, `.regular`).
   /// - Returns: A view with the themed font applied.
   @ViewBuilder
   func font(_ token: TextStyleToken, weight: Font.Weight? = nil) -> some View {
@@ -20,10 +26,10 @@ public extension View {
     self.modifier(TypographyModifier(token: fontToken))
   }
 
-  /// Applies a foreground text or icon color using a theme-defined `ColorToken`.
+  /// Applies a themed foreground color (text, icon, etc.) using a `ColorToken`.
   ///
   /// - Parameter token: The color token to apply (e.g. `.primary`, `.onSurface`).
-  /// - Returns: A view with the foreground color applied.
+  /// - Returns: A view with the specified foreground color.
   @ViewBuilder
   func foregroundColor(_ token: ColorToken) -> some View {
     self.modifier(ForegroundModifier(token: token))
@@ -35,28 +41,61 @@ public extension View {
   /// - Returns: A view with the background color applied.
   @ViewBuilder
   func backgroundColor(_ token: ColorToken) -> some View {
-    self.modifier(BackgroundModifier(token: token, edgesIgnoringSafeArea: nil))
+    self.modifier(BackgroundColorModifier(token: token, edgesIgnoringSafeArea: nil))
   }
 
-  /// Applies a background fill color using a theme-defined `ColorToken`.
+  /// Applies a background fill color using a theme-defined `ColorToken`, ignoring safe area on specified edges.
   ///
-  /// - Parameter token: The color token to apply (e.g. `.surface`, `.primaryContainer`).
-  /// - Parameter edgesIgnoringSafeArea: Edges that should be ignored by the background color
+  /// - Parameters:
+  ///   - token: The color token to apply.
+  ///   - edgesIgnoringSafeArea: The edges where the safe area should be ignored.
   /// - Returns: A view with the background color applied.
   @ViewBuilder
   func backgroundColor(_ token: ColorToken, edgesIgnoringSafeArea: Edge.Set) -> some View {
-    self.modifier(BackgroundModifier(token: token, edgesIgnoringSafeArea: edgesIgnoringSafeArea))
+    self.modifier(BackgroundColorModifier(token: token, edgesIgnoringSafeArea: edgesIgnoringSafeArea))
   }
 
-  /// Applies padding using a `SpacingToken` from the theme and optional edge set.
+  /// Applies a background shape with optional fill color using theme-defined tokens.
+  ///
+  /// - Parameters:
+  ///   - token: The shape token to apply (e.g. `.sm`, `.md`).
+  ///   - color: Optional fill color for the shape.
+  /// - Returns: A view with a shaped background.
+  @ViewBuilder
+  func backgroundShape(_ token: ShapeToken, color: ColorToken? = nil) -> some View {
+    self.modifier(BackgroundShapeModifier(token: token, colorToken: color, edgesIgnoringSafeArea: nil))
+  }
+
+  /// Applies a background shape with optional fill color and safe area edge control.
+  ///
+  /// - Parameters:
+  ///   - token: The shape token to apply.
+  ///   - color: Optional fill color.
+  ///   - edgesIgnoringSafeArea: The edges where safe area should be ignored.
+  /// - Returns: A view with the shaped background.
+  @ViewBuilder
+  func backgroundShape(_ token: ShapeToken, color: ColorToken? = nil, edgesIgnoringSafeArea: Edge.Set) -> some View {
+    self.modifier(BackgroundShapeModifier(token: token, colorToken: color, edgesIgnoringSafeArea: edgesIgnoringSafeArea))
+  }
+
+  /// Applies padding using a `SpacingToken` from the theme on specified edges.
   ///
   /// - Parameters:
   ///   - edges: The edges to apply padding to (default is `.all`).
   ///   - token: The spacing token to use (e.g. `.sm`, `.lg`).
-  /// - Returns: A view with the specified padding applied.
+  /// - Returns: A view with themed padding.
   @ViewBuilder
   func padding(_ edges: Edge.Set = .all, _ token: SpacingToken) -> some View {
     self.modifier(PaddingModifier(edges: edges, token: token))
+  }
+
+  /// Applies uniform padding using a `SpacingToken` from the theme.
+  ///
+  /// - Parameter token: The spacing token to use.
+  /// - Returns: A view with themed padding.
+  @ViewBuilder
+  func padding(_ token: SpacingToken) -> some View {
+    self.modifier(PaddingModifier(edges: .all, token: token))
   }
 
   /// Applies a corner radius using a `RadiusToken` from the current theme.
@@ -68,23 +107,24 @@ public extension View {
     self.modifier(CornerRadiusModifier(token: token))
   }
 
-  /// Clips the view using a `RoundedRectangle` shape with radius defined by a `RadiusToken`.
+  /// Clips the view to a rounded rectangle using a `RadiusToken` and optional style.
   ///
   /// - Parameters:
-  ///   - token: The radius token to apply (e.g. `.lg`, `.pill`).
-  ///   - style: The corner style (`.circular` or `.continuous`). Default is `.circular`.
-  /// - Returns: A view clipped to a rounded shape.
+  ///   - token: The radius token to use.
+  ///   - style: The corner style, either `.circular` or `.continuous`.
+  /// - Returns: A clipped view.
   @ViewBuilder
   func clipRadius(_ token: RadiusToken, style: RoundedCornerStyle = .circular) -> some View {
     self.modifier(ClipRadiusModifier(token: token, style: style))
   }
 
-  /// Applies a themed stroke (border) to the current view.
+  /// Applies a themed border stroke using stroke width, corner radius, and color from the theme.
   ///
   /// - Parameters:
-  ///   - width: A `StrokeToken` representing the stroke width from the theme.
-  ///   - radius: A `RadiusToken` representing the corner radius. Default is `.md`.
-  ///   - color: A `ColorToken` for stroke color. Default is `.primary`.
+  ///   - width: The stroke width from the theme.
+  ///   - radius: The corner radius from the theme (default is `.md`).
+  ///   - color: The border color from the theme (default is `.primary`).
+  /// - Returns: A view with the border stroke applied.
   @ViewBuilder
   func stroke(
     _ width: StrokeToken,
@@ -94,39 +134,73 @@ public extension View {
     self.modifier(StrokeModifier(width: width, radius: radius, color: color))
   }
 
-  /// Applies a theme shape to the current view
+  /// Clips the view using a shape defined in the current theme.
   ///
-  /// - Parameters:
-  ///   - toke: A `ShapeToken` representing the shape from the theme,
+  /// - Parameter token: A `ShapeToken` from the theme.
+  /// - Returns: A view clipped to the given shape.
   @ViewBuilder
   func clipShape(_ token: ShapeToken) -> some View {
     self.modifier(ClipShapeModifier(token: token))
   }
 
-  /// Sets a custom navigation title using the theme's typography system.
-  ///
-  /// This modifier allows you to style the navigation bar title with a specific text style
-  /// from your theme, and optionally apply a font weight.
+  /// Sets a navigation title styled using the theme’s typography.
   ///
   /// - Parameters:
-  ///   - title: The string to display as the navigation title.
-  ///   - style: The typography style token from your theme (e.g., `.headlineLarge`, `.titleMedium`). Defaults to `.headlineLarge`.
-  ///   - weight: An optional font weight override (e.g., `.bold`, `.medium`).
-  ///
-  /// - Returns: A view with a themed navigation title applied.
-  ///
-  /// ### Example:
-  /// ```swift
-  /// NavigationStack {
-  ///   MyView()
-  ///     .navigationTitle("Settings", style: .titleLarge, weight: .semibold)
-  /// }
-  /// ```
+  ///   - title: The string to display.
+  ///   - style: Typography token (e.g. `.titleLarge`).
+  ///   - weight: Optional custom weight override.
+  /// - Returns: A view with the themed navigation title.
   func navigationTitle(
     _ title: String,
     style: TextStyleToken = .headlineLarge,
     weight: Font.Weight? = nil
   ) -> some View {
     self.modifier(ThemedNavigationTitleModifier(title: title, token: style, weight: weight))
+  }
+
+  /// Applies layout weight and expands the view to fill available space.
+  ///
+  /// Inspired by Jetpack Compose's `weight()`, useful in `HStack`/`VStack`.
+  ///
+  /// - Parameter value: The proportional layout weight.
+  /// - Returns: A weighted view.
+  func weight(_ value: Double) -> some View {
+    self
+      .frame(maxWidth: .infinity, maxHeight: .infinity)
+      .layoutPriority(value)
+  }
+
+  /// Expands the view to fill available width and height, aligned as specified.
+  ///
+  /// - Parameter alignment: The alignment within the space. Default is `.leading`.
+  /// - Returns: A fully expanded view.
+  func fillMaxSize(alignment: Alignment = .leading) -> some View {
+    self.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: alignment)
+  }
+
+  /// Expands the view to fill the maximum width, aligned as specified.
+  ///
+  /// - Parameter alignment: The alignment within the space. Default is `.leading`.
+  /// - Returns: A view that fills the max width.
+  func fillMaxWidth(alignment: Alignment = .leading) -> some View {
+    self.frame(maxWidth: .infinity, alignment: alignment)
+  }
+
+  /// Expands the view to fill the maximum height, aligned as specified.
+  ///
+  /// - Parameter alignment: The alignment within the space. Default is `.leading`.
+  /// - Returns: A view that fills the max height.
+  func fillMaxHeight(alignment: Alignment = .leading) -> some View {
+    self.frame(maxHeight: .infinity, alignment: alignment)
+  }
+  
+  /// Sets an exact square size for the view using the same value for width and height.
+  ///
+  /// - Parameters:
+  ///   - size: The size to apply for both width and height.
+  ///   - alignment: The alignment inside the frame. Default is `.center`.
+  /// - Returns: A view with fixed size.
+  func size(_ size: CGFloat, alignment: Alignment = .center) -> some View {
+    self.frame(width: size, height: size, alignment: alignment)
   }
 }

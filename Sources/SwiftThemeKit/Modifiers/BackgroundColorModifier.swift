@@ -15,7 +15,7 @@ import SwiftUI
 /// - Parameters:
 ///   - token: A `ColorToken` representing the semantic background color (e.g. `.surface`, `.background`, etc.).
 ///   - edgesIgnoringSafeArea: Optional. A set of edges (e.g. `.all`, `.top`) to extend the background beyond the safe area.
-struct BackgroundModifier: ViewModifier {
+struct BackgroundColorModifier: ViewModifier {
   /// The current theme pulled from the environment.
   @Environment(\.appTheme) private var theme
 

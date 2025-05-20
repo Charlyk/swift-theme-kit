@@ -57,15 +57,17 @@ public struct ThemeSpacing {
     case .lg: return lg
     case .xl: return xl
     case .xxl: return xxl
+    case .none: return .zero
     }
   }
 }
 
-public enum SpacingToken {
+public enum SpacingToken: String, CaseIterable {
   case xs
   case sm
   case md
   case lg
   case xl
   case xxl
+  case none
 }
