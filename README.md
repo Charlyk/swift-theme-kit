@@ -143,7 +143,7 @@ Use [Swift Package Manager](https://swift.org/package-manager/) and select the l
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/Charlyk/swift-theme-kit.git", from: "<latest-tag>")
+  .package(url: "https://github.com/Charlyk/swift-theme-kit.git", from: "<latest_version>")
 ]
 ```
 
