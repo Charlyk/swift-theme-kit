@@ -17,7 +17,7 @@
     <a title="Structures  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">SwiftThemeKit Docs</a> (59% documented)</p>
+        <p><a href="index.html">SwiftThemeKit Docs</a> (71% documented)</p>
         <div class="header-right">
           <form role="search" action="search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -95,6 +95,9 @@
                 <a href="Extensions/EnvironmentValues.html">EnvironmentValues</a>
               </li>
               <li class="nav-group-task">
+                <a href="Extensions/Shape.html">Shape</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Extensions/View.html">View</a>
               </li>
             </ul>
@@ -161,6 +164,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Structs/ThemedNavigationTitleModifier.html">ThemedNavigationTitleModifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ThemedShape.html">ThemedShape</a>
               </li>
             </ul>
           </li>
@@ -338,6 +344,50 @@ It supports both simple <code>String</code> labels or custom label views.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:13SwiftThemeKit11ThemedShapeV"></a>
+                    <a name="//apple_ref/swift/Struct/ThemedShape" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13SwiftThemeKit11ThemedShapeV">ThemedShape</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A SwiftUI view that renders a shape using a color defined in the current theme.</p>
+
+<p><code>ThemedShape</code> allows developers to apply consistent, theme-based coloring to any SwiftUI <code>Shape</code>,
+leveraging the <code><a href="Enums/ColorToken.html">ColorToken</a></code> system from <code><a href="Structs/Theme.html#/s:13SwiftThemeKit0B0V6colorsAA0B6ColorsVvp">Theme.colors</a></code>.</p>
+
+<p>The actual color is resolved from the current <code><a href="Structs/Theme.html">Theme</a></code> injected in the environment via <code><a href="Structs/ThemeProvider.html">ThemeProvider</a></code>.</p>
+
+<p>Example usage:</p>
+<pre class="highlight swift"><code><span class="kt">ThemedShape</span><span class="p">(</span><span class="nv">shape</span><span class="p">:</span> <span class="kt">Circle</span><span class="p">(),</span> <span class="nv">color</span><span class="p">:</span> <span class="o">.</span><span class="n">accent</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">50</span><span class="p">)</span>
+</code></pre>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Ensure the view hierarchy is wrapped in a <code><a href="Structs/ThemeProvider.html">ThemeProvider</a></code> so the <code>theme</code> environment is properly available.
+
+</div>
+
+                        <a href="Structs/ThemedShape.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ThemedShape</span><span class="o">&lt;</span><span class="kt">S</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">View</span> <span class="k">where</span> <span class="kt">S</span> <span class="p">:</span> <span class="kt">Shape</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:13SwiftThemeKit0B0V"></a>
                     <a name="//apple_ref/swift/Struct/Theme" class="dashAnchor"></a>
                     <a class="token" href="#/s:13SwiftThemeKit0B0V">Theme</a>
@@ -405,7 +455,11 @@ The <code>Theme</code> struct is the root context for all styling logic in a the
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>A struct that defines all semantic colors used across the UI theme.</p>
+
+<p>Colors follow the Material Design 3 specification and are resolved from a <code><a href="Structs/Theme.html">Theme</a></code>.
+These values can be accessed via environment using <code>@Environment(\.appTheme).colors</code>
+or via subscript using a <code><a href="Enums/ColorToken.html">ColorToken</a></code>.</p>
 
                         <a href="Structs/ThemeColors.html" class="slightly-smaller">See more</a>
                       </div>
@@ -993,7 +1047,7 @@ via <code>@Environment(\.appTheme)</code>. It automatically switches between lig
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2025 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2025-05-16)</p>
+          <p>&copy; 2025 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2025-05-20)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>

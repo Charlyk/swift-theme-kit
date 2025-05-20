@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ThemeTextFieldDefaults Structure Reference</title>
+    <title>ThemedShape Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,8 +13,8 @@
     <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/ThemeTextFieldDefaults" class="dashAnchor"></a>
-    <a title="ThemeTextFieldDefaults Structure Reference"></a>
+    <a name="//apple_ref/swift/Struct/ThemedShape" class="dashAnchor"></a>
+    <a title="ThemedShape Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">SwiftThemeKit Docs</a> (71% documented)</p>
@@ -31,7 +31,7 @@
         <img id="carat" src="../img/carat.png" alt=""/>
         <a href="../Structs.html">Structures</a>
         <img id="carat" src="../img/carat.png" alt=""/>
-        ThemeTextFieldDefaults Structure Reference
+        ThemedShape Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -177,15 +177,31 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>ThemeTextFieldDefaults</h1>
+            <h1>ThemedShape</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ThemeTextFieldDefaults</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="kd">struct</span> <span class="kt">ThemedShape</span><span class="o">&lt;</span><span class="kt">S</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">View</span> <span class="k">where</span> <span class="kt">S</span> <span class="p">:</span> <span class="kt">Shape</span></code></pre>
 
                 </div>
               </div>
-            <p>Undocumented</p>
+            <p>A SwiftUI view that renders a shape using a color defined in the current theme.</p>
+
+<p><code>ThemedShape</code> allows developers to apply consistent, theme-based coloring to any SwiftUI <code>Shape</code>,
+leveraging the <code><a href="../Enums/ColorToken.html">ColorToken</a></code> system from <code><a href="../Structs/Theme.html#/s:13SwiftThemeKit0B0V6colorsAA0B6ColorsVvp">Theme.colors</a></code>.</p>
+
+<p>The actual color is resolved from the current <code><a href="../Structs/Theme.html">Theme</a></code> injected in the environment via <code><a href="../Structs/ThemeProvider.html">ThemeProvider</a></code>.</p>
+
+<p>Example usage:</p>
+<pre class="highlight swift"><code><span class="kt">ThemedShape</span><span class="p">(</span><span class="nv">shape</span><span class="p">:</span> <span class="kt">Circle</span><span class="p">(),</span> <span class="nv">color</span><span class="p">:</span> <span class="o">.</span><span class="n">accent</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">frame</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">50</span><span class="p">)</span>
+</code></pre>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Ensure the view hierarchy is wrapped in a <code><a href="../Structs/ThemeProvider.html">ThemeProvider</a></code> so the <code>theme</code> environment is properly available.
+
+</div>
 
           </section>
           <section class="section task-group-section">
@@ -194,9 +210,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13SwiftThemeKit0B17TextFieldDefaultsV12defaultLightACvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/defaultLight" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13SwiftThemeKit0B17TextFieldDefaultsV12defaultLightACvpZ">defaultLight</a>
+                    <a name="/s:13SwiftThemeKit11ThemedShapeV5shapexvp"></a>
+                    <a name="//apple_ref/swift/Property/shape" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13SwiftThemeKit11ThemedShapeV5shapexvp">shape</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -204,14 +220,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The default configuration for light mode</p>
+                        <p>The SwiftUI shape to render, such as <code>Circle</code>, <code>RoundedRectangle</code>, etc.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">defaultLight</span><span class="p">:</span> <span class="kt">ThemeTextFieldDefaults</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="k">let</span> <span class="nv">shape</span><span class="p">:</span> <span class="kt">S</span></code></pre>
 
                         </div>
                       </div>
@@ -221,9 +238,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13SwiftThemeKit0B17TextFieldDefaultsV11defaultDarkACvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/defaultDark" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13SwiftThemeKit0B17TextFieldDefaultsV11defaultDarkACvpZ">defaultDark</a>
+                    <a name="/s:13SwiftThemeKit11ThemedShapeV5colorAA10ColorTokenOvp"></a>
+                    <a name="//apple_ref/swift/Property/color" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13SwiftThemeKit11ThemedShapeV5colorAA10ColorTokenOvp">color</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -231,14 +248,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The default configuration for dark mode</p>
+                        <p>The color token to apply to the shape’s fill, resolved from the theme.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">defaultDark</span><span class="p">:</span> <span class="kt">ThemeTextFieldDefaults</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="k">let</span> <span class="nv">color</span><span class="p">:</span> <span class="kt"><a href="../Enums/ColorToken.html">ColorToken</a></span></code></pre>
 
                         </div>
                       </div>
@@ -248,9 +266,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:13SwiftThemeKit0B17TextFieldDefaultsV5shape4size7variantAcA0dE5ShapeO_AA0dE4SizeOAA0dE7VariantOtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(shape:size:variant:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:13SwiftThemeKit0B17TextFieldDefaultsV5shape4size7variantAcA0dE5ShapeO_AA0dE4SizeOAA0dE7VariantOtcfc">init(shape:<wbr>size:<wbr>variant:<wbr>)</a>
+                    <a name="/s:13SwiftThemeKit11ThemedShapeV4bodyQrvp"></a>
+                    <a name="//apple_ref/swift/Property/body" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13SwiftThemeKit11ThemedShapeV4bodyQrvp">body</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -258,59 +276,17 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Initialize a new button configuration</p>
+                        <p>The content and behavior of the <code>ThemedShape</code> view.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">shape</span><span class="p">:</span> <span class="kt"><a href="../Enums/TextFieldShape.html">TextFieldShape</a></span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="kt"><a href="../Enums/TextFieldSize.html">TextFieldSize</a></span><span class="p">,</span> <span class="nv">variant</span><span class="p">:</span> <span class="kt"><a href="../Enums/TextFieldVariant.html">TextFieldVariant</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="k">var</span> <span class="nv">body</span><span class="p">:</span> <span class="kd">some</span> <span class="kt">View</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>shape</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The <code><a href="../Enums/TextFieldShape.html">TextFieldShape</a></code> to be used by default</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>size</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The <code><a href="../Enums/TextFieldSize.html">TextFieldSize</a></code> to be used by default</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>variant</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The <code><a href="../Enums/TextFieldVariant.html">TextFieldVariant</a></code> to be used by default</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       </div>
                     </section>
                   </div>
