@@ -1,5 +1,29 @@
 import SwiftUI
 
+public enum TextStyleToken: String, CaseIterable, Equatable {
+  case displayLarge
+  case displayMedium
+  case displaySmall
+
+  case headlineLarge
+  case headlineMedium
+  case headlineSmall
+
+  case titleLarge
+  case titleMedium
+  case titleSmall
+
+  case labelLarge
+  case labelMedium
+  case labelSmall
+
+  case bodyLarge
+  case bodyMedium
+  case bodySmall
+
+  case buttonText
+}
+
 /// Defines a typography scale for use across an application, providing visual hierarchy and consistent font styling.
 public struct ThemeTypography {
   
@@ -170,39 +194,5 @@ public struct ThemeTypography {
       
     case .buttonText: return buttonText
     }
-  }
-}
-
-public enum TextStyleToken: String, CaseIterable {
-  case displayLarge
-  case displayMedium
-  case displaySmall
-  
-  case headlineLarge
-  case headlineMedium
-  case headlineSmall
-  
-  case titleLarge
-  case titleMedium
-  case titleSmall
-  
-  case labelLarge
-  case labelMedium
-  case labelSmall
-  
-  case bodyLarge
-  case bodyMedium
-  case bodySmall
-  
-  case buttonText
-}
-
-public struct ThemeFontToken {
-  public let style: TextStyleToken
-  public let weight: Font.Weight?
-  
-  public init(_ style: TextStyleToken, weight: Font.Weight? = nil) {
-    self.style = style
-    self.weight = weight
   }
 }
