@@ -12,7 +12,7 @@ Easily create consistent, themeable user interfaces with full customization powe
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px;">
   <img src="demo_app.png" alt="Demo app landing" width="300"/>
-  <img src="demo_app.gif" alt="Demo app animation" width="300"/>
+  <img src="skdemo.gif" alt="Demo app animation" width="300"/>
 </div>
 
 ---

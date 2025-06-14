@@ -57,7 +57,7 @@ public struct Card<Content: View>: View {
     content()
       .padding(contentPadding)
       .background(
-        theme.shapes.md
+        theme.shapes[.md]
           .fill(bgColor)
       )
       .clipShape(.md)

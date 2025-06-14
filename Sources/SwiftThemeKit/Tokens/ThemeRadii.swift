@@ -1,7 +1,7 @@
 import Foundation
 
 /// Defines standard corner radius values used throughout the design system.
-public struct ThemeRadii {
+public struct ThemeRadii: Equatable {
   
   /// No corner radius (0pt). Used for completely square edges.
   public let none: CGFloat = .zero

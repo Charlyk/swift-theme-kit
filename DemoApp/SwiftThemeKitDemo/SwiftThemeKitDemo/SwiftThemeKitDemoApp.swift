@@ -7,14 +7,14 @@ struct SwiftThemeKitDemoApp: App {
 
   var body: some Scene {
     WindowGroup {
-      ThemeProvider {
+      ThemeProvider(light: themeManager.colorThemeLight, dark: themeManager.colorThemeDark) {
         NavigationStack {
           ContentView()
         }
       }
       .environmentObject(themeManager)
       .preferredColorScheme(
-        themeManager.scheme == .system ? nil :
+        themeManager.scheme == .system ? .light :
           themeManager.scheme == .dark ? .dark : .light
       )
     }

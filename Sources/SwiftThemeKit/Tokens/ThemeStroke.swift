@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// Defines the stroke widths used throughout the design system.
-public struct ThemeStroke {
+public struct ThemeStroke: Equatable {
   
   /// No stroke. Used when no border is needed.
   public let none: CGFloat
