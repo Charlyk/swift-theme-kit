@@ -6,11 +6,11 @@ public extension ThemeShapes {
   ///
   /// Only parameters you pass will be changed — others will retain existing values.
   func copy(
-    xs: RoundedRectangle? = nil,
-    sm: RoundedRectangle? = nil,
-    md: RoundedRectangle? = nil,
-    lg: RoundedRectangle? = nil,
-    xl: RoundedRectangle? = nil
+    xs: CGFloat? = nil,
+    sm: CGFloat? = nil,
+    md: CGFloat? = nil,
+    lg: CGFloat? = nil,
+    xl: CGFloat? = nil
   ) -> ThemeShapes {
     ThemeShapes(
       xs: xs ?? self.xs,

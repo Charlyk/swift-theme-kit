@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct ThemeButtonDefaults {
+public struct ThemeButtonDefaults: Equatable {
   /// The default shape of the buttons if no other modifiers applied
   let shape: ButtonShape
   

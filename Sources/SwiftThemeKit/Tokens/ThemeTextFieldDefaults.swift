@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct ThemeTextFieldDefaults {
+public struct ThemeTextFieldDefaults: Equatable {
   /// The default shape of the buttons if no other modifiers applied
   let shape: TextFieldShape
 

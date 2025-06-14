@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5D63CC722DDB402B00BEA59F /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 5D63CC712DDB402B00BEA59F /* SnapshotTesting */; };
+		F80BC1622DFCAC29004D9DD5 /* SwiftThemeKit in Frameworks */ = {isa = PBXBuildFile; productRef = F80BC1612DFCAC29004D9DD5 /* SwiftThemeKit */; };
 		F84CBDE02DD7A93F00B9DBAE /* SwiftThemeKit in Frameworks */ = {isa = PBXBuildFile; productRef = F84CBDDF2DD7A93F00B9DBAE /* SwiftThemeKit */; };
+		F85D4C0B2DFCB22A0037E0DC /* InlineSnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = F85D4C0A2DFCB22A0037E0DC /* InlineSnapshotTesting */; };
+		F85D4C0D2DFCB22A0037E0DC /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = F85D4C0C2DFCB22A0037E0DC /* SnapshotTesting */; };
+		F85D4C0F2DFCB22A0037E0DC /* SnapshotTestingCustomDump in Frameworks */ = {isa = PBXBuildFile; productRef = F85D4C0E2DFCB22A0037E0DC /* SnapshotTestingCustomDump */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F85D4C0F2DFCB22A0037E0DC /* SnapshotTestingCustomDump in Frameworks */,
+				F85D4C0D2DFCB22A0037E0DC /* SnapshotTesting in Frameworks */,
+				F85D4C0B2DFCB22A0037E0DC /* InlineSnapshotTesting in Frameworks */,
 				5D63CC722DDB402B00BEA59F /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F84CBDE02DD7A93F00B9DBAE /* SwiftThemeKit in Frameworks */,
+				F80BC1622DFCAC29004D9DD5 /* SwiftThemeKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +107,9 @@
 			name = SwiftThemeKitDemoTests;
 			packageProductDependencies = (
 				5D63CC712DDB402B00BEA59F /* SnapshotTesting */,
+				F85D4C0A2DFCB22A0037E0DC /* InlineSnapshotTesting */,
+				F85D4C0C2DFCB22A0037E0DC /* SnapshotTesting */,
+				F85D4C0E2DFCB22A0037E0DC /* SnapshotTestingCustomDump */,
 			);
 			productName = SwiftThemeKitDemoTests;
 			productReference = 5D63CC392DDB3E1900BEA59F /* SwiftThemeKitDemoTests.xctest */;
@@ -122,6 +133,7 @@
 			name = SwiftThemeKitDemo;
 			packageProductDependencies = (
 				F84CBDDF2DD7A93F00B9DBAE /* SwiftThemeKit */,
+				F80BC1612DFCAC29004D9DD5 /* SwiftThemeKit */,
 			);
 			productName = SwiftThemeKitDemo;
 			productReference = F84CBDC22DD7A29E00B9DBAE /* SwiftThemeKitDemo.app */;
@@ -156,8 +168,8 @@
 			mainGroup = F84CBDB92DD7A29E00B9DBAE;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				F84CBDDE2DD7A93F00B9DBAE /* XCLocalSwiftPackageReference "../../../swift-theme-kit" */,
-				5D63CC702DDB402B00BEA59F /* XCLocalSwiftPackageReference "../../../swift-snapshot-testing" */,
+				F80BC1602DFCAC29004D9DD5 /* XCLocalSwiftPackageReference "../../../swift-theme-kit" */,
+				F85D4C092DFCB22A0037E0DC /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F84CBDC32DD7A29E00B9DBAE /* Products */;
@@ -374,10 +386,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SwiftThemeKitDemo/SwiftThemeKitDemo.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftThemeKitDemo/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2C65AZRED8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -415,10 +428,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SwiftThemeKitDemo/SwiftThemeKitDemo.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftThemeKitDemo/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 2C65AZRED8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -483,24 +497,50 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		5D63CC702DDB402B00BEA59F /* XCLocalSwiftPackageReference "../../../swift-snapshot-testing" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../../../swift-snapshot-testing";
-		};
-		F84CBDDE2DD7A93F00B9DBAE /* XCLocalSwiftPackageReference "../../../swift-theme-kit" */ = {
+		F80BC1602DFCAC29004D9DD5 /* XCLocalSwiftPackageReference "../../../swift-theme-kit" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = "../../../swift-theme-kit";
 		};
 /* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F85D4C092DFCB22A0037E0DC /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.18.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		5D63CC712DDB402B00BEA59F /* SnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SnapshotTesting;
 		};
+		F80BC1612DFCAC29004D9DD5 /* SwiftThemeKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftThemeKit;
+		};
 		F84CBDDF2DD7A93F00B9DBAE /* SwiftThemeKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftThemeKit;
+		};
+		F85D4C0A2DFCB22A0037E0DC /* InlineSnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F85D4C092DFCB22A0037E0DC /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = InlineSnapshotTesting;
+		};
+		F85D4C0C2DFCB22A0037E0DC /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F85D4C092DFCB22A0037E0DC /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+		F85D4C0E2DFCB22A0037E0DC /* SnapshotTestingCustomDump */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F85D4C092DFCB22A0037E0DC /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTestingCustomDump;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
