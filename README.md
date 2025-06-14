@@ -11,7 +11,6 @@ Easily create consistent, themeable user interfaces with full customization powe
 [![License](https://img.shields.io/badge/License-MIT-yellow)]()
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-  <img src="demo_app.png" alt="Demo app landing" width="300"/>
   <img src="skdemo.gif" alt="Demo app animation" width="300"/>
 </div>
 
