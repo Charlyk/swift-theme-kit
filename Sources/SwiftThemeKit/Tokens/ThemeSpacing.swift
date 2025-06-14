@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// Defines the standard spacing scale for layout and padding/margin values throughout the app.
-public struct ThemeSpacing {
+public struct ThemeSpacing: Equatable {
   /// Extra-small spacing. Used for tight gaps between small elements like icons or labels.
   public let xs: CGFloat    // 4pt
   
