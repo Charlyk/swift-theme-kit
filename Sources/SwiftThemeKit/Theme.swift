@@ -2,7 +2,7 @@ import Foundation
 
 /// A complete representation of a visual theme including color, typography, spacing, radius, and shadow tokens.
 /// The `Theme` struct is the root context for all styling logic in a themed SwiftUI application.
-public struct Theme {
+public struct Theme: Equatable {
   
   /// The set of color tokens used throughout the UI.
   /// Includes semantic roles like `primary`, `onSurface`, `background`, etc.
