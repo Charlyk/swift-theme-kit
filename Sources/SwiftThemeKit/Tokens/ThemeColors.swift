@@ -5,7 +5,7 @@ import SwiftUI
 /// Colors follow the Material Design 3 specification and are resolved from a `Theme`.
 /// These values can be accessed via environment using `@Environment(\.appTheme).colors`
 /// or via subscript using a `ColorToken`.
-public struct ThemeColors {
+public struct ThemeColors: Equatable {
   // MARK: - Primary
 
   /// Primary brand color. Used for filled buttons, toggles, sliders, and active states.

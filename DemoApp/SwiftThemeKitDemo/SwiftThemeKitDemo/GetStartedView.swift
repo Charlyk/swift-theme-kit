@@ -2,7 +2,8 @@ import SwiftUI
 import SwiftThemeKit
 
 struct GetStartedView: View {
-  @AppStorage("colorScheme") private var colorScheme: String = "light"
+  @EnvironmentObject var themeManager: ThemeManager
+
   @Environment(\.appTheme) private var theme
   
   var body: some View {
@@ -26,6 +27,20 @@ struct GetStartedView: View {
         .font(.bodyLarge)
         .multilineTextAlignment(.center)
         .padding(.bottom, theme.spacing.md)
+
+      Picker("Theme", selection: $themeManager.colorMode) {
+        ForEach(["light", "dark"], id: \.self) { text in
+          Text(text)
+        }
+      }
+      .pickerStyle(.segmented)
+
+      Picker("Theme", selection: $themeManager.selectedTheme) {
+        ForEach(["theme1", "theme2", "theme3"], id: \.self) { text in
+          Text(text)
+        }
+      }
+      .pickerStyle(.segmented)
 
       NavigationLink {
         HomeScreenView()

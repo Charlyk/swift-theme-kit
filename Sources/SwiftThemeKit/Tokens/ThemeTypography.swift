@@ -25,7 +25,7 @@ public enum TextStyleToken: String, CaseIterable, Equatable {
 }
 
 /// Defines a typography scale for use across an application, providing visual hierarchy and consistent font styling.
-public struct ThemeTypography {
+public struct ThemeTypography: Equatable {
   
   // MARK: - Display
   

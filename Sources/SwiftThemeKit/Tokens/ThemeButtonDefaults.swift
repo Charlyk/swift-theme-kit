@@ -1,15 +1,15 @@
 import SwiftUI
 
-public struct ThemeButtonDefaults {
+public struct ThemeButtonDefaults: Equatable {
   /// The default shape of the buttons if no other modifiers applied
-  let shape: ButtonShape
-  
+  public let shape: ButtonShape
+
   /// The default size of the buttons if no other modifiers applied
-  let size: ButtonSize
-  
+  public let size: ButtonSize
+
   /// The default variant of the buttons if no other modifiers applied
-  let variant: ButtonVariant
-  
+  public let variant: ButtonVariant
+
   /// The default configuration for light mode
   public static let defaultLight = ThemeButtonDefaults(
     shape: .rounded,

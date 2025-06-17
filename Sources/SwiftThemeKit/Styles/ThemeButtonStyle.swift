@@ -52,7 +52,6 @@ public struct ThemeButtonStyle: ButtonStyle {
 
   public func makeBody(configuration: Configuration) -> some View {
     let isPressed = configuration.isPressed
-    let isDestructive = configuration.role == .destructive
 
     let bgColor = variant.backgroundColor(
       for: theme,

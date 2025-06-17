@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// A collection of predefined shadow styles used to indicate elevation, depth, or focus across the UI.
-public struct ThemeShadows {
+public struct ThemeShadows: Equatable {
   
   /// No shadow. Used for flat surfaces and elements that should appear flush with the background.
   public let none: ThemeShadow
