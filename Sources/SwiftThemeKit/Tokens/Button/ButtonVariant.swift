@@ -82,29 +82,37 @@ public enum ButtonVariant {
     }
 
     let isDestructive = role == .destructive
+    let overlayOpacity = 0.12
+
+    func applyOverlay(base: Color, overlay: Color) -> Color {
+      return base.blend(with: overlay, alpha: overlayOpacity)
+    }
 
     switch self {
     case .filled:
       let base = isDestructive ? theme.colors.error : theme.colors.primary
-      return isPressed ? base.lighten(by: 0.1) : base
+      let overlay = isDestructive ? theme.colors.onError : theme.colors.onPrimary
+      return isPressed ? applyOverlay(base: base, overlay: overlay) : base
 
     case .tonal:
       let base = isDestructive ? theme.colors.errorContainer : theme.colors.secondaryContainer
-      return isPressed ? base.lighten(by: 0.1) : base
+      let overlay = isDestructive ? theme.colors.onErrorContainer : theme.colors.onSecondaryContainer
+      return isPressed ? applyOverlay(base: base, overlay: overlay) : base
 
     case .outline:
-      let pressed = isDestructive
-        ? theme.colors.error.opacity(0.05)
-        : theme.colors.primary.opacity(0.05)
-      return isPressed ? pressed : .clear
+      let base = theme.colors.surface
+      let overlay = isDestructive ? theme.colors.error : theme.colors.primary
+      return isPressed ? applyOverlay(base: base, overlay: overlay) : .clear
 
     case .elevated:
-      return isPressed
-        ? theme.colors.surfaceContainerLow.darken(by: 0.1)
-        : theme.colors.surfaceContainerLow
+      let base = theme.colors.surfaceContainerLow
+      let overlay = isDestructive ? theme.colors.error : theme.colors.primary
+      return isPressed ? applyOverlay(base: base, overlay: overlay) : base
 
     case .text:
-      return .clear
+      let base = theme.colors.surface
+      let overlay = isDestructive ? theme.colors.error : theme.colors.primary
+      return isPressed ? applyOverlay(base: base, overlay: overlay) : .clear
     }
   }
 

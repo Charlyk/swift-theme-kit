@@ -51,7 +51,7 @@ public struct ThemedNavigationTitleModifier: ViewModifier {
             .font(font)
         }
       }
-#else
+#elseif os(iOS)
     return content
       .navigationBarTitleDisplayMode(.inline)
       .toolbar {
@@ -60,6 +60,8 @@ public struct ThemedNavigationTitleModifier: ViewModifier {
             .font(font)
         }
       }
+#else
+    return content
 #endif
   }
 }
