@@ -1,52 +1,52 @@
 import SwiftUI
 
-public struct ThemeShapes {
+public struct ThemeShapes: Equatable {
   /// A shape style with 4 same-sized corners smaller than ThemeShapes.sm.
-  public let xs: RoundedRectangle
-  
+  public let xs: CGFloat
+
   /// A shape style with 4 same-sized corners bigger than ThemeShapes.xs.
-  public let sm: RoundedRectangle
-  
+  public let sm: CGFloat
+
   /// A shape style with 4 same-sized corners bigger than ThemeShapes.sm.
-  public let md: RoundedRectangle
-  
+  public let md: CGFloat
+
   /// A shape style with 4 same-sized corners bigger than ThemeShapes.md.
-  public let lg: RoundedRectangle
-  
+  public let lg: CGFloat
+
   /// A shape style with 4 same-sized corners bigger than ThemeShapes.lg.
-  public let xl: RoundedRectangle
-  
+  public let xl: CGFloat
+
   public static let defaultLight: ThemeShapes = ThemeShapes(
-    xs: RoundedRectangle(cornerRadius: ThemeRadii.defaultLight.xs),
-    sm: RoundedRectangle(cornerRadius: ThemeRadii.defaultLight.sm),
-    md: RoundedRectangle(cornerRadius: ThemeRadii.defaultLight.md),
-    lg: RoundedRectangle(cornerRadius: ThemeRadii.defaultLight.lg),
-    xl: RoundedRectangle(cornerRadius: ThemeRadii.defaultLight.xl)
+    xs: ThemeRadii.defaultLight.xs,
+    sm: ThemeRadii.defaultLight.sm,
+    md: ThemeRadii.defaultLight.md,
+    lg: ThemeRadii.defaultLight.lg,
+    xl: ThemeRadii.defaultLight.xl
   )
-  
+
   public static let defaultDark: ThemeShapes = ThemeShapes(
-    xs: RoundedRectangle(cornerRadius: ThemeRadii.defaultLight.xs),
-    sm: RoundedRectangle(cornerRadius: ThemeRadii.defaultLight.sm),
-    md: RoundedRectangle(cornerRadius: ThemeRadii.defaultLight.md),
-    lg: RoundedRectangle(cornerRadius: ThemeRadii.defaultLight.lg),
-    xl: RoundedRectangle(cornerRadius: ThemeRadii.defaultLight.xl)
+    xs: ThemeRadii.defaultLight.xs,
+    sm: ThemeRadii.defaultLight.sm,
+    md: ThemeRadii.defaultLight.md,
+    lg: ThemeRadii.defaultLight.lg,
+    xl: ThemeRadii.defaultLight.xl
   )
-  
-  public init(xs: RoundedRectangle, sm: RoundedRectangle, md: RoundedRectangle, lg: RoundedRectangle, xl: RoundedRectangle) {
+
+  public init(xs: CGFloat, sm: CGFloat, md: CGFloat, lg: CGFloat, xl: CGFloat) {
     self.xs = xs
     self.sm = sm
     self.md = md
     self.lg = lg
     self.xl = xl
   }
-  
-  subscript(_ token: ShapeToken) -> RoundedRectangle {
-    switch(token) {
-    case .xs: return xs
-    case .sm: return sm
-    case .md: return md
-    case .lg: return lg
-    case .xl: return xl
+
+  public subscript(_ token: ShapeToken) -> RoundedRectangle {
+    switch token {
+    case .xs: return RoundedRectangle(cornerRadius: xs)
+    case .sm: return RoundedRectangle(cornerRadius: sm)
+    case .md: return RoundedRectangle(cornerRadius: md)
+    case .lg: return RoundedRectangle(cornerRadius: lg)
+    case .xl: return RoundedRectangle(cornerRadius: xl)
     }
   }
 }

@@ -1,5 +1,13 @@
 import SwiftUI
 
+#if os(macOS)
+import AppKit
+typealias PlatformColor = NSColor
+#else
+import UIKit
+typealias PlatformColor = UIColor
+#endif
+
 extension Color {
   /// Initializes a `Color` from a hex string like `"#FF0000"` or `"FF0000"`
   init(hex: String) {
@@ -85,5 +93,24 @@ extension Color {
 #else
     return self
 #endif
+  }
+
+  /// Blends this color with another using alpha compositing (A over B).
+  /// Works on iOS, macOS, watchOS, and visionOS.
+  func blend(with overlay: Color, alpha: Double) -> Color {
+    let base = PlatformColor(self)
+    let top = PlatformColor(overlay.opacity(alpha))
+
+    var br: CGFloat = 0, bg: CGFloat = 0, bb: CGFloat = 0, ba: CGFloat = 0
+    var tr: CGFloat = 0, tg: CGFloat = 0, tb: CGFloat = 0, ta: CGFloat = 0
+
+    base.getRed(&br, green: &bg, blue: &bb, alpha: &ba)
+    top.getRed(&tr, green: &tg, blue: &tb, alpha: &ta)
+
+    let r = tr * CGFloat(alpha) + br * (1 - CGFloat(alpha))
+    let g = tg * CGFloat(alpha) + bg * (1 - CGFloat(alpha))
+    let b = tb * CGFloat(alpha) + bb * (1 - CGFloat(alpha))
+
+    return Color(red: Double(r), green: Double(g), blue: Double(b))
   }
 }

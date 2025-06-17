@@ -24,7 +24,7 @@ struct TypographyModifier: ViewModifier {
     let baseFont = theme.typography[token.style]
     if let weight = token.weight {
 #if canImport(UIKit)
-      if #available(iOS 16.0, *), #available(tvOS 16.0, *) {
+      if #available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, visionOS 1.0, *) {
         content
           .font(baseFont)
           .fontWeight(weight)
