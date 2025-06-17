@@ -18,7 +18,7 @@ Easily create consistent, themeable user interfaces with full customization powe
 
 ## Theme builder [WIP]
 
-![SwiftThemeKit.com](https://swiftthemekit.com)
+[SwiftThemeKit.com](https://swiftthemekit.com)
 
 ## ✨ Why SwiftThemeKit?
 
