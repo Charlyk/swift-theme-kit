@@ -3,7 +3,7 @@ import SwiftThemeKit
 
 struct ButtonsView: View {
   @Environment(\.appTheme) private var theme
-  let shapes: Shapes
+  let shape: ButtonShape
 
   var body: some View {
     Card(elevation: .none) {
@@ -16,7 +16,7 @@ struct ButtonsView: View {
         } label: {
           Text("Filled button")
         }
-        .buttonShape(shapes.buttonShape)
+        .buttonShape(shape)
         .buttonSize(.fullWidth)
         .buttonVariant(.filled)
 
@@ -25,7 +25,7 @@ struct ButtonsView: View {
         } label: {
           Text("Tonal button")
         }
-        .buttonShape(shapes.buttonShape)
+        .buttonShape(shape)
         .buttonSize(.fullWidth)
         .buttonVariant(.tonal)
 
@@ -34,7 +34,7 @@ struct ButtonsView: View {
         } label: {
           Text("Outlined button")
         }
-        .buttonShape(shapes.buttonShape)
+        .buttonShape(shape)
         .buttonSize(.fullWidth)
         .buttonVariant(.outline)
 
@@ -43,7 +43,7 @@ struct ButtonsView: View {
         } label: {
           Text("Elevated button")
         }
-        .buttonShape(shapes.buttonShape)
+        .buttonShape(shape)
         .buttonSize(.fullWidth)
         .buttonVariant(.elevated)
 
@@ -52,7 +52,7 @@ struct ButtonsView: View {
         } label: {
           Text("Text button")
         }
-        .buttonShape(shapes.buttonShape)
+        .buttonShape(shape)
         .buttonSize(.fullWidth)
         .buttonVariant(.text)
 
@@ -61,7 +61,7 @@ struct ButtonsView: View {
         } label: {
           Text("Custom background")
         }
-        .buttonShape(shapes.buttonShape)
+        .buttonShape(shape)
         .buttonSize(.fullWidth)
         .buttonVariant(.filled)
         .buttonBackgroundColor(.green)
@@ -79,6 +79,6 @@ struct ButtonsView: View {
 }
 
 #Preview {
-  ButtonsView(shapes: .rounded)
+  ButtonsView(shape: .rounded)
     .padding(.md)
 }

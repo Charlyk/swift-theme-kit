@@ -2,13 +2,13 @@ import SwiftUI
 
 public struct ThemeTextFieldDefaults: Equatable {
   /// The default shape of the buttons if no other modifiers applied
-  let shape: TextFieldShape
+  public let shape: TextFieldShape
 
   /// The default size of the buttons if no other modifiers applied
-  let size: TextFieldSize
+  public let size: TextFieldSize
 
   /// The default variant of the buttons if no other modifiers applied
-  let variant: TextFieldVariant
+  public let variant: TextFieldVariant
 
   /// The default configuration for light mode
   public static let defaultLight = ThemeTextFieldDefaults(

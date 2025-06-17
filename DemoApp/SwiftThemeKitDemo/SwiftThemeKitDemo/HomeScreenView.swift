@@ -31,6 +31,7 @@ struct HomeScreenView: View {
   @EnvironmentObject var themeManager: ThemeManager
   @Environment(\.appTheme) private var theme
   @State private var shapes: Shapes = .rounded
+  @State private var buttonsShape: ButtonShape = .rounded
   @State private var fieldsValue: String = ""
   @State private var isChecked: Bool = true
   @State private var isOn: Bool = true
@@ -60,7 +61,7 @@ struct HomeScreenView: View {
 
         StrokesView()
 
-        ButtonsView(shapes: shapes)
+        ButtonsView(shape: buttonsShape)
 
         TextFieldsView(shapes: shapes)
 
@@ -74,6 +75,9 @@ struct HomeScreenView: View {
     .fillMaxSize()
     .backgroundColor(.surface, edgesIgnoringSafeArea: .all)
     .colorSchemeButton(colorScheme: $themeManager.scheme)
+    .onAppear {
+      buttonsShape = theme.buttons.shape
+    }
   }
 }
 
