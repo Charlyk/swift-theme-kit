@@ -86,7 +86,7 @@ public struct Theme: Equatable {
   
   /// The default theme configuration optimized for light mode.
   /// Uses `defaultLight` for colors and shadows, and shared defaults for other scales.
-  public static var defaultLight: Theme = Theme(
+  public static let defaultLight: Theme = Theme(
     colors: .defaultLight,
     typography: .defaultLight,
     spacing: .defaultLight,
@@ -103,7 +103,7 @@ public struct Theme: Equatable {
   
   /// The default theme configuration optimized for dark mode.
   /// Uses `defaultDark` for colors and shadows, and shared defaults for other scales.
-  public static var defaultDark: Theme = Theme(
+  public static let defaultDark: Theme = Theme(
     colors: .defaultDark,
     typography: .defaultDark,
     spacing: .defaultDark,
