@@ -241,7 +241,7 @@ let darkColors3 = ThemeColors(
 
 let lightTheme1: Theme = .defaultLight.copy(colors: lightColors1)
 
-let darkTheme1: Theme = .defaultDark.copy(colors: darkColors1)
+let darkTheme1: Theme = .defaultDark.copy(colors: darkColors1.copy(primary: .blue))
 
 let lightTheme2: Theme = .defaultLight.copy(colors: lightColors2,
                                             buttons: .defaultLight.copy(shape: .capsule))
