@@ -8,6 +8,47 @@ import UIKit
 typealias PlatformColor = UIColor
 #endif
 
+#if os(iOS) || os(tvOS) || targetEnvironment(macCatalyst)
+@inline(__always)
+private func rgba(_ color: UIColor) -> (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat)? {
+  // Resolve dynamic colors against the current trait collection
+  let resolved = color.resolvedColor(with: UIScreen.main.traitCollection)
+  var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+  guard resolved.getRed(&r, green: &g, blue: &b, alpha: &a) else { return nil }
+  return (r, g, b, a)
+}
+#elseif os(macOS)
+@inline(__always)
+private func rgba(_ color: NSColor,
+                  appearance: NSAppearance? = NSApp?.effectiveAppearance)
+-> (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat)? {
+
+  // Convert to an RGB-compatible color space (works once correct appearance is current)
+  let convertToRGB = { () -> NSColor? in
+    color.usingColorSpace(NSColorSpace.sRGB) ?? color.usingColorSpace(NSColorSpace.deviceRGB)
+  }
+
+  // If we have an appearance, make it current while converting (resolves dynamic/catalog colors)
+  let rgb: NSColor?
+  if let ap = appearance {
+    var tmp: NSColor?
+    ap.performAsCurrentDrawingAppearance {
+      tmp = convertToRGB()
+    }
+    rgb = tmp
+  } else {
+    rgb = convertToRGB()
+  }
+
+  guard let rgb else { return nil }
+
+  var r: CGFloat = 0, g: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+  rgb.getRed(&r, green: &g, blue: &b, alpha: &a)   // no Bool return on macOS
+  return (r, g, b, a)
+}
+#endif
+
+
 extension Color {
   /// Initializes a `Color` from a hex string like `"#FF0000"` or `"FF0000"`
   init(hex: String) {
@@ -104,13 +145,16 @@ extension Color {
     var br: CGFloat = 0, bg: CGFloat = 0, bb: CGFloat = 0, ba: CGFloat = 0
     var tr: CGFloat = 0, tg: CGFloat = 0, tb: CGFloat = 0, ta: CGFloat = 0
 
-    base.getRed(&br, green: &bg, blue: &bb, alpha: &ba)
-    top.getRed(&tr, green: &tg, blue: &tb, alpha: &ta)
+#if os(iOS) || os(tvOS) || targetEnvironment(macCatalyst)
+    guard let b = rgba(base), let t = rgba(top) else { return self }
+#else
+    guard let b = rgba(base), let t = rgba(top) else { return self }
+#endif
 
-    let r = tr * CGFloat(alpha) + br * (1 - CGFloat(alpha))
-    let g = tg * CGFloat(alpha) + bg * (1 - CGFloat(alpha))
-    let b = tb * CGFloat(alpha) + bb * (1 - CGFloat(alpha))
+    let r = t.r * CGFloat(alpha) + b.r * (1 - CGFloat(alpha))
+    let g = t.g * CGFloat(alpha) + b.g * (1 - CGFloat(alpha))
+    let bl = t.b * CGFloat(alpha) + b.b * (1 - CGFloat(alpha))
 
-    return Color(red: Double(r), green: Double(g), blue: Double(b))
+    return Color(red: Double(r), green: Double(g), blue: Double(bl))
   }
 }
