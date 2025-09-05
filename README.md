@@ -13,7 +13,7 @@ Easily create consistent, themeable user interfaces with full customization powe
 <a href="https://www.producthunt.com/products/swiftthemekit?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-swiftthemekit" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=979799&theme=light&t=1750157106036" alt="SwiftThemeKit - A&#0032;modern&#0044;&#0032;token&#0045;driven&#0032;design&#0032;system&#0032;framework&#0032;for&#0032;SwiftUI | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-  <img src="skdemo.gif" alt="Demo app animation" width="300"/>
+  <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeGhwZmlmNnpoczNxZGVsYnpqNzcwNjI2ZGJ4YWM0c2VxZXo0ZXN4ayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/7iKZZ3U6wdhOay4iOM/giphy.gif" alt="Demo app animation" width="300"/>
 </div>
 
 ---
