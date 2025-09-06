@@ -1,0 +1,754 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Styles/ThemeButtonStyle.swift",
+      "line": 37,
+      "symbol": "ThemeButtonStyle.init(variant:size:shape:font:backgroundColor:foregroundColor:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeButtonDefaults.swift",
+      "line": 3,
+      "symbol": "ThemeButtonDefaults",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeButtonDefaults.swift",
+      "line": 3,
+      "symbol": "ThemeButtonDefaults",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 135,
+      "symbol": "ThemeColors.defaultLight",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 174,
+      "symbol": "ThemeColors.defaultDark",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 213,
+      "symbol": "ThemeColors.init(primary:onPrimary:primaryContainer:onPrimaryContainer:secondary:onSecondary:secondaryContainer:onSecondaryContainer:tertiary:onTertiary:tertiaryContainer:onTertiaryContainer:background:onBackground:error:onError:errorContainer:onErrorContainer:inverseSurface:inverseOnSurface:inversePrimary:surface:onSurface:surfaceVariant:onSurfaceVariant:surfaceDim:surfaceBright:surfaceContainerLowest:surfaceContainerLow:surfaceContainer:surfaceContainerHigh:surfaceContainerHighest:outline:outlineVariant:scrim:shadow:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 346,
+      "symbol": "ColorToken",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 347,
+      "symbol": "ColorToken.onPrimary",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 347,
+      "symbol": "ColorToken.onPrimaryContainer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 347,
+      "symbol": "ColorToken.primary",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 347,
+      "symbol": "ColorToken.primaryContainer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 348,
+      "symbol": "ColorToken.onSecondary",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 348,
+      "symbol": "ColorToken.onSecondaryContainer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 348,
+      "symbol": "ColorToken.secondary",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 348,
+      "symbol": "ColorToken.secondaryContainer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 349,
+      "symbol": "ColorToken.onTertiary",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 349,
+      "symbol": "ColorToken.onTertiaryContainer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 349,
+      "symbol": "ColorToken.tertiary",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 349,
+      "symbol": "ColorToken.tertiaryContainer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 350,
+      "symbol": "ColorToken.background",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 350,
+      "symbol": "ColorToken.onBackground",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 351,
+      "symbol": "ColorToken.error",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 351,
+      "symbol": "ColorToken.errorContainer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 351,
+      "symbol": "ColorToken.onError",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 351,
+      "symbol": "ColorToken.onErrorContainer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 352,
+      "symbol": "ColorToken.inverseOnSurface",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 352,
+      "symbol": "ColorToken.inversePrimary",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 352,
+      "symbol": "ColorToken.inverseSurface",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 353,
+      "symbol": "ColorToken.onSurface",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 353,
+      "symbol": "ColorToken.onSurfaceVariant",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 353,
+      "symbol": "ColorToken.surface",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 353,
+      "symbol": "ColorToken.surfaceVariant",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 354,
+      "symbol": "ColorToken.surfaceBright",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 354,
+      "symbol": "ColorToken.surfaceDim",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 355,
+      "symbol": "ColorToken.surfaceContainer",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 355,
+      "symbol": "ColorToken.surfaceContainerHigh",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 355,
+      "symbol": "ColorToken.surfaceContainerHighest",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 355,
+      "symbol": "ColorToken.surfaceContainerLow",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 355,
+      "symbol": "ColorToken.surfaceContainerLowest",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 356,
+      "symbol": "ColorToken.outline",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 356,
+      "symbol": "ColorToken.outlineVariant",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 356,
+      "symbol": "ColorToken.scrim",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeColors.swift",
+      "line": 356,
+      "symbol": "ColorToken.shadow",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeRadii.swift",
+      "line": 70,
+      "symbol": "RadiusToken",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeRadii.swift",
+      "line": 71,
+      "symbol": "RadiusToken.none",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeRadii.swift",
+      "line": 72,
+      "symbol": "RadiusToken.xs",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeRadii.swift",
+      "line": 73,
+      "symbol": "RadiusToken.sm",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeRadii.swift",
+      "line": 74,
+      "symbol": "RadiusToken.md",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeRadii.swift",
+      "line": 75,
+      "symbol": "RadiusToken.lg",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeRadii.swift",
+      "line": 76,
+      "symbol": "RadiusToken.xl",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeRadii.swift",
+      "line": 77,
+      "symbol": "RadiusToken.pill",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeShadows.swift",
+      "line": 69,
+      "symbol": "ShadowToken",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeShadows.swift",
+      "line": 70,
+      "symbol": "ShadowToken.none",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeShadows.swift",
+      "line": 71,
+      "symbol": "ShadowToken.sm",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeShadows.swift",
+      "line": 72,
+      "symbol": "ShadowToken.md",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeShadows.swift",
+      "line": 73,
+      "symbol": "ShadowToken.lg",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeShadows.swift",
+      "line": 74,
+      "symbol": "ShadowToken.focus",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeShapes.swift",
+      "line": 3,
+      "symbol": "ThemeShapes",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeShapes.swift",
+      "line": 3,
+      "symbol": "ThemeShapes",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeShapes.swift",
+      "line": 19,
+      "symbol": "ThemeShapes.defaultLight",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeShapes.swift",
+      "line": 27,
+      "symbol": "ThemeShapes.defaultDark",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeShapes.swift",
+      "line": 35,
+      "symbol": "ThemeShapes.init(xs:sm:md:lg:xl:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeShapes.swift",
+      "line": 54,
+      "symbol": "ShapeToken",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeShapes.swift",
+      "line": 55,
+      "symbol": "ShapeToken.xs",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeShapes.swift",
+      "line": 56,
+      "symbol": "ShapeToken.sm",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeShapes.swift",
+      "line": 57,
+      "symbol": "ShapeToken.md",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeShapes.swift",
+      "line": 58,
+      "symbol": "ShapeToken.lg",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeShapes.swift",
+      "line": 59,
+      "symbol": "ShapeToken.xl",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeSpacing.swift",
+      "line": 43,
+      "symbol": "ThemeSpacing.init(xs:sm:md:lg:xl:xxl:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeSpacing.swift",
+      "line": 65,
+      "symbol": "SpacingToken",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeSpacing.swift",
+      "line": 66,
+      "symbol": "SpacingToken.xs",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeSpacing.swift",
+      "line": 67,
+      "symbol": "SpacingToken.sm",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeSpacing.swift",
+      "line": 68,
+      "symbol": "SpacingToken.md",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeSpacing.swift",
+      "line": 69,
+      "symbol": "SpacingToken.lg",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeSpacing.swift",
+      "line": 70,
+      "symbol": "SpacingToken.xl",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeSpacing.swift",
+      "line": 71,
+      "symbol": "SpacingToken.xxl",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeSpacing.swift",
+      "line": 72,
+      "symbol": "SpacingToken.none",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeStroke.swift",
+      "line": 39,
+      "symbol": "ThemeStroke.init(none:xs:sm:md:lg:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeStroke.swift",
+      "line": 66,
+      "symbol": "StrokeToken.none",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeStroke.swift",
+      "line": 67,
+      "symbol": "StrokeToken.xs",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeStroke.swift",
+      "line": 68,
+      "symbol": "StrokeToken.sm",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeStroke.swift",
+      "line": 69,
+      "symbol": "StrokeToken.md",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeStroke.swift",
+      "line": 70,
+      "symbol": "StrokeToken.lg",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTextFieldDefaults.swift",
+      "line": 3,
+      "symbol": "ThemeTextFieldDefaults",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 91,
+      "symbol": "ThemeTypography.defaultDark",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 115,
+      "symbol": "ThemeTypography.init(displayLarge:displayMedium:displaySmall:headlineLarge:headlineMedium:headlineSmall:titleLarge:titleMedium:titleSmall:labelLarge:labelMedium:labelSmall:bodyLarge:bodyMedium:bodySmall:buttonText:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 176,
+      "symbol": "TextStyleToken",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 177,
+      "symbol": "TextStyleToken.displayLarge",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 178,
+      "symbol": "TextStyleToken.displayMedium",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 179,
+      "symbol": "TextStyleToken.displaySmall",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 181,
+      "symbol": "TextStyleToken.headlineLarge",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 182,
+      "symbol": "TextStyleToken.headlineMedium",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 183,
+      "symbol": "TextStyleToken.headlineSmall",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 185,
+      "symbol": "TextStyleToken.titleLarge",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 186,
+      "symbol": "TextStyleToken.titleMedium",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 187,
+      "symbol": "TextStyleToken.titleSmall",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 189,
+      "symbol": "TextStyleToken.labelLarge",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 190,
+      "symbol": "TextStyleToken.labelMedium",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 191,
+      "symbol": "TextStyleToken.labelSmall",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 193,
+      "symbol": "TextStyleToken.bodyLarge",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 194,
+      "symbol": "TextStyleToken.bodyMedium",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 195,
+      "symbol": "TextStyleToken.bodySmall",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 197,
+      "symbol": "TextStyleToken.buttonText",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 200,
+      "symbol": "ThemeFontToken",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 201,
+      "symbol": "ThemeFontToken.style",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 202,
+      "symbol": "ThemeFontToken.weight",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/albueduard/XcodeProjects/swift-theme-kit/Sources/SwiftThemeKit/Tokens/ThemeTypography.swift",
+      "line": 204,
+      "symbol": "ThemeFontToken.init(_:weight:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/albueduard/XcodeProjects/swift-theme-kit"
+}
