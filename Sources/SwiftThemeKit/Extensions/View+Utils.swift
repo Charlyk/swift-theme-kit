@@ -17,7 +17,7 @@ extension View {
   ///   .if(isHighlighted) { $0.foregroundColor(.red) }
   /// ```
   @ViewBuilder
-  public func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
+  func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
     if condition {
       transform(self)
     } else {
