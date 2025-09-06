@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Theme Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/Theme" class="dashAnchor"></a>
+    <a title="Theme Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">SwiftThemeKit Docs</a> (71% documented)</p>
+        <div class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">SwiftThemeKit</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        <a href="../Structs.html">Structures</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        Theme Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/ButtonShape.html">ButtonShape</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ButtonSize.html">ButtonSize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ButtonVariant.html">ButtonVariant</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/CheckboxShape.html">CheckboxShape</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ColorToken.html">ColorToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/HorizontalPosition.html">HorizontalPosition</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RadiusToken.html">RadiusToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ShadowToken.html">ShadowToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ShapeToken.html">ShapeToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SpacingToken.html">SpacingToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/StrokeToken.html">StrokeToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TextFieldShape.html">TextFieldShape</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TextFieldSize.html">TextFieldSize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TextFieldVariant.html">TextFieldVariant</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TextStyleToken.html">TextStyleToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VerticalPosition.html">VerticalPosition</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/EnvironmentValues.html">EnvironmentValues</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Shape.html">Shape</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/View.html">View</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Card.html">Card</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Checkbox.html">Checkbox</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RadioButton.html">RadioButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RadioGroup.html">RadioGroup</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Theme.html">Theme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeButtonDefaults.html">ThemeButtonDefaults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeButtonStyle.html">ThemeButtonStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeColors.html">ThemeColors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeFontToken.html">ThemeFontToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeProvider.html">ThemeProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeRadii.html">ThemeRadii</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeShadow.html">ThemeShadow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeShadows.html">ThemeShadows</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeShapes.html">ThemeShapes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeSpacing.html">ThemeSpacing</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeStroke.html">ThemeStroke</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeTextFieldDefaults.html">ThemeTextFieldDefaults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeTextFieldStyle.html">ThemeTextFieldStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeTypography.html">ThemeTypography</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemedNavigationTitleModifier.html">ThemedNavigationTitleModifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemedShape.html">ThemedShape</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Theme</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Theme</span></code></pre>
+
+                </div>
+              </div>
+            <p>A complete representation of a visual theme including color, typography, spacing, radius, and shadow tokens.
+The <code>Theme</code> struct is the root context for all styling logic in a themed SwiftUI application.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13SwiftThemeKit0B0V6colorsAA0B6ColorsVvp"></a>
+                    <a name="//apple_ref/swift/Property/colors" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13SwiftThemeKit0B0V6colorsAA0B6ColorsVvp">colors</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The set of color tokens used throughout the UI.
+Includes semantic roles like <code>primary</code>, <code>onSurface</code>, <code>background</code>, etc.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">colors</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeColors.html">ThemeColors</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13SwiftThemeKit0B0V10typographyAA0B10TypographyVvp"></a>
+                    <a name="//apple_ref/swift/Property/typography" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13SwiftThemeKit0B0V10typographyAA0B10TypographyVvp">typography</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The full typography scale used for all text elements, including headings, body text, and labels.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">typography</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeTypography.html">ThemeTypography</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13SwiftThemeKit0B0V7spacingAA0B7SpacingVvp"></a>
+                    <a name="//apple_ref/swift/Property/spacing" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13SwiftThemeKit0B0V7spacingAA0B7SpacingVvp">spacing</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The standard spacing scale for padding, margins, and layout spacing.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">spacing</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeSpacing.html">ThemeSpacing</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13SwiftThemeKit0B0V5radiiAA0B5RadiiVvp"></a>
+                    <a name="//apple_ref/swift/Property/radii" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13SwiftThemeKit0B0V5radiiAA0B5RadiiVvp">radii</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The radius scale used for rounded corners and clip shapes.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">radii</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeRadii.html">ThemeRadii</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13SwiftThemeKit0B0V7shadowsAA0B7ShadowsVvp"></a>
+                    <a name="//apple_ref/swift/Property/shadows" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13SwiftThemeKit0B0V7shadowsAA0B7ShadowsVvp">shadows</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The set of shadow styles representing elevation or focus states.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">shadows</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeShadows.html">ThemeShadows</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13SwiftThemeKit0B0V6strokeAA0B6StrokeVvp"></a>
+                    <a name="//apple_ref/swift/Property/stroke" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13SwiftThemeKit0B0V6strokeAA0B6StrokeVvp">stroke</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The set of stroke styles</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">stroke</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeStroke.html">ThemeStroke</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13SwiftThemeKit0B0V6shapesAA0B6ShapesVvp"></a>
+                    <a name="//apple_ref/swift/Property/shapes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13SwiftThemeKit0B0V6shapesAA0B6ShapesVvp">shapes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The set of shapes styles used in clipShape modifiers</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">shapes</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeShapes.html">ThemeShapes</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13SwiftThemeKit0B0V7buttonsAA0B14ButtonDefaultsVvp"></a>
+                    <a name="//apple_ref/swift/Property/buttons" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13SwiftThemeKit0B0V7buttonsAA0B14ButtonDefaultsVvp">buttons</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The set of buttons default configurations</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">buttons</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeButtonDefaults.html">ThemeButtonDefaults</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13SwiftThemeKit0B0V10textFieldsAA0B17TextFieldDefaultsVvp"></a>
+                    <a name="//apple_ref/swift/Property/textFields" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13SwiftThemeKit0B0V10textFieldsAA0B17TextFieldDefaultsVvp">textFields</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The set of buttons default configurations</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">textFields</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeTextFieldDefaults.html">ThemeTextFieldDefaults</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13SwiftThemeKit0B0V6colors10typography7spacing5radii7shadows6stroke6shapes7buttons10textFieldsAcA0B6ColorsV_AA0B10TypographyVAA0B7SpacingVAA0B5RadiiVAA0B7ShadowsVAA0B6StrokeVAA0B6ShapesVAA0B14ButtonDefaultsVAA0b9TextFieldV0Vtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(colors:typography:spacing:radii:shadows:stroke:shapes:buttons:textFields:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13SwiftThemeKit0B0V6colors10typography7spacing5radii7shadows6stroke6shapes7buttons10textFieldsAcA0B6ColorsV_AA0B10TypographyVAA0B7SpacingVAA0B5RadiiVAA0B7ShadowsVAA0B6StrokeVAA0B6ShapesVAA0B14ButtonDefaultsVAA0b9TextFieldV0Vtcfc">init(colors:<wbr>typography:<wbr>spacing:<wbr>radii:<wbr>shadows:<wbr>stroke:<wbr>shapes:<wbr>buttons:<wbr>textFields:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a new theme instance with custom tokens.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span>
+  <span class="nv">colors</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeColors.html">ThemeColors</a></span><span class="p">,</span>
+  <span class="nv">typography</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeTypography.html">ThemeTypography</a></span><span class="p">,</span>
+  <span class="nv">spacing</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeSpacing.html">ThemeSpacing</a></span><span class="p">,</span>
+  <span class="nv">radii</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeRadii.html">ThemeRadii</a></span><span class="p">,</span>
+  <span class="nv">shadows</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeShadows.html">ThemeShadows</a></span><span class="p">,</span>
+  <span class="nv">stroke</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeStroke.html">ThemeStroke</a></span><span class="p">,</span>
+  <span class="nv">shapes</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeShapes.html">ThemeShapes</a></span><span class="p">,</span>
+  <span class="nv">buttons</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeButtonDefaults.html">ThemeButtonDefaults</a></span><span class="p">,</span>
+  <span class="nv">textFields</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeTextFieldDefaults.html">ThemeTextFieldDefaults</a></span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>colors</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The color token configuration.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>typography</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The typography scale.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>spacing</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The spacing scale.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>radii</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The corner radius scale.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>shadows</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The shadow styles for various elevations.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>stroke</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The stroke styles.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>shapes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The shapes styles used for various components.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>buttons</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The buttons default values used when no modifier applied</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13SwiftThemeKit0B0V12defaultLightACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/defaultLight" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13SwiftThemeKit0B0V12defaultLightACvpZ">defaultLight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The default theme configuration optimized for light mode.
+Uses <code>defaultLight</code> for colors and shadows, and shared defaults for other scales.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">defaultLight</span><span class="p">:</span> <span class="kt">Theme</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13SwiftThemeKit0B0V11defaultDarkACvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/defaultDark" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13SwiftThemeKit0B0V11defaultDarkACvpZ">defaultDark</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The default theme configuration optimized for dark mode.
+Uses <code>defaultDark</code> for colors and shadows, and shared defaults for other scales.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">defaultDark</span><span class="p">:</span> <span class="kt">Theme</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13SwiftThemeKit0B0V4copy6colors10typography7spacing5radii7shadows6stroke6shapes7buttons10textFieldsAcA0B6ColorsVSg_AA0B10TypographyVSgAA0B7SpacingVSgAA0B5RadiiVSgAA0B7ShadowsVSgAA0B6StrokeVSgAA0B6ShapesVSgAA0B14ButtonDefaultsVSgAA0b9TextFieldW0VSgtF"></a>
+                    <a name="//apple_ref/swift/Method/copy(colors:typography:spacing:radii:shadows:stroke:shapes:buttons:textFields:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13SwiftThemeKit0B0V4copy6colors10typography7spacing5radii7shadows6stroke6shapes7buttons10textFieldsAcA0B6ColorsVSg_AA0B10TypographyVSgAA0B7SpacingVSgAA0B5RadiiVSgAA0B7ShadowsVSgAA0B6StrokeVSgAA0B6ShapesVSgAA0B14ButtonDefaultsVSgAA0b9TextFieldW0VSgtF">copy(colors:<wbr>typography:<wbr>spacing:<wbr>radii:<wbr>shadows:<wbr>stroke:<wbr>shapes:<wbr>buttons:<wbr>textFields:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a new <code>Theme</code> instance by copying the current one
+and applying the specified overrides.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">copy</span><span class="p">(</span>
+  <span class="nv">colors</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeColors.html">ThemeColors</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+  <span class="nv">typography</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeTypography.html">ThemeTypography</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+  <span class="nv">spacing</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeSpacing.html">ThemeSpacing</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+  <span class="nv">radii</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeRadii.html">ThemeRadii</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+  <span class="nv">shadows</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeShadows.html">ThemeShadows</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+  <span class="nv">stroke</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeStroke.html">ThemeStroke</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+  <span class="nv">shapes</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeShapes.html">ThemeShapes</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+  <span class="nv">buttons</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeButtonDefaults.html">ThemeButtonDefaults</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+  <span class="nv">textFields</span><span class="p">:</span> <span class="kt"><a href="../Structs/ThemeTextFieldDefaults.html">ThemeTextFieldDefaults</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Theme</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>colors</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The color token configuration.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>typography</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The typography scale.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>spacing</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The spacing scale.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>radii</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The corner radius scale.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>shadows</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The shadow styles for various elevations.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>stroke</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The stroke styles.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>shapes</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The shapes styles used for various components.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>buttons</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The buttons default values used when no modifier applied</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>textFields</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The text field default values used when no modifier applied</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2025 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2025-05-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>

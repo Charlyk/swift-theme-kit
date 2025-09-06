@@ -1,0 +1,2240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>View Extension Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Extension/View" class="dashAnchor"></a>
+    <a title="View Extension Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">SwiftThemeKit Docs</a> (71% documented)</p>
+        <div class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">SwiftThemeKit</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        <a href="../Extensions.html">Extensions</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        SwiftUICore.View Extension Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/ButtonShape.html">ButtonShape</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ButtonSize.html">ButtonSize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ButtonVariant.html">ButtonVariant</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/CheckboxShape.html">CheckboxShape</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ColorToken.html">ColorToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/HorizontalPosition.html">HorizontalPosition</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RadiusToken.html">RadiusToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ShadowToken.html">ShadowToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ShapeToken.html">ShapeToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SpacingToken.html">SpacingToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/StrokeToken.html">StrokeToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TextFieldShape.html">TextFieldShape</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TextFieldSize.html">TextFieldSize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TextFieldVariant.html">TextFieldVariant</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TextStyleToken.html">TextStyleToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VerticalPosition.html">VerticalPosition</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/EnvironmentValues.html">EnvironmentValues</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Shape.html">Shape</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/View.html">View</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Card.html">Card</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Checkbox.html">Checkbox</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RadioButton.html">RadioButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RadioGroup.html">RadioGroup</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Theme.html">Theme</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeButtonDefaults.html">ThemeButtonDefaults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeButtonStyle.html">ThemeButtonStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeColors.html">ThemeColors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeFontToken.html">ThemeFontToken</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeProvider.html">ThemeProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeRadii.html">ThemeRadii</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeShadow.html">ThemeShadow</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeShadows.html">ThemeShadows</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeShapes.html">ThemeShapes</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeSpacing.html">ThemeSpacing</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeStroke.html">ThemeStroke</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeTextFieldDefaults.html">ThemeTextFieldDefaults</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeTextFieldStyle.html">ThemeTextFieldStyle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemeTypography.html">ThemeTypography</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemedNavigationTitleModifier.html">ThemedNavigationTitleModifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ThemedShape.html">ThemedShape</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>View</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">View</span></code></pre>
+
+                </div>
+              </div>
+            
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE05applyD11ButtonStyleQryF"></a>
+                    <a name="//apple_ref/swift/Method/applyThemeButtonStyle()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE05applyD11ButtonStyleQryF">applyThemeButtonStyle()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies the full SwiftThemeKit button style to the current view using the theme&rsquo;s button system.</p>
+
+<p>This modifier is <strong>optional</strong> but recommended when you want to use the default layout, padding,
+background, and interactive states provided by SwiftThemeKit.</p>
+
+<p>You can also apply individual overrides such as <code>buttonSize</code>, <code>buttonVariant</code>, or <code>buttonShape</code>
+without needing to use this modifier, especially if you are using your own custom button style.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">applyThemeButtonStyle</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the themed button styling applied.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE13buttonVariantyQrAD06ButtonG0OF"></a>
+                    <a name="//apple_ref/swift/Method/buttonVariant(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE13buttonVariantyQrAD06ButtonG0OF">buttonVariant(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Overrides the button variant (e.g. <code>.filled</code>, <code>.outline</code>, <code>.text</code>) for this specific button.</p>
+
+<p>This is stored in the view environment and affects how <code><a href="../Extensions/View.html#/s:7SwiftUI4ViewP0A8ThemeKitE05applyD11ButtonStyleQryF">applyThemeButtonStyle()</a></code> renders the background,
+border, and interaction behavior.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">buttonVariant</span><span class="p">(</span><span class="n">_</span> <span class="nv">variant</span><span class="p">:</span> <span class="kt"><a href="../Enums/ButtonVariant.html">ButtonVariant</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>variant</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired button style variant.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the custom variant applied to the button context.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE10buttonSizeyQrAD06ButtonG0OF"></a>
+                    <a name="//apple_ref/swift/Method/buttonSize(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE10buttonSizeyQrAD06ButtonG0OF">buttonSize(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Overrides the button size (e.g. <code>.small</code>, <code>.medium</code>, <code>.large</code>, <code>.fullWidth</code>) for this button.</p>
+
+<p>The size affects height, padding, and possibly font size, based on the current theme configuration.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">buttonSize</span><span class="p">(</span><span class="n">_</span> <span class="nv">size</span><span class="p">:</span> <span class="kt"><a href="../Enums/ButtonSize.html">ButtonSize</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>size</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The size token to apply.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the custom size stored in the environment.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE11buttonShapeyQrAD06ButtonG0OF"></a>
+                    <a name="//apple_ref/swift/Method/buttonShape(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE11buttonShapeyQrAD06ButtonG0OF">buttonShape(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Overrides the shape used for the button (e.g. <code>.capsule</code>, <code>.rounded</code>, <code>.rectangle</code>).</p>
+
+<p>This affects how the button is clipped and how the background and stroke are drawn.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">buttonShape</span><span class="p">(</span><span class="n">_</span> <span class="nv">shape</span><span class="p">:</span> <span class="kt"><a href="../Enums/ButtonShape.html">ButtonShape</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>shape</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The shape token to apply to this button.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the shape override applied.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE15plainTextButton_6weightQrAD0G10StyleTokenO_AA4FontV6WeightVSgtF"></a>
+                    <a name="//apple_ref/swift/Method/plainTextButton(_:weight:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE15plainTextButton_6weightQrAD0G10StyleTokenO_AA4FontV6WeightVSgtF">plainTextButton(_:<wbr>weight:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies a minimal, text-only button style without background, padding, or borders.</p>
+
+<p>Best for inline links or toolbar actions where no container styling is needed.
+Can still use theme typography tokens for consistent font sizing.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">plainTextButton</span><span class="p">(</span><span class="n">_</span> <span class="nv">style</span><span class="p">:</span> <span class="kt"><a href="../Enums/TextStyleToken.html">TextStyleToken</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">buttonText</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="kt">Font</span><span class="o">.</span><span class="kt">Weight</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>style</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The typography style to apply (default is <code>.buttonText</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>weight</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional font weight override.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A button with stripped-down appearance and themed text.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE16buttonLabelStyle_6weightQrAD04TextH5TokenO_AA4FontV6WeightVSgtF"></a>
+                    <a name="//apple_ref/swift/Method/buttonLabelStyle(_:weight:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE16buttonLabelStyle_6weightQrAD04TextH5TokenO_AA4FontV6WeightVSgtF">buttonLabelStyle(_:<wbr>weight:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Overrides only the font style of the button’s label while preserving all other styles (padding, background, etc.).</p>
+
+<p>Useful when you want to adjust the font of a button without affecting its variant or layout.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">buttonLabelStyle</span><span class="p">(</span><span class="n">_</span> <span class="nv">token</span><span class="p">:</span> <span class="kt"><a href="../Enums/TextStyleToken.html">TextStyleToken</a></span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="kt">Font</span><span class="o">.</span><span class="kt">Weight</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The typography token to apply (e.g. <code>.labelLarge</code>, <code>.bodyMedium</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>weight</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional font weight override.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the custom font style applied to the label.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE21buttonBackgroundColoryQrAA0H0VF"></a>
+                    <a name="//apple_ref/swift/Method/buttonBackgroundColor(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE21buttonBackgroundColoryQrAA0H0VF">buttonBackgroundColor(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Overrides the background color of the button&rsquo;s label content.</p>
+
+<p>This can be used to apply a custom background color instead of the theme-defined one
+(e.g., for special states or brand-specific overrides).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">buttonBackgroundColor</span><span class="p">(</span><span class="n">_</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">Color</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The color to use as the label&rsquo;s background.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the background color applied to the button label.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE21buttonForegroundColoryQrAA0H0VF"></a>
+                    <a name="//apple_ref/swift/Method/buttonForegroundColor(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE21buttonForegroundColoryQrAA0H0VF">buttonForegroundColor(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Overrides the foreground (text/icon) color of the button&rsquo;s label content.</p>
+
+<p>This affects the text/icon rendering but does not override other theme styles.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">buttonForegroundColor</span><span class="p">(</span><span class="n">_</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">Color</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The color to use as the foreground.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the foreground color applied to the button label.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE05applyD14TextFieldStyleQryF"></a>
+                    <a name="//apple_ref/swift/Method/applyThemeTextFieldStyle()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE05applyD14TextFieldStyleQryF">applyThemeTextFieldStyle()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies the full SwiftThemeKit text field style using the theme’s configuration system.</p>
+
+<p>This modifier sets up the base layout, padding, shape, and interaction styling from the theme,
+using environment-provided values such as <code><a href="../Enums/TextFieldVariant.html">TextFieldVariant</a></code>, <code><a href="../Enums/TextFieldSize.html">TextFieldSize</a></code>, <code><a href="../Enums/TextFieldShape.html">TextFieldShape</a></code>, and typography tokens.</p>
+
+<p>This is <strong>optional</strong> — you can use <code>textFieldVariant</code>, <code>textFieldSize</code>, or <code>textFieldFont</code> individually
+if you prefer to build a custom layout.</p>
+<h3 id='example' class='heading'>Example:</h3>
+<pre class="highlight swift"><code><span class="kt">TextField</span><span class="p">(</span><span class="s">"Email"</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="n">$email</span><span class="p">)</span>
+  <span class="o">.</span><span class="nf">applyThemeTextFieldStyle</span><span class="p">()</span>
+  <span class="o">.</span><span class="nf">textFieldVariant</span><span class="p">(</span><span class="o">.</span><span class="n">outlined</span><span class="p">)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">applyThemeTextFieldStyle</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the themed text field style applied.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE16textFieldVariantyQrAD04TextgH0OF"></a>
+                    <a name="//apple_ref/swift/Method/textFieldVariant(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE16textFieldVariantyQrAD04TextgH0OF">textFieldVariant(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the visual variant of the text field, such as <code>.filled</code>, <code>.outlined</code>, or <code>.underlined</code>.</p>
+
+<p>This determines the field&rsquo;s border, background, and focus styling.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">textFieldVariant</span><span class="p">(</span><span class="n">_</span> <span class="nv">variant</span><span class="p">:</span> <span class="kt"><a href="../Enums/TextFieldVariant.html">TextFieldVariant</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>variant</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired text field variant.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the variant applied to the environment.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE13textFieldSizeyQrAD04TextgH0OF"></a>
+                    <a name="//apple_ref/swift/Method/textFieldSize(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE13textFieldSizeyQrAD04TextgH0OF">textFieldSize(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Overrides the size of the text field, such as <code>.small</code>, <code>.medium</code>, or <code>.large</code>.</p>
+
+<p>This affects internal padding, height, and default font unless overridden with <code>textFieldFont</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">textFieldSize</span><span class="p">(</span><span class="n">_</span> <span class="nv">size</span><span class="p">:</span> <span class="kt"><a href="../Enums/TextFieldSize.html">TextFieldSize</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>size</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired size token.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the size styling applied.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE14textFieldShapeyQrAD04TextgH0OF"></a>
+                    <a name="//apple_ref/swift/Method/textFieldShape(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE14textFieldShapeyQrAD04TextgH0OF">textFieldShape(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the corner shape of the text field (e.g., <code>.rounded</code>, <code>.capsule</code>, <code>.rectangle</code>).</p>
+
+<p>The shape is applied to the background or outline and affects how the field is clipped.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">textFieldShape</span><span class="p">(</span><span class="n">_</span> <span class="nv">shape</span><span class="p">:</span> <span class="kt"><a href="../Enums/TextFieldShape.html">TextFieldShape</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>shape</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The shape token to apply.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the shape applied.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE7isErroryQrSbF"></a>
+                    <a name="//apple_ref/swift/Method/isError(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE7isErroryQrSbF">isError(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Flags the text field as being in an error state, typically changing its color or border.</p>
+
+<p>Use this to visually indicate validation failure or incorrect input.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">isError</span><span class="p">(</span><span class="n">_</span> <span class="nv">isError</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>isError</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A Boolean value indicating if the field is in error.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with error styling conditionally applied.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE13textFieldFont_6weightQrAD14TextStyleTokenO_AA0H0V6WeightVSgtF"></a>
+                    <a name="//apple_ref/swift/Method/textFieldFont(_:weight:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE13textFieldFont_6weightQrAD14TextStyleTokenO_AA0H0V6WeightVSgtF">textFieldFont(_:<wbr>weight:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies a specific font style to the text field label/content using the theme&rsquo;s typography system.</p>
+
+<p>This only affects the font (size, weight, line height) and does not change layout or padding.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">textFieldFont</span><span class="p">(</span><span class="n">_</span> <span class="nv">token</span><span class="p">:</span> <span class="kt"><a href="../Enums/TextStyleToken.html">TextStyleToken</a></span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="kt">Font</span><span class="o">.</span><span class="kt">Weight</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The text style token to apply (e.g., <code>.bodySmall</code>, <code>.labelLarge</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>weight</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional custom font weight (e.g., <code>.medium</code>, <code>.semibold</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the font styling applied.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE6shadowyQrAD11ShadowTokenOF"></a>
+                    <a name="//apple_ref/swift/Method/shadow(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE6shadowyQrAD11ShadowTokenOF">shadow(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies a shadow to the view using a predefined <code><a href="../Enums/ShadowToken.html">ShadowToken</a></code> from the current theme.</p>
+
+<p>The shadow style (color, radius, offset) is defined in the current theme.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">shadow</span><span class="p">(</span><span class="n">_</span> <span class="nv">token</span><span class="p">:</span> <span class="kt"><a href="../Enums/ShadowToken.html">ShadowToken</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The shadow token to apply (e.g. <code>.sm</code>, <code>.md</code>, <code>.focus</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the theme shadow applied.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE4font_6weightQrAD14TextStyleTokenO_AA4FontV6WeightVSgtF"></a>
+                    <a name="//apple_ref/swift/Method/font(_:weight:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE4font_6weightQrAD14TextStyleTokenO_AA4FontV6WeightVSgtF">font(_:<wbr>weight:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies a themed font style from the current theme using a <code><a href="../Enums/TextStyleToken.html">TextStyleToken</a></code>.</p>
+
+<p>The font size, weight, and line height are defined by the token.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">font</span><span class="p">(</span><span class="n">_</span> <span class="nv">token</span><span class="p">:</span> <span class="kt"><a href="../Enums/TextStyleToken.html">TextStyleToken</a></span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="kt">Font</span><span class="o">.</span><span class="kt">Weight</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The typography style to use (e.g. <code>.headlineMedium</code>, <code>.labelSmall</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>weight</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional override for font weight (e.g., <code>.semibold</code>, <code>.regular</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the themed font applied.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE15foregroundColoryQrAD0G5TokenOF"></a>
+                    <a name="//apple_ref/swift/Method/foregroundColor(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE15foregroundColoryQrAD0G5TokenOF">foregroundColor(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies a themed foreground color (text, icon, etc.) using a <code><a href="../Enums/ColorToken.html">ColorToken</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">foregroundColor</span><span class="p">(</span><span class="n">_</span> <span class="nv">token</span><span class="p">:</span> <span class="kt"><a href="../Enums/ColorToken.html">ColorToken</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The color token to apply (e.g. <code>.primary</code>, <code>.onSurface</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the specified foreground color.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE15backgroundColoryQrAD0G5TokenOF"></a>
+                    <a name="//apple_ref/swift/Method/backgroundColor(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE15backgroundColoryQrAD0G5TokenOF">backgroundColor(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies a background fill color using a theme-defined <code><a href="../Enums/ColorToken.html">ColorToken</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">backgroundColor</span><span class="p">(</span><span class="n">_</span> <span class="nv">token</span><span class="p">:</span> <span class="kt"><a href="../Enums/ColorToken.html">ColorToken</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The color token to apply (e.g. <code>.surface</code>, <code>.primaryContainer</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the background color applied.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE15backgroundColor_21edgesIgnoringSafeAreaQrAD0G5TokenO_AA4EdgeO3SetVtF"></a>
+                    <a name="//apple_ref/swift/Method/backgroundColor(_:edgesIgnoringSafeArea:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE15backgroundColor_21edgesIgnoringSafeAreaQrAD0G5TokenO_AA4EdgeO3SetVtF">backgroundColor(_:<wbr>edgesIgnoringSafeArea:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies a background fill color using a theme-defined <code><a href="../Enums/ColorToken.html">ColorToken</a></code>, ignoring safe area on specified edges.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">backgroundColor</span><span class="p">(</span><span class="n">_</span> <span class="nv">token</span><span class="p">:</span> <span class="kt"><a href="../Enums/ColorToken.html">ColorToken</a></span><span class="p">,</span> <span class="nv">edgesIgnoringSafeArea</span><span class="p">:</span> <span class="kt">Edge</span><span class="o">.</span><span class="kt">Set</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The color token to apply.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>edgesIgnoringSafeArea</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The edges where the safe area should be ignored.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the background color applied.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE15backgroundShape_5colorQrAD0G5TokenO_AD05ColorI0OSgtF"></a>
+                    <a name="//apple_ref/swift/Method/backgroundShape(_:color:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE15backgroundShape_5colorQrAD0G5TokenO_AD05ColorI0OSgtF">backgroundShape(_:<wbr>color:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies a background shape with optional fill color using theme-defined tokens.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">backgroundShape</span><span class="p">(</span><span class="n">_</span> <span class="nv">token</span><span class="p">:</span> <span class="kt"><a href="../Enums/ShapeToken.html">ShapeToken</a></span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt"><a href="../Enums/ColorToken.html">ColorToken</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The shape token to apply (e.g. <code>.sm</code>, <code>.md</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional fill color for the shape.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with a shaped background.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE15backgroundShape_5color21edgesIgnoringSafeAreaQrAD0G5TokenO_AD05ColorM0OSgAA4EdgeO3SetVtF"></a>
+                    <a name="//apple_ref/swift/Method/backgroundShape(_:color:edgesIgnoringSafeArea:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE15backgroundShape_5color21edgesIgnoringSafeAreaQrAD0G5TokenO_AD05ColorM0OSgAA4EdgeO3SetVtF">backgroundShape(_:<wbr>color:<wbr>edgesIgnoringSafeArea:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies a background shape with optional fill color and safe area edge control.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">backgroundShape</span><span class="p">(</span><span class="n">_</span> <span class="nv">token</span><span class="p">:</span> <span class="kt"><a href="../Enums/ShapeToken.html">ShapeToken</a></span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt"><a href="../Enums/ColorToken.html">ColorToken</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">edgesIgnoringSafeArea</span><span class="p">:</span> <span class="kt">Edge</span><span class="o">.</span><span class="kt">Set</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The shape token to apply.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional fill color.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>edgesIgnoringSafeArea</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The edges where safe area should be ignored.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the shaped background.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE7paddingyQrAA4EdgeO3SetV_AD12SpacingTokenOtF"></a>
+                    <a name="//apple_ref/swift/Method/padding(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE7paddingyQrAA4EdgeO3SetV_AD12SpacingTokenOtF">padding(_:<wbr>_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies padding using a <code><a href="../Enums/SpacingToken.html">SpacingToken</a></code> from the theme on specified edges.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">padding</span><span class="p">(</span><span class="n">_</span> <span class="nv">edges</span><span class="p">:</span> <span class="kt">Edge</span><span class="o">.</span><span class="kt">Set</span> <span class="o">=</span> <span class="o">.</span><span class="n">all</span><span class="p">,</span> <span class="n">_</span> <span class="nv">token</span><span class="p">:</span> <span class="kt"><a href="../Enums/SpacingToken.html">SpacingToken</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>edges</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The edges to apply padding to (default is <code>.all</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The spacing token to use (e.g. <code>.sm</code>, <code>.lg</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with themed padding.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE7paddingyQrAD12SpacingTokenOF"></a>
+                    <a name="//apple_ref/swift/Method/padding(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE7paddingyQrAD12SpacingTokenOF">padding(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies uniform padding using a <code><a href="../Enums/SpacingToken.html">SpacingToken</a></code> from the theme.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">padding</span><span class="p">(</span><span class="n">_</span> <span class="nv">token</span><span class="p">:</span> <span class="kt"><a href="../Enums/SpacingToken.html">SpacingToken</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The spacing token to use.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with themed padding.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE12cornerRadiusyQrAD0G5TokenOF"></a>
+                    <a name="//apple_ref/swift/Method/cornerRadius(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE12cornerRadiusyQrAD0G5TokenOF">cornerRadius(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies a corner radius using a <code><a href="../Enums/RadiusToken.html">RadiusToken</a></code> from the current theme.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">cornerRadius</span><span class="p">(</span><span class="n">_</span> <span class="nv">token</span><span class="p">:</span> <span class="kt"><a href="../Enums/RadiusToken.html">RadiusToken</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The radius token to apply (e.g. <code>.sm</code>, <code>.pill</code>, <code>.circle</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with rounded corners.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE10clipRadius_5styleQrAD0G5TokenO_AA18RoundedCornerStyleOtF"></a>
+                    <a name="//apple_ref/swift/Method/clipRadius(_:style:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE10clipRadius_5styleQrAD0G5TokenO_AA18RoundedCornerStyleOtF">clipRadius(_:<wbr>style:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Clips the view to a rounded rectangle using a <code><a href="../Enums/RadiusToken.html">RadiusToken</a></code> and optional style.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">clipRadius</span><span class="p">(</span><span class="n">_</span> <span class="nv">token</span><span class="p">:</span> <span class="kt"><a href="../Enums/RadiusToken.html">RadiusToken</a></span><span class="p">,</span> <span class="nv">style</span><span class="p">:</span> <span class="kt">RoundedCornerStyle</span> <span class="o">=</span> <span class="o">.</span><span class="n">circular</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The radius token to use.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>style</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The corner style, either <code>.circular</code> or <code>.continuous</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A clipped view.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE6stroke_6radius5colorQrAD11StrokeTokenO_AD06RadiusJ0OAD05ColorJ0OtF"></a>
+                    <a name="//apple_ref/swift/Method/stroke(_:radius:color:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE6stroke_6radius5colorQrAD11StrokeTokenO_AD06RadiusJ0OAD05ColorJ0OtF">stroke(_:<wbr>radius:<wbr>color:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies a themed border stroke using stroke width, corner radius, and color from the theme.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">stroke</span><span class="p">(</span>
+  <span class="n">_</span> <span class="nv">width</span><span class="p">:</span> <span class="kt"><a href="../Enums/StrokeToken.html">StrokeToken</a></span><span class="p">,</span>
+  <span class="nv">radius</span><span class="p">:</span> <span class="kt"><a href="../Enums/RadiusToken.html">RadiusToken</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">md</span><span class="p">,</span>
+  <span class="nv">color</span><span class="p">:</span> <span class="kt"><a href="../Enums/ColorToken.html">ColorToken</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">primary</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>width</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The stroke width from the theme.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>radius</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The corner radius from the theme (default is <code>.md</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The border color from the theme (default is <code>.primary</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the border stroke applied.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE9clipShapeyQrAD0G5TokenOF"></a>
+                    <a name="//apple_ref/swift/Method/clipShape(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE9clipShapeyQrAD0G5TokenOF">clipShape(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Clips the view using a shape defined in the current theme.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">clipShape</span><span class="p">(</span><span class="n">_</span> <span class="nv">token</span><span class="p">:</span> <span class="kt"><a href="../Enums/ShapeToken.html">ShapeToken</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A <code><a href="../Enums/ShapeToken.html">ShapeToken</a></code> from the theme.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view clipped to the given shape.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE15navigationTitle_5style6weightQrSS_AD14TextStyleTokenOAA4FontV6WeightVSgtF"></a>
+                    <a name="//apple_ref/swift/Method/navigationTitle(_:style:weight:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE15navigationTitle_5style6weightQrSS_AD14TextStyleTokenOAA4FontV6WeightVSgtF">navigationTitle(_:<wbr>style:<wbr>weight:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets a navigation title styled using the theme’s typography.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">navigationTitle</span><span class="p">(</span>
+  <span class="n">_</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+  <span class="nv">style</span><span class="p">:</span> <span class="kt"><a href="../Enums/TextStyleToken.html">TextStyleToken</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">headlineLarge</span><span class="p">,</span>
+  <span class="nv">weight</span><span class="p">:</span> <span class="kt">Font</span><span class="o">.</span><span class="kt">Weight</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>title</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The string to display.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>style</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Typography token (e.g. <code>.titleLarge</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>weight</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional custom weight override.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with the themed navigation title.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE6weightyQrSdF"></a>
+                    <a name="//apple_ref/swift/Method/weight(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE6weightyQrSdF">weight(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Applies layout weight and expands the view to fill available space.</p>
+
+<p>Inspired by Jetpack Compose&rsquo;s <code>weight()</code>, useful in <code>HStack</code>/<code>VStack</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">weight</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Double</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The proportional layout weight.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A weighted view.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE11fillMaxSize9alignmentQrAA9AlignmentV_tF"></a>
+                    <a name="//apple_ref/swift/Method/fillMaxSize(alignment:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE11fillMaxSize9alignmentQrAA9AlignmentV_tF">fillMaxSize(alignment:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Expands the view to fill available width and height, aligned as specified.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">fillMaxSize</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="kt">Alignment</span> <span class="o">=</span> <span class="o">.</span><span class="n">leading</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alignment</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The alignment within the space. Default is <code>.leading</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A fully expanded view.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE12fillMaxWidth9alignmentQrAA9AlignmentV_tF"></a>
+                    <a name="//apple_ref/swift/Method/fillMaxWidth(alignment:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE12fillMaxWidth9alignmentQrAA9AlignmentV_tF">fillMaxWidth(alignment:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Expands the view to fill the maximum width, aligned as specified.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">fillMaxWidth</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="kt">Alignment</span> <span class="o">=</span> <span class="o">.</span><span class="n">leading</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alignment</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The alignment within the space. Default is <code>.leading</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view that fills the max width.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE13fillMaxHeight9alignmentQrAA9AlignmentV_tF"></a>
+                    <a name="//apple_ref/swift/Method/fillMaxHeight(alignment:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE13fillMaxHeight9alignmentQrAA9AlignmentV_tF">fillMaxHeight(alignment:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Expands the view to fill the maximum height, aligned as specified.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">fillMaxHeight</span><span class="p">(</span><span class="nv">alignment</span><span class="p">:</span> <span class="kt">Alignment</span> <span class="o">=</span> <span class="o">.</span><span class="n">leading</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alignment</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The alignment within the space. Default is <code>.leading</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view that fills the max height.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE4size_9alignmentQr14CoreFoundation7CGFloatV_AA9AlignmentVtF"></a>
+                    <a name="//apple_ref/swift/Method/size(_:alignment:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE4size_9alignmentQr14CoreFoundation7CGFloatV_AA9AlignmentVtF">size(_:<wbr>alignment:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets an exact square size for the view using the same value for width and height.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@MainActor</span>
+<span class="kd">func</span> <span class="nf">size</span><span class="p">(</span><span class="n">_</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">,</span> <span class="nv">alignment</span><span class="p">:</span> <span class="kt">Alignment</span> <span class="o">=</span> <span class="o">.</span><span class="n">center</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>size</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The size to apply for both width and height.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alignment</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The alignment inside the frame. Default is <code>.center</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A view with fixed size.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE2if_9transformQrSb_qd__xXEtAaBRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/if(_:transform:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE2if_9transformQrSb_qd__xXEtAaBRd__lF">if(_:<wbr>transform:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Conditionally applies a view transformation when a condition is <code>true</code>.</p>
+
+<p>This is useful for chaining conditional modifiers in a clean and readable way.</p>
+<h3 id='example' class='heading'>Example:</h3>
+<pre class="highlight swift"><code><span class="kt">Text</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">)</span>
+  <span class="o">.</span><span class="k">if</span><span class="p">(</span><span class="n">isHighlighted</span><span class="p">)</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="nf">foregroundColor</span><span class="p">(</span><span class="o">.</span><span class="n">red</span><span class="p">)</span> <span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="p">`</span><span class="nv">if</span><span class="p">`</span><span class="o">&lt;</span><span class="kt">Content</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">condition</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">transform</span><span class="p">:</span> <span class="p">(</span><span class="k">Self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Content</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span> <span class="k">where</span> <span class="kt">Content</span> <span class="p">:</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>condition</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A Boolean value that determines whether the transform is applied.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>transform</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure that takes the original view and returns a modified view.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Either the original view or the transformed view if the condition is <code>true</code>.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7SwiftUI4ViewP0A8ThemeKitE7measureyQrAA7BindingVySo6CGSizeVGF"></a>
+                    <a name="//apple_ref/swift/Method/measure(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7SwiftUI4ViewP0A8ThemeKitE7measureyQrAA7BindingVySo6CGSizeVGF">measure(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Measures the size of the view and writes it to a bound <code>CGSize</code>.</p>
+
+<p>This can be used to capture layout dimensions for alignment, animation,
+or dynamic layout decisions.</p>
+<h3 id='example' class='heading'>Example:</h3>
+<pre class="highlight swift"><code><span class="kd">@State</span> <span class="kd">private</span> <span class="k">var</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">CGSize</span> <span class="o">=</span> <span class="o">.</span><span class="n">zero</span>
+
+<span class="kt">Text</span><span class="p">(</span><span class="s">"Resizable"</span><span class="p">)</span>
+  <span class="o">.</span><span class="nf">measure</span><span class="p">(</span><span class="n">$size</span><span class="p">)</span>
+  <span class="o">.</span><span class="nf">onChange</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="n">size</span><span class="p">)</span> <span class="p">{</span> <span class="nf">print</span><span class="p">(</span><span class="s">"New size: </span><span class="se">\(</span><span class="nv">$0</span><span class="se">)</span><span class="s">"</span><span class="p">)</span> <span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@ViewBuilder</span>
+<span class="kd">@MainActor</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">measure</span><span class="p">(</span><span class="n">_</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">Binding</span><span class="o">&lt;</span><span class="kt">CGSize</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kd">some</span> <span class="kt">View</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>size</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A binding to a <code>CGSize</code> value that will be updated with the view’s size.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2025 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2025-05-20)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>
