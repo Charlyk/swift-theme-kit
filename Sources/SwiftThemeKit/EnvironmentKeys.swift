@@ -34,6 +34,11 @@ private struct TypographyKey: EnvironmentKey {
   static let defaultValue: ThemeFontToken = ThemeFontToken(.bodyMedium)
 }
 
+/// Environment key for text editor configuration
+private struct TextEditorConfigurationKey: EnvironmentKey {
+  static let defaultValue = TextEditorConfiguration()
+}
+
 // MARK: - Environment Values
 
 public extension EnvironmentValues {
@@ -73,5 +78,10 @@ public extension EnvironmentValues {
   internal var typographyStyle: ThemeFontToken {
     get { self[TypographyKey.self] }
     set { self[TypographyKey.self] = newValue }
+  }
+
+  internal var textEditorConfiguration: TextEditorConfiguration {
+    get { self[TextEditorConfigurationKey.self] }
+    set { self[TextEditorConfigurationKey.self] = newValue }
   }
 }
