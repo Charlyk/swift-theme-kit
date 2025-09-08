@@ -150,7 +150,7 @@ public extension View {
   ///   - style: Typography token (e.g. `.titleLarge`).
   ///   - weight: Optional custom weight override.
   /// - Returns: A view with the themed navigation title.
-  func navigationTitle(
+  func themedNavigationTitle(
     _ title: String,
     style: TextStyleToken = .headlineLarge,
     weight: Font.Weight? = nil
